@@ -1,0 +1,59 @@
+If you read this in time for [Code-in](http://g.co/gci) 2018 and are aged between 13 to 17, you might be in luck, for this post might just help you out. It would’ve made it easier for me too, if this existed before I won. I list some pro tips that I feel would be useful in order to fully experience GCI.
+
+The aim of the contest is to simply encourage young developers to get started with open-source. Interestingly, unlike other contests, not everyone participates in GCI to truly win. Yes, I hear you, the Grand Prize is an all expenses paid 4 days trip to fucking Googleplex and here you see me saying some people don’t really concentrate on that. It is true though, a participant can approach Code-in two ways-
+
+1. Quickly complete 3 noob tasks (including 2 beginner tasks) which guarantees you a Google Code-in t-shirt and call it quits. It’s that simple, you could do that in just a day.
+
+1. Work constantly through the 7 weeks and go all in hoping for the big prize.
+
+Unsurprisingly, most people go with the first option. Google Code-in 2017 had 3555 students who completed 16468 tasks. That averages to a bit over 4 tasks per student. (I did 21 - and that’s just the tasks I could claim)
+
+Let’s say you don’t want to settle for a t-shirt and are willing to focus on GCI neglecting sleep/studies/social life/whatever. In that case, read on, we’re jumping to the meat of it now. (I’m presuming you know the basics about the contest.)
+
+***
+
+You need to understand there’s no specific skill set that will help you win GCI, there’s no sure bet that being very proficient in *insert language* will make sure you win. That’s not how it works, which brings us to the first pro tip-
+
+**Choose your org early.**
+
+Every organization has specific languages and tools they use. The org I worked with, [CCExtractor Development](http://ccextractor.org), has its core utility mainly written in C, while the [sample-platform](https://github.com/CCExtractor/sample-platform) is in Python. So skim through the orgs once they’re official and see which one suits you best. It wouldn’t hurt checking out previous orgs either, since many of them may participate again. That would in fact give you an advantage over others. This point applies for GSoC as well.
+
+Once you’ve chosen your org and acquainted yourself with their code and the contest begins, you might wonder what tasks to do and if number of tasks is important.
+
+**Get acquainted with how version control works.**
+
+You should know the basics, so you don’t trip yourself in making a pull request or performing a rebase and stuff like that. You’ll probably be eligible for [Github’s student pack](https://education.github.com/pack), which’ll provide you access to GitKraken, a client that made things simpler for me.
+
+**Quality over quantity** would be the way to go except **quantity matters** too. 12 quality tasks are better than 7 quality tasks so don’t stop once you feel you’ve done enough, quantity will make a difference.
+
+Avoid silly tasks like writing about your experience etc. Use that time to work on stuff that will count.
+
+**Try to make life easier for your org.**
+
+If your PRs require multiple reviews for silly stuff by your mentors, you’re wasting their time and energy. On the other hand if you write good code than can be merged without a lot of revisions, you certainly would be better than a lot of others.
+
+**Don’t restrict yourself to tasks.**
+
+Your aim should be to help the org, so the tasks page shouldn’t be a limit to your contributions. Eg. if you see an issue on their GitHub that you could fix, it would be a good idea to implement it. It definitely shows good faith and is what a good person would do. *You feel nice about yourself too*
+
+**Try to get really involved.**
+
+Once I realized I wasn’t dependent on GCI to work with my org, I did stuff even after the contest had ended. That is what Google aims for with the contest and what I find coolest about it. I fixed an issue that had been waiting to be fixed for over a year right after Code-in had ended. No one is stopping you from working, so if you choose to go beyond GCI, you’re doing it right.
+
+**Last but not the least,** **be nice be respectful.**
+
+Don’t badger your mentors if they don’t review your task within the hour, don’t ask overly silly questions and at the same time do ask questions if you have problems understanding code or need help understanding a task. Do help a fellow participant out if you’re a good person and share dank memes in the group chat (or not).
+
+Thanks for reading, I hope it helps. I might write about more Code-in stuff, especially after the trip. You could check out CCExtractor Development’s GitHub [here](https://github.com/CCExtractor) to find out more about what I and other participants worked on.
+
+Useful Links-
+
+* [Previous years’ tasks](https://codein.withgoogle.com/archive/)
+
+* [Even older archive (2010–2014)](https://www.google-melange.com/archive/gci)
+
+* [Sample Tasks](https://developers.google.com/open-source/gci/resources/example-tasks)
+
+Best of luck!
+
+
