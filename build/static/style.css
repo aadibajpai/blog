@@ -31,7 +31,7 @@ body {
 }
 #headerholder,
 #footerholder { 
-	background-color:#f9f9f9;
+	background-color:#ffffff;
 	border-top:solid 1px #CCC;
 	border-left:solid 1px #CCC;
 	border-right:solid 1px #CCC;
@@ -43,6 +43,7 @@ body {
 	margin:0px auto;
 	padding-top:24px;
 	padding-bottom:8px;
+	text-align:center;
 }
 #footer { 
 	padding-top:10px;
