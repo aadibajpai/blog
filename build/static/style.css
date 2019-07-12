@@ -66,7 +66,8 @@ h1#blogtitle a {
 	color:initial;
 }
 h2#blogsubtitle {
-	margin-top:20px;
+	margin-top:30px;
+	margin-bottom: 40px;
 	font-size:medium;
 	font-weight:normal;
 }
