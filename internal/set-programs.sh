@@ -19,11 +19,11 @@ RM_FLAGS="-fr"
 ################################################################################
 # check for always required programs
 ################################################################################
-if ! which "Markdown.pl" &> /dev/null
+if ! which "cmark-gfm" &> /dev/null
 then
 	MARKDOWN="./internal/Markdown.pl"
 else
-	MARKDOWN="$(which "Markdown.pl")"
+	MARKDOWN="$(which "cmark-gfm")"
 fi
 [ ! -x "${MARKDOWN}" ] && echo "error: Markdown.pl not found" && exit 1
 [ ! -x "${MAKE}" ] && echo "error: make not found" && exit 1
