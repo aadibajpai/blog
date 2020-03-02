@@ -14,7 +14,7 @@ Lorem Ipsum or whatever.
 
 `import __hello__  # This should be inline code`
 
-```py
+```
 from __future__ import braces
 import antigravity
 # A few Python easter eggs and also an example of a code block
