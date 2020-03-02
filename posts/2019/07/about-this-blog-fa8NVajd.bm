@@ -1,5 +1,5 @@
 1562540551
-1583113445
+1583117641
 fa8NVajd
 pinned=1
 
@@ -13,7 +13,7 @@ I love this blog, although it is a relative pain to maintain, purely because of 
 
 It is pretty formal as well, which is how I imagine myself writing (all hunched over a typewriter by candlelight lol).
 
-The source code of this blog is at https://github.com/aadibajpai/blog. It is composed solely of linux utilities and I am a Windows pleb unfortunately. This meant configuring a lot of stuff to work with wsl and figuring out how to run the Windows Sublime Text program from inside wsl to create and edit posts like this one. Previously, I used to actually ssh into a linux server just to run the blog, that's how much I like it. 
+The source code of this blog is at <https://github.com/aadibajpai/blog>. It is composed solely of linux utilities and I am a Windows pleb unfortunately. This meant configuring a lot of stuff to work with wsl and figuring out how to run the Windows Sublime Text program from inside wsl to create and edit posts like this one. Previously, I used to actually ssh into a linux server just to run the blog, that's how much I like it. 
 
 This also serves as a test blog post.
 
@@ -21,15 +21,19 @@ Lorem Ipsum or whatever.
 
 `import __hello__  # This should be inline code`
 
-    from __future__ import braces
-    import antigravity
-    # A few Python easter eggs and also an example of a code block
+Now, let's try a code block.
+
+```
+from __future__ import braces
+import antigravity
+# A few Python easter eggs and also an example of a code block
+```
 
 *italics* and **bold**
 
 Thanks for visiting, stay to read a couple of posts :)
 
-If you have something to say about this blog (appreciation appreciated, criticism appreciated even more ~~not really~~) then please go ahead and contact me at iloveyourblog@aadibajpai.me
+If you have something to say about this blog (appreciation appreciated, criticism appreciated even more ~~not really~~) then please go ahead and contact me at <iloveyourblog@aadibajpai.me>
 /// See https://github.com/pastly/bm/blob/master/doc/Options.md for help with valid
 /// options for line four.
 ///
