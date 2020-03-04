@@ -130,7 +130,7 @@ function build_index {
 		build_content_header "${POST}" "for-preview"
 		< "${CONTENT}" \
 		pre_markdown "$(get_id "${HEADERS}")" |\
-		${MARKDOWN} ${MARKDOWN_FLAGS} |\
+		$(MARKDOWN) -e footnotes -e strikethrough -e autolink -e tasklist |\
 		post_markdown "$(get_id "${HEADERS}")" "for-preview"
 		[[ "${CONTENT_IS_TRIMMED}" != "" ]] &&
 			echo "<a href='${POST_LINK}'><em>Read the entire post</em></a>"
@@ -360,7 +360,7 @@ function get_toc {
 	FILE="$1"
 	[[ "$(file_has_toc_code "${FILE}")" == "" ]] && return
 	TEMP_HTML="$(mktemp)"
-	< "${FILE}" "${MARKDOWN}" ${MARKDOWN_FLAGS} > "${TEMP_HTML}"
+	< "${FILE}" "${MARKDOWN}" > "${TEMP_HTML}"
 	HEADINGS=( )
 	LINE_NUMBERS=( )
 	while read -r LINE
