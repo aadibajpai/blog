@@ -1,4 +1,6 @@
-I'm actually just going to write a writeup for the [Luna](https://ctf.wpictf.xyz/challenges#Luna) steganography challenge, because that's the one I found the most interesting. We also finished #14 in the end which I think was pretty great since we were all just doing it out of quarantine boredness (lol).
+A couple of days ago, me and a couple of other GCI winners decided to participate in the [WPI CTF](https://ctf.wpictf.xyz) out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.
+
+This is a writeup for the [Luna](https://ctf.wpictf.xyz/challenges#Luna) steganography challenge, because that's the one I found the most interesting.
 
 # Luna
 > They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!
@@ -7,7 +9,7 @@ I'm actually just going to write a writeup for the [Luna](https://ctf.wpictf.xyz
 <img src="https://i.imgur.com/LEZkRet.png" alt="Luna" />
 </p>
 
-So as you see, we start off with a `Luna.tar.xz` file which on unzipping gives a `Luna.tar` file which on further unzipping gives a file named `1.png` and a zipped folder with two password protected files—`Just In Case.png` and `jut`.
+So as you see, we start off with a `Luna.tar.xz` file which on decompressing gives a `Luna.tar` file which on further unzipping gives a file named `1.png` and a zipped folder with two password protected files—`Just In Case.png` and `jut`.
 
 Clearly, we're supposed to start out with `1.png` which in looks is nothing but an all white image. 
 
@@ -33,5 +35,3 @@ Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff
 I tried to patch `jut` on `1.png` but welp, no dice.
 
 Circling back, we hadn't yet used the 2nd line from metadata nor `Just In Case.png` so it has to do something with those.
-
-"oops, all #FFD2A4#" seems to imply that the image shouldn't be all white but that hex color, and `Just In Case.png` has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new `1.png` looks like this:

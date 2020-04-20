@@ -94,7 +94,7 @@ import antigravity
 <div>
 <h1 id='posttitle'><a href='/blog/posts/wpictf-2020-writeups-ttL4fYDn.html'>WPICTF 2020 Writeup(s)</a></h1>
 <p class='postsubtitle'>Posted on 20 Apr 2020 by Aadi Bajpai</p>
-<span class='postsubtitle' style='font-size:small;'><em>Last updated 20 Apr 2020 at  6:57 pm</em></span><br/>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 20 Apr 2020 at  7:02 pm</em></span><br/>
 
 <span class='postsubtitle' style='font-size:small;'><a href='/blog/p/ttL4fYDn.html'>permalink</a></span><br/>
 
@@ -102,7 +102,8 @@ import antigravity
 
 </div>
 
-<p>I'm actually just going to write a writeup for the <a href="https://ctf.wpictf.xyz/challenges#Luna">Luna</a> steganography challenge, because that's the one I found the most interesting. We also finished #14 in the end which I think was pretty great since we were all just doing it out of quarantine boredness (lol).</p>
+<p>A couple of days ago, me and a couple of other GCI winners decided to participate in the <a href="https://ctf.wpictf.xyz">WPI CTF</a> out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.</p>
+<p>This is a writeup for the <a href="https://ctf.wpictf.xyz/challenges#Luna">Luna</a> steganography challenge, because that's the one I found the most interesting.</p>
 <h1>Luna</h1>
 <blockquote>
 <p>They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!</p>
@@ -110,7 +111,7 @@ import antigravity
 <p align="center">
 <img src="https://i.imgur.com/LEZkRet.png" alt="Luna" />
 </p>
-<p>So as you see, we start off with a <code>Luna.tar.xz</code> file which on unzipping gives a <code>Luna.tar</code> file which on further unzipping gives a file named <code>1.png</code> and a zipped folder with two password protected files—<code>Just In Case.png</code> and <code>jut</code>.</p>
+<p>So as you see, we start off with a <code>Luna.tar.xz</code> file which on decompressing gives a <code>Luna.tar</code> file which on further unzipping gives a file named <code>1.png</code> and a zipped folder with two password protected files—<code>Just In Case.png</code> and <code>jut</code>.</p>
 <p>Clearly, we're supposed to start out with <code>1.png</code> which in looks is nothing but an all white image.</p>
 <p align="center">
 <img src="https://i.imgur.com/sK55OEO.png" alt="1.png" />
@@ -128,7 +129,6 @@ import antigravity
 <p>Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff so I downloaded <a href="https://github.com/Alcaro/Flips">Flips</a>, a patcher for BPS files.</p>
 <p>I tried to patch <code>jut</code> on <code>1.png</code> but welp, no dice.</p>
 <p>Circling back, we hadn't yet used the 2nd line from metadata nor <code>Just In Case.png</code> so it has to do something with those.</p>
-<p>&quot;oops, all #FFD2A4#&quot; seems to imply that the image shouldn't be all white but that hex color, and <code>Just In Case.png</code> has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new <code>1.png</code> looks like this:</p>
 <a href='/blog/posts/wpictf-2020-writeups-ttL4fYDn.html'><em>Read the entire post</em></a>
 </div> <!-- divcontent -->
 
