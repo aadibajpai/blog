@@ -1,5 +1,5 @@
 1587384046
-1587388473
+1587389224
 ttL4fYDn
 
 
@@ -7,18 +7,22 @@ Aadi Bajpai
 WPICTF 2020 Writeup(s)
 /// Create your post below. Lines beginning with "///"
 /// will be stripped out.
-I'm actually just going to write a writeup for the Luna challenge, because that's the one I found the most interesting.
+I'm actually just going to write a writeup for the [Luna](https://ctf.wpictf.xyz/challenges#Luna) steganography challenge, because that's the one I found the most interesting. We also finished #14 in the end which I think was pretty great since we were all just doing it out of quarantine boredness (lol).
 
 # Luna
 > They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!
 
-<img align="center" src="https://i.imgur.com/LEZkRet.png" alt="Luna" />
+<p align="center">
+<img src="https://i.imgur.com/LEZkRet.png" alt="Luna" />
+</p>
 
 So as you see, we start off with a `Luna.tar.xz` file which on unzipping gives a `Luna.tar` file which on further unzipping gives a file named `1.png` and a zipped folder with two password protected files—`Just In Case.png` and `jut`.
 
 Clearly, we're supposed to start out with `1.png` which in looks is nothing but an all white image. 
 
-<img align="center" src="https://https://ah-sayed.github.io/assets/documentation/WPICTF/1-399743d67c4bf96130cc168755c7588a1d1bf8738a408a7c0ba439000bf9a58f.png" alt="1.png" />
+<p align="center">
+<img src="https://i.imgur.com/sK55OEO.png" alt="1.png" />
+</p>
 
 I ran the [stegoveritas](https://github.com/bannsec/stegoVeritas) tool on it to examine further and it printed a lot of metadata and exif info and carved out a couple of `.zlib` files. Interestingly, the metadata had 2 fields that stood out: 
 
@@ -27,11 +31,13 @@ I ran the [stegoveritas](https://github.com/bannsec/stegoVeritas) tool on it to 
 
 From the first, we have our password! The `jut` file seemed absolute gibberish while `Just In Case.png` was a screenshot from gimp.
 
-<img align="center" src="https://i.imgur.com/u8Ax45H.png" alt="Just In Case" />
+<p align="center">
+<img src="https://i.imgur.com/u8Ax45H.png" alt="Just In Case" />
+</p>
 
 Looking at `jut` from a hex editor, the first 3 characters were interesting: `BPS`
 
-A .bps file is one used to patch ROMs on SNES emulators and stuff so I downloaded [Flips](https://github.com/Alcaro/Flips), a patcher for BPS files. 
+Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff so I downloaded [Flips](https://github.com/Alcaro/Flips), a patcher for BPS files. 
 
 I tried to patch `jut` on `1.png` but welp, no dice.
 
@@ -39,11 +45,15 @@ Circling back, we hadn't yet used the 2nd line from metadata nor `Just In Case.p
 
 "oops, all #FFD2A4#" seems to imply that the image shouldn't be all white but that hex color, and `Just In Case.png` has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new `1.png` looks like this:
 
-<img align="center" src="https://i.imgur.com/NuamVNH.png" alt="New 1.png" />
+<p align="center">
+<img src="https://i.imgur.com/NuamVNH.png" alt="New 1.png" />
+</p>
 
 Now we patch `jut` on top of this and voila!
 
-<img align="center" src="https://i.imgur.com/K1KCVhr.png" alt="flag ez" />
+<p align="center">
+<img src="https://i.imgur.com/K1KCVhr.png" alt="flag ez" />
+</p>
 
 > WPI{M00N_mOOn}
 
@@ -73,3 +83,4 @@ Honestly, this was a pretty involved challenge and Justin really did a great job
 ///
 /// Other than these special rules, use markdown to format your post.
 
+@@ctf
