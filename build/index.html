@@ -92,6 +92,51 @@ import antigravity
 
 
 <div>
+<h1 id='posttitle'><a href='/blog/posts/wpictf-2020-writeups-ttL4fYDn.html'>WPICTF 2020 Writeup(s)</a></h1>
+<p class='postsubtitle'>Posted on 20 Apr 2020 by Aadi Bajpai</p>
+
+<span class='postsubtitle' style='font-size:small;'><a href='/blog/p/ttL4fYDn.html'>permalink</a></span><br/>
+
+
+
+</div>
+
+<p>I'm actually just going to write a writeup for Luna, because that's the one I found the most interesting.</p>
+<h1>Luna</h1>
+<blockquote>
+<p>They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!</p>
+</blockquote>
+<p><img src="https://i.imgur.com/r4xkMmH.png" alt="Luna" />   /// Add Luna image</p>
+<p>So as you see, you start off with a <code>tar.xz</code> file which on unzipping gives a <code>Luna.tar</code> file which on further unzipping gives a file named <code>1.png</code> and a zipped folder with two password protected files—<code>Just In Case.png</code> and <code>jut</code>.</p>
+<p>Clearly, we're supposed to start out with <code>1.png</code> which in looks is nothing but an all white image.</p>
+<p><img src="https://ah-sayed.github.io/assets/documentation/WPICTF/1-399743d67c4bf96130cc168755c7588a1d1bf8738a408a7c0ba439000bf9a58f.png" alt="1.png" /></p>
+<p>I ran the <a href="https://github.com/bannsec/stegoVeritas">stegoveritas</a> tool on it to examine it further and it gave a lot of metadata and exif info and carved out a couple of <code>.zlib</code> files. Interestingly, the metadata had 2 fields that stood out:</p>
+<ol>
+<li><code>StudyPhysician: awcIsALegendAndIHopeThisIsAStrongPasswordJackTheRipperBegone</code></li>
+<li><code>Description: oops, all #FFD2A4#</code></li>
+</ol>
+<p>From the first, we have our password! The <code>jut</code> file seemed absolute gibberish while <code>Just In Case.png</code> was a screenshot from gimp.</p>
+<p><img src="https://i.imgur.com/u8Ax45H.png" alt="Just In Case" /></p>
+<p>Looking at <code>jut</code> from a hex editor, the first 3 characters were interesting: <code>BPS</code></p>
+<p>A <code>.bps</code> file is one used to patch ROMs on like SNES emulators and stuff so I downloaded <a href="https://github.com/Alcaro/Flips">Flips</a>, a patcher for BPS files.</p>
+<p>I tried to patch <code>jut</code> on <code>1.png</code> but welp, no dice.</p>
+<p>Circling back, we hadn't yet used the 2nd line from metadata nor <code>Just In Case.png</code> so it has to do something with those.</p>
+<p>&quot;oops, all #FFD2A4#&quot; seems to imply that the image shouldn't be all white but that hex color, and <code>Just In Case.png</code> has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new <code>1.png</code> looks like this:</p>
+<a href='/blog/posts/wpictf-2020-writeups-ttL4fYDn.html'><em>Read the entire post</em></a>
+</div> <!-- divcontent -->
+
+
+<div class='divcontent'>
+
+
+
+
+
+
+
+
+
+<div>
 <h1 id='posttitle'><a href='/blog/posts/how-to-google-XpSr1CDb.html'>How To Google Code-in</a></h1>
 <p class='postsubtitle'>Posted on 12 Jul 2019 by Aadi Bajpai</p>
 <span class='postsubtitle' style='font-size:small;'><em>Last updated 27 Nov 2019 at  9:29 am</em></span><br/>

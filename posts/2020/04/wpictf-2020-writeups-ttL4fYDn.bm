@@ -1,0 +1,75 @@
+1587384046
+1587384046
+ttL4fYDn
+
+
+Aadi Bajpai
+WPICTF 2020 Writeup(s)
+/// Create your post below. Lines beginning with "///"
+/// will be stripped out.
+I'm actually just going to write a writeup for Luna, because that's the one I found the most interesting.
+
+# Luna
+> They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!
+
+![Luna](https://i.imgur.com/r4xkMmH.png)   /// Add Luna image
+
+So as you see, you start off with a `tar.xz` file which on unzipping gives a `Luna.tar` file which on further unzipping gives a file named `1.png` and a zipped folder with two password protected files—`Just In Case.png` and `jut`.
+
+Clearly, we're supposed to start out with `1.png` which in looks is nothing but an all white image. 
+
+![1.png](https://ah-sayed.github.io/assets/documentation/WPICTF/1-399743d67c4bf96130cc168755c7588a1d1bf8738a408a7c0ba439000bf9a58f.png)
+
+I ran the [stegoveritas](https://github.com/bannsec/stegoVeritas) tool on it to examine it further and it gave a lot of metadata and exif info and carved out a couple of `.zlib` files. Interestingly, the metadata had 2 fields that stood out: 
+
+1. `StudyPhysician: awcIsALegendAndIHopeThisIsAStrongPasswordJackTheRipperBegone`
+2. `Description: oops, all #FFD2A4#`
+
+From the first, we have our password! The `jut` file seemed absolute gibberish while `Just In Case.png` was a screenshot from gimp.
+
+![Just In Case](https://i.imgur.com/u8Ax45H.png)
+
+Looking at `jut` from a hex editor, the first 3 characters were interesting: `BPS`
+
+A `.bps` file is one used to patch ROMs on like SNES emulators and stuff so I downloaded [Flips](https://github.com/Alcaro/Flips), a patcher for BPS files. 
+
+I tried to patch `jut` on `1.png` but welp, no dice.
+
+Circling back, we hadn't yet used the 2nd line from metadata nor `Just In Case.png` so it has to do something with those.
+
+"oops, all #FFD2A4#" seems to imply that the image shouldn't be all white but that hex color, and `Just In Case.png` has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new `1.png` looks like this:
+
+![New 1.png](https://i.imgur.com/NuamVNH.png)
+
+Now we patch `jut` on top of this and voila!
+
+![flag ez](https://i.imgur.com/K1KCVhr.png)
+
+> WPI{M00N_mOOn}
+
+Honestly, this was a pretty involved challenge and Justin really did a great job with this, so props for that. I would even recommend his other challenge, Remy's Epic Adventure 2: Electric Boogaloo but I'm gonna procrastinate on writing that writeup lol.
+/// Do not add any comments above the first seven lines. The first seven lines
+/// are special.
+///
+/// 1. The initial posting timestamp
+/// 2. The last modified date
+/// 3. The post id
+/// 4. Options for this post (feel free to change)
+/// 5. (Reserved for future use)
+/// 6. The author (feel free to change)
+/// 7. The title (feel free to change)
+///
+/// See https://github.com/pastly/bm/blob/master/doc/Options.md for help with valid
+/// options for line four.
+///
+/// Any remaining lines are considered the body. Any word
+/// preceeded by "@@" will be treated as a tag. In the final HTML page,
+/// tags will have the preceeding "@@" removed and hyperlinks added.
+///
+/// You may manually specify where to end the homepage preview of this post by
+/// placing "{preview-stop}" once somewhere. Otherwise, 300 words will
+/// be used. Place "{toc}" somewhere to have BM automatically generate a table of
+/// contents for you.
+///
+/// Other than these special rules, use markdown to format your post.
+
