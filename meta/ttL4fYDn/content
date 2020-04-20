@@ -36,7 +36,7 @@ I tried to patch `jut` on `1.png` but welp, no dice.
 
 Circling back, we hadn't yet used the 2nd line from metadata nor `Just In Case.png` so it has to do something with those.
 
-"oops, all #FFD2A4#" seems to imply that the image shouldn't be all white but that hex color, and `Just In Case.png` has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new `1.png` looks like this:
+"oops, all #FFD2A4#" seems to imply that the image shouldn't be all white but the hex color `#FFD2A4`, and `Just In Case.png` has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new `1.png` looks like this:
 
 <p align="center">
 <img src="https://i.imgur.com/NuamVNH.png" alt="New 1.png" />
