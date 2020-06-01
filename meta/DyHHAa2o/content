@@ -39,7 +39,7 @@ We're provided a few numbers, and an image.
 
 ![triangle with numbers](https://raw.githubusercontent.com/cyber-castors/ctf20challenges/master/challenges/crypto/rsa/chal.png)
 
-Classic RSA with a twist, seems simple enough! But even after getting the values of `p` and `q`, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of `c` posted in the challenge was actually $c^2$, factoring that into the equation, we got the correct values. 
+Classic RSA with a twist, seems simple enough! But even after getting the values of `p` and `q`, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of `c` posted in the challenge was actually `c^2`, factoring that into the equation, we got the correct values. 
 
 The equations I used were derived from the Pythagoras theorem and area of the triangle formula:
 
