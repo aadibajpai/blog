@@ -15,7 +15,7 @@ We're given two pictures from a screenshot of the Untitled Goose Game, with one 
 ![goose_stole_the_key.png](https://i.imgur.com/hRiwU4V.png)  
 ![chal.png](https://i.imgur.com/G96FFLG.png)
 
-Since they're the same picture, immediately my mind jumps to the thought that the diff of both the images might show us the distorted part properly. Checking the diff, my suspicions were confirmed. 
+Since they're the same picture, immediately my mind jumps to the thought that the diff of both the images might show us the distorted part properly. Checking the diff using literally the first website that came up, my suspicions were confirmed. 
 
 ![flag image diff](https://i.imgur.com/vPshBkJ.png)
 
