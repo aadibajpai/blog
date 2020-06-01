@@ -1,0 +1,245 @@
+1590971418
+1590971418
+DyHHAa2o
+heading_ids=true
+
+Aadi Bajpai
+castorsCTF 2020 Writeups
+/// Create your post below. Lines beginning with "///"
+/// will be stripped out.
+///
+/// Do not add any comments above the first seven lines. The first seven lines
+/// are special.
+///
+/// 1. The initial posting timestamp
+/// 2. The last modified date
+/// 3. The post id
+/// 4. Options for this post (feel free to change)
+/// 5. (Reserved for future use)
+/// 6. The author (feel free to change)
+/// 7. The title (feel free to change)
+///
+/// See https://github.com/pastly/bm/blob/master/doc/Options.md for help with valid
+/// options for line four.
+///
+/// Any remaining lines are considered the body. Any word
+/// preceeded by "@@" will be treated as a tag. In the final HTML page,
+/// tags will have the preceeding "@@" removed and hyperlinks added.
+///
+/// You may manually specify where to end the homepage preview of this post by
+/// placing "{preview-stop}" once somewhere. Otherwise, 300 words will
+/// be used. Place "{toc}" somewhere to have BM automatically generate a table of
+/// contents for you.
+///
+/// Other than these special rules, use markdown to format your post.
+My CTF team Pwnzorz recently won [castorsCTF 2020](https://castorsctf20.ctfd.io/) 🥳. Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process (which imo is the most important).
+
+Let's get started.
+
+{toc}
+
+## Cryptography
+
+### Goose Chase
+
+We're given two pictures from a screenshot of the Untitled Goose Game, with one of them having a distorted horizontal bar of pixels presumably containing the flag and the other having some weird RGB stuff going on:
+
+![goose_stole_the_key.png](https://i.imgur.com/hRiwU4V.png)  
+![chal.png](https://i.imgur.com/G96FFLG.png)
+
+Since they're the same picture, immediately my mind jumps to the thought that the diff of both the images might show us the distorted part properly. Checking the diff, my suspicions were confirmed. 
+
+![flag image diff](https://i.imgur.com/vPshBkJ.png)
+
+> castorsCTF{m355_w1th_7h3_h0nk_y0u_g3t_7h3_b0nk}
+
+### Warmup
+
+We're provided a few numbers, and an image.
+
+> a=p+q
+>
+> b=p-q
+>
+> c=41027546415588921135190519817388916847442693284567375482282571314638757544938653824671437300971782426302443281077457253827782026089649732942648771306702020
+>
+> A=1780602199528179468577178612383888301611753776788787799581979768613992169436352468580888042155360498830144442282937213247708372597613226926855391934953064
+>
+> e=0x10001
+>
+> enc=825531027337680366509171870396193970230179478931882005355846498785843598000659828635030935743236266080589740863128695174980645084614454653557872620514117
+
+![triangle with numbers](https://raw.githubusercontent.com/cyber-castors/ctf20challenges/master/challenges/crypto/rsa/chal.png)
+
+Classic RSA with a twist, seems simple enough! But even after getting the values of `p` and `q`, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of `c` posted in the challenge was actually $c^2$, factoring that into the equation, we got the correct values. 
+
+The equations I used were derived from the Pythagoras theorem and area of the triangle formula:
+
+`p = \sqrt(c^2/4 + A)` 
+
+`q = \sqrt(p^2-2A)`
+
+giving us:
+
+```python
+p = 109715490261974447198586988864224528805526352370318545032102915309331780233413
+q = 92066738860291183962222763550286379517247445014524023523696633123203716884771
+```
+
+Then, it's a simple matter of plugging the values in [RsaCtfTool](https://github.com/Ganapati/RsaCtfTool), and it spits out the flag.
+
+> castorsCTF{n0th1ng_l1k3_pr1m3_numb3r5_t0_w4rm_up_7h3_3ng1n3s}
+
+### Magic School Bus
+
+> nc [chals20.cybercastors.com](http://chals20.cybercastors.com/) 14421
+>
+> *Flag is slightly out of format. Add underscores and submit uppercase*
+
+Connecting to it, we are greeted with:
+
+![Magic School Bus](https://i.imgur.com/G7vn9Ks.png)
+
+Of note is the description that all the kids got moved around and we should fill each row, that alludes to the shuffling being length dependent.
+
+Inputting `2` always gives us the same  string, `Flag bus seating: SCNTGET0SKV3CTNESYS2ISL7AF4I0SC0COM5ORS31RR3AYN1`. And inputting `1` allows us to provide our own string that gets shuffled and returned, playing a bit with that confirmed that the shuffling depends on the length, and is the same shuffling that happens to the flag. 
+
+So I thought the way we can do this is use the first option to send a string of `A`s equal to the length of the flag string with one character changed and then observing where the changed character ends up in the output and performing that same switch in the encrypted flag string. As in, if we send `AAAB` and get back `ABAA` then we know that the second character in the encrypted string was actually the last character in the plaintext.
+
+I was trying it manually, and it seemed to be working, so my teammate Nils whipped up a quick script to do this automatically.
+
+```python
+#!/usr/bin/env python
+
+from pwn import *
+
+r = remote('chals20.cybercastors.com', 14421)
+r.recv()
+r.recv()
+
+sol = ""
+encrypted = "SNESYT3AYN1CTISL7SRS31RAFSKV3C4I0SOCNTGER0COM5"
+
+for x in range(46):
+    a = ['a'] * 46
+    a[x] = 'b'
+    r.sendline("1")
+    r.recv()
+    r.sendline(''.join(a))
+    sol += encrypted[r.recv().split()[2].decode().index('B')]
+    r.recv()
+    print(sol)
+```
+
+It prints `CASTORSCTFR3C0N4ISSANCEISK3YTOS0LV1NGMYS73R1E5`, and we add underscores and braces to get the flag.
+
+> CASTORSCTF{R3C0N4ISSANCE_IS_K3Y_TO_S0LV1NG_MYS73R1E5}
+
+### Amazon
+
+> Are you watching the new series on Amazon?
+>
+> 198 291 575 812 1221 1482 1955 1273 1932 2030 3813 2886 1968 4085 3243 5830 5900 5795 5628 3408 7300 4108 10043 8455 6790 4848 11742 10165 8284 5424 14986 6681 13015 10147 7897 14345 13816 8313 18370 8304 19690 22625
+
+Key takeaways from the challenge text are the words "series" and "Amazon", especially because to watch a series on Amazon you'd go to Prime, and prime numbers are common in context of cryptography. 
+
+Now, thinking about primes and series, I think it might be referring to the series of first n prime numbers, loading that up, I tried to xor the first number in the challenge with the first prime number and so on, which led to exactly nothing lol, so I tried modulo which spat out a list of `0`s. This was interesting because that meant those numbers were divisible by the corresponding prime number. So we divide and convert to characters:
+
+```python
+>>> pp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181]
+>>> nn = [198,291,575,812,1221,1482,1955,1273,1932,2030,3813,2886,1968,4085,3243,5830,5900,5795,5628,3408,7300,4108,10043,8455,6790,4848,11742,10165,8284,5424,14986,6681,13015,10147,7897,14345,13816,8313,18370,8304,19690,22625]
+>>> for i in range(42):
+...     print(chr(int(nn[i]/pp[i])), end='')
+...
+castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}
+```
+
+> castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}
+
+## Misc
+
+### Pitfall
+
+> sylv3on_ was visiting cybercastors island and thought it'd be funny to bury the flag.txt. Can you help us dig it out?
+
+And there was an Animal Crossing image attached (this tweet has the challenge image https://twitter.com/sylv3on_/status/1266478775585386496).
+
+After performing a lot of steganography on the image and coming up with nothing, I understood that it was not a forensics challenge at all. Then the challenge text was updated with the words dig capitalized to DIG. Immediately I make the connection to the linux `dig` commands and query the DNS records of the domain cybercastors.com where we find a TXT record with the flag. 
+
+> castorsCTF{L00K_1_DuG_uP_4_fL4g_464C4147}
+
+## Web
+
+### Bane Art
+
+> http://web1.cybercastors.com:14438/
+
+We're greeted by a website with a lot of ascii art and tabs with even more ascii art, when you go to a tab, the link is like `http://web1.cybercastors.com:14438/app.php?topic=space.php` which screams LFI.
+
+I was thinking of doing log poisoning to get RCE but when I opened the logs through the LFI `http://web1.cybercastors.com:14438/app.php?topic=/var/log/apache2/access.log`, the flag was already there 😛
+
+For the purposes of the writeup, I properly did the challenge and the flag was located at `http://web1.cybercastors.com:14438/app.php?topic=/home/falg/flag/test/why/the/hassle/right/flag.txt`.
+
+> castorsCTF{w3lc0m3_2_D4_s0urc3_YoUng_Ju4n}
+
+### Quiz
+
+> Our intern, Jeff, received a brief introduction to Golang and decided to write a Web app that quizzes users.
+>
+> http://web1.cybercastors.com:14436
+
+The website has a simple quiz with basic arithmetic questions, playing with the input gives us nothing so we tried gobusting it which again gave nothing, so we tried with a dot prefixed, signifying hidden dirs. That yielded us .backup/, which contained the source code!
+
+One of the functions was interesting:
+
+```go
+func super(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
+    fmt.Println(ps.ByName("whynot"))
+    var file string = "/" + ps.ByName("directory") + "/" + ps.ByName("theme") + "/" + ps.ByName("whynot")
+    test, err := os.Open(file)
+    handleError(w, err)
+    defer test.Close()
+
+    scanner := bufio.NewScanner(test)
+    var content string
+    for scanner.Scan() {
+        content = scanner.Text()
+    }
+
+    fmt.Fprintf(w, "Directories: %s/%s\n", ps.ByName("directory"), ps.ByName("theme"))
+    fmt.Fprintf(w, "File: %s\n", ps.ByName("whynot"))
+    fmt.Fprintf(w, "Contents: %s\n", content)
+}
+```
+
+and this line a bit above it
+
+```go
+mux.GET("/test/:directory/:theme/:whynot", super)
+```
+
+which gave us LFI as long as all the three parts of the url existed. A lot of attempts later, the flag was found at `http://web1.cybercastors.com:14436/test/home/jeff/flag.txt`.
+
+> castorsCTC{wh0_l4iks_qUiZZ3s_4nyW4y}
+
+## Forensics
+
+### Leftovers
+
+> We suspect a user has been typing faster than a computer. Our analyst don't know what to make of it, maybe you will be the one to shine light on the subject.
+
+A USB PCAP was included with it as well. Since I had never done keyboard pcap analysis before, I googled a bit and found this one [writeup](https://teamrocketist.github.io/2017/08/29/Forensics-Hackit-2017-USB-ducker/) which was pretty similar.
+
+Dumping all keystrokes to a txt and running a [script](https://github.com/TeamRocketIst/ctf-usb-keyboard-parser/blob/master/usbkeyboard.py) to decode them back gave us:
+
+`what doyo thng yu will fn her? ths? cstos[CAPSLOCK]ctf[CAPSLOCK]{1stiswhatyowant}`
+
+which had the flag with one letter missing.
+
+> castorsCTF{1stiswhatyouwant}
+
+---
+
+Overall, this was a great CTF for us and a huge shoutout to the extremely helpful organizers! We had a great time participating so thank you for making it possible :)
+
+@@ctf
