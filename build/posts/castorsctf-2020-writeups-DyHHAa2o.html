@@ -53,7 +53,7 @@
 <div>
 <h1 id='posttitle'>castorsCTF 2020 Writeups</h1>
 <p class='postsubtitle'>Posted on 01 Jun 2020 by Aadi Bajpai</p>
-<span class='postsubtitle' style='font-size:small;'><em>Last updated 01 Jun 2020 at  6:53 am</em></span><br/>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 01 Jun 2020 at  8:50 am</em></span><br/>
 
 <span class='postsubtitle' style='font-size:small;'><a href='/blog/p/DyHHAa2o.html'>permalink</a></span><br/>
 
@@ -111,7 +111,7 @@
 <p>enc=825531027337680366509171870396193970230179478931882005355846498785843598000659828635030935743236266080589740863128695174980645084614454653557872620514117</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/cyber-castors/ctf20challenges/master/challenges/crypto/rsa/chal.png" alt="triangle with numbers" /></p>
-<p>Classic RSA with a twist, seems simple enough! But even after getting the values of <code>p</code> and <code>q</code>, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of <code>c</code> posted in the challenge was actually $c^2$, factoring that into the equation, we got the correct values.</p>
+<p>Classic RSA with a twist, seems simple enough! But even after getting the values of <code>p</code> and <code>q</code>, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of <code>c</code> posted in the challenge was actually <code>c^2</code>, factoring that into the equation, we got the correct values.</p>
 <p>The equations I used were derived from the Pythagoras theorem and area of the triangle formula:</p>
 <p><code>p = sqrt(c^2/4 + A)</code></p>
 <p><code>q = sqrt(p^2-2A)</code></p>
