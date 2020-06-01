@@ -1,5 +1,5 @@
 1590971418
-1590971418
+1590972606
 DyHHAa2o
 heading_ids=true
 
@@ -32,7 +32,9 @@ castorsCTF 2020 Writeups
 /// contents for you.
 ///
 /// Other than these special rules, use markdown to format your post.
-My CTF team Pwnzorz recently won [castorsCTF 2020](https://castorsctf20.ctfd.io/) 🥳. Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process (which imo is the most important).
+My CTF team Pwnzorz recently won [castorsCTF20](https://castorsctf20.ctfd.io/) 🥳. 
+
+Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process, which, in my opinion, is the most important part of solving a challenge.
 
 Let's get started.
 
@@ -143,7 +145,7 @@ It prints `CASTORSCTFR3C0N4ISSANCEISK3YTOS0LV1NGMYS73R1E5`, and we add underscor
 
 Key takeaways from the challenge text are the words "series" and "Amazon", especially because to watch a series on Amazon you'd go to Prime, and prime numbers are common in context of cryptography. 
 
-Now, thinking about primes and series, I think it might be referring to the series of first n prime numbers, loading that up, I tried to xor the first number in the challenge with the first prime number and so on, which led to exactly nothing lol, so I tried modulo which spat out a list of `0`s. This was interesting because that meant those numbers were divisible by the corresponding prime number. So we divide and convert to characters:
+Now, thinking about primes and series, I think it might be referring to the series of first n prime numbers, loading that up, I tried to xor the first number in the challenge with the first prime number and so on, which led to exactly nothing lol, so I tried modulo which spat out a list of 0s. This was interesting because that meant those numbers were divisible by the corresponding prime number. So we divide and convert to characters:
 
 ```python
 >>> pp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181]
@@ -240,6 +242,6 @@ which had the flag with one letter missing.
 
 ---
 
-Overall, this was a great CTF for us and a huge shoutout to the extremely helpful organizers! We had a great time participating so thank you for making it possible :)
+Overall, this was a great CTF for us and a huge shoutout to the extremely helpful organizers, especially hasu and icinta! We had a great time participating so thank you for making it possible :)
 
 @@ctf

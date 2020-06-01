@@ -53,6 +53,7 @@
 <div>
 <h1 id='posttitle'>castorsCTF 2020 Writeups</h1>
 <p class='postsubtitle'>Posted on 01 Jun 2020 by Aadi Bajpai</p>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 01 Jun 2020 at  6:20 am</em></span><br/>
 
 <span class='postsubtitle' style='font-size:small;'><a href='/blog/p/DyHHAa2o.html'>permalink</a></span><br/>
 
@@ -60,7 +61,8 @@
 
 </div>
 
-<p>My CTF team Pwnzorz recently won <a href="https://castorsctf20.ctfd.io/">castorsCTF 2020</a> 🥳. Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process (which imo is the most important).</p>
+<p>My CTF team Pwnzorz recently won <a href="https://castorsctf20.ctfd.io/">castorsCTF20</a> 🥳.</p>
+<p>Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process, which, in my opinion, is the most important part of solving a challenge.</p>
 <p>Let's get started.</p>
 <ul>
 <li><a href='#cryptography'>Cryptography</a>
@@ -163,7 +165,7 @@ print(sol)
 <p>198 291 575 812 1221 1482 1955 1273 1932 2030 3813 2886 1968 4085 3243 5830 5900 5795 5628 3408 7300 4108 10043 8455 6790 4848 11742 10165 8284 5424 14986 6681 13015 10147 7897 14345 13816 8313 18370 8304 19690 22625</p>
 </blockquote>
 <p>Key takeaways from the challenge text are the words &quot;series&quot; and &quot;Amazon&quot;, especially because to watch a series on Amazon you'd go to Prime, and prime numbers are common in context of cryptography.</p>
-<p>Now, thinking about primes and series, I think it might be referring to the series of first n prime numbers, loading that up, I tried to xor the first number in the challenge with the first prime number and so on, which led to exactly nothing lol, so I tried modulo which spat out a list of <code>0</code>s. This was interesting because that meant those numbers were divisible by the corresponding prime number. So we divide and convert to characters:</p>
+<p>Now, thinking about primes and series, I think it might be referring to the series of first n prime numbers, loading that up, I tried to xor the first number in the challenge with the first prime number and so on, which led to exactly nothing lol, so I tried modulo which spat out a list of 0s. This was interesting because that meant those numbers were divisible by the corresponding prime number. So we divide and convert to characters:</p>
 <pre><code class="language-python">&gt;&gt;&gt; pp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181]
 &gt;&gt;&gt; nn = [198,291,575,812,1221,1482,1955,1273,1932,2030,3813,2886,1968,4085,3243,5830,5900,5795,5628,3408,7300,4108,10043,8455,6790,4848,11742,10165,8284,5424,14986,6681,13015,10147,7897,14345,13816,8313,18370,8304,19690,22625]
 &gt;&gt;&gt; for i in range(42):
@@ -240,7 +242,7 @@ fmt.Fprintf(w, &quot;Contents: %sn&quot;, content)
 <p>castorsCTF{1stiswhatyouwant}</p>
 </blockquote>
 <hr />
-<p>Overall, this was a great CTF for us and a huge shoutout to the extremely helpful organizers! We had a great time participating so thank you for making it possible :)</p>
+<p>Overall, this was a great CTF for us and a huge shoutout to the extremely helpful organizers, especially hasu and icinta! We had a great time participating so thank you for making it possible :)</p>
 <p><a href='/blog/tags/ctf.html'>ctf</a></p>
 </div> <!-- divcontent -->
 
