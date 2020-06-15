@@ -30,11 +30,30 @@ that may be specified in the header of the post file. For more information, see
 
 # Installation
 
-BM runs entirely within it's own directory. Simply clone the source and situate
+BM runs entirely within its own directory. Simply clone the source and situate
 yourself in the new directory.
 
     git clone https://github.com/pastly/bm.git
     cd bm
+
+## `cmark-gfm` issue?
+
+You might want to verify that the bundled copy works on your machine,
+especially if "Linux amd64" doesn't sound like a good description of your
+computer.
+
+One way to do this would be to try parsing the `README.md` into HTML:
+
+    <README.md ./internal/cmark-gfm | head
+
+You should get HTML and no errors.
+
+If you get errors, maybe it's because the binary won't work on your computer.
+There is a script in the `tools` directory to help you download and compile
+`cmark-gfm`. Please be familiar with compiling software from source and
+discovering/fetching dependencies before attempting this.
+
+    ./tools/get-and-build-cmark.sh
 
 # Usage
 
@@ -105,7 +124,7 @@ sensitive__, but searching by post title is __case insensitive__.
 If the search term is a single word, BM will first try to find a _single_ post
 id. If that fails or more than one word was given, it will then search post
 titles. By default, it must also find a single post by title, but this can be
-[configured](Configuration.md). I
+[configured](Configuration.md).
 
 When you're done editing, tell your editor to save the temporary file. Then
 close your editor. BM will take care of the rest by default.
