@@ -21,7 +21,7 @@ BUILT_POST_DIR="${BUILD_DIR}/posts"
 BUILT_SHORT_POST_DIR="${BUILD_DIR}/p"
 BUILT_TAG_DIR="${BUILD_DIR}/tags"
 BUILT_STATIC_DIR="${BUILD_DIR}/static"
-VERSION="v4.2.1-dev"
+VERSION="v5.0.1-dev"
 TAG_ALPHABET="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-"
 ID_ALPHABET="123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 KNOWN_HASH_PROGRAMS="sha1sum sha1 sha256sum sha256 md5sum md5 cat"
@@ -101,7 +101,7 @@ function build_content_header {
 		IS_PINNED="foobar" ||
 		IS_PINNED=""
 	cat << EOF
-POST_HEADER(${TITLE},${AUTHOR},${DATE},${MOD_DATE},${PERMALINK},${IS_PINNED})
+POST_HEADER([[${TITLE}]],[[${AUTHOR}]],[[${DATE}]],[[${MOD_DATE}]],[[${PERMALINK}]],[[${IS_PINNED}]])
 EOF
 }
 
@@ -638,7 +638,7 @@ function set_editor {
 function start_html {
 	TITLE="$1"
 	echo "m4_include(${THEME_SYMLINK}/html.m4)"
-	echo "START_HTML(${TITLE})"
+	echo "START_HTML([[${TITLE}]])"
 }
 
 function start_rss {
