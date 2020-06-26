@@ -82,6 +82,8 @@ function build_content_header {
 	[[ "${PREFER_SHORT_POSTS}" == "yes" ]] &&
 		POST_LINK="${ROOT_URL}/p/${POST}.html" ||
 		POST_LINK="${ROOT_URL}/posts/${POST_FILE}"
+	[ -n "$(op_is_set "${METADATA_DIR}/${POST}/options" named)" ] &&
+		POST_LINK="/${POST_FILE%%-${POST}\.html}.html"
 	(( "${#OPTS[@]}" > 0 )) && [[ " ${OPTS[@]} " =~ " for-preview " ]] &&
 		TITLE="<a href='${POST_LINK}'>${TITLE}</a>"
 	DATE="$(get_date "${HEADERS}")"
@@ -532,9 +534,12 @@ function post_markdown {
 	if (( "${#OPTS[@]}" > 0 )) && [[ " ${OPTS[@]} " =~ " for-preview " ]]
 	then
 		[[ "${PREFER_SHORT_POSTS}" == "yes" ]] && \
-			LINK="${ROOT_URL}/p/${ID}.html" || \
-			LINK="${ROOT_URL}/posts/$(get_title "${METADATA_DIR}/${ID}/headers" | title_to_post_url)${TITLE_SEPARATOR_CHAR}${ID}.html"
-		sed "s|\(<a href=['\"]\)\(#.*\)|\1${LINK}\2|" "${TMP1}" > "${TMP2}"
+			LINK="/p/${ID}.html" || \
+			LINK="/posts/$(get_title "${METADATA_DIR}/${ID}/headers" | title_to_post_url)${TITLE_SEPARATOR_CHAR}${ID}.html"
+
+		[ -n "$(op_is_set "${METADATA_DIR}/${ID}/options" named)" ] &&
+			LINK="/${POST_FILE%%-${ID}\.html}.html"
+		sed "s|\(<a href=['\"]\)\(#.*\)|\1${ROOT_URL}${LINK}\2|" "${TMP1}" > "${TMP2}"
 	else
 		cat "${TMP1}" > "${TMP2}"
 	fi
