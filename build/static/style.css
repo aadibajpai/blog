@@ -85,6 +85,7 @@ blockquote {
 	border-left:solid 4px #E9E9E9;
 	margin-left:12px;
 	padding:12px 12px 12px 24px;
+	word-break: break-word;
 }
 blockquote img { 
 	margin:12px 0px;
@@ -94,4 +95,7 @@ blockquote iframe {
 }
 img {
 	max-width:100%;
+}
+pre {
+	overflow-x: scroll;
 }
