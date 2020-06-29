@@ -2,30 +2,30 @@
 <rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
 <title>Aadi Bajpai ✒️</title>
-<link>https://aadibajpai.me</link>
+<link>https://aadibajpai.com</link>
 <description>Welcome to my writing space on the internet.</description>
-<atom:link href='https://aadibajpai.me/blog/feed.rss' rel='self' type='application/rss+xml' />
+<atom:link href='https://aadibajpai.com/blog/feed.rss' rel='self' type='application/rss+xml' />
 <item>
 <title>castorsCTF 2020 Writeups</title>
-<link>https://aadibajpai.me/blog/posts/castorsctf-2020-writeups-DyHHAa2o.html</link>
+<link>https://aadibajpai.com/blog/posts/castorsctf-2020-writeups-DyHHAa2o.html</link>
 <guid isPermaLink='false'>DyHHAa2o</guid>
 <pubDate>Mon, 01 Jun 2020 06:00:18 IST</pubDate>
 </item>
 <item>
 <title>WPICTF 2020 Writeup(s)</title>
-<link>https://aadibajpai.me/blog/posts/wpictf-2020-writeups-ttL4fYDn.html</link>
+<link>https://aadibajpai.com/blog/posts/wpictf-2020-writeups-ttL4fYDn.html</link>
 <guid isPermaLink='false'>ttL4fYDn</guid>
 <pubDate>Mon, 20 Apr 2020 17:30:46 IST</pubDate>
 </item>
 <item>
 <title>How To Google Code-in</title>
-<link>https://aadibajpai.me/blog/posts/how-to-google-XpSr1CDb.html</link>
+<link>https://aadibajpai.com/blog/posts/how-to-google-XpSr1CDb.html</link>
 <guid isPermaLink='false'>XpSr1CDb</guid>
 <pubDate>Fri, 12 Jul 2019 00:30:41 IST</pubDate>
 </item>
 <item>
 <title>About This Blog.</title>
-<link>https://aadibajpai.me/blog/posts/about-this-blog-fa8NVajd.html</link>
+<link>https://aadibajpai.com/blog/posts/about-this-blog-fa8NVajd.html</link>
 <guid isPermaLink='false'>fa8NVajd</guid>
 <pubDate>Mon, 08 Jul 2019 04:32:31 IST</pubDate>
 </item>
