@@ -114,8 +114,8 @@
 <p><img src="https://raw.githubusercontent.com/cyber-castors/ctf20challenges/master/challenges/crypto/rsa/chal.png" alt="triangle with numbers" /></p>
 <p>Classic RSA with a twist, seems simple enough! But even after getting the values of <code>p</code> and <code>q</code>, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of <code>c</code> posted in the challenge was actually <code>c^2</code>, factoring that into the equation, we got the correct values.</p>
 <p>The equations I used were derived from the Pythagoras theorem and area of the triangle formula:</p>
-<p><code>p = sqrt(c^2/4 + A)</code></p>
-<p><code>q = sqrt(p^2-2A)</code></p>
+<p><code>p = \sqrt(c^2/4 + A)</code></p>
+<p><code>q = \sqrt(p^2-2A)</code></p>
 <p>giving us:</p>
 <pre><code class="language-python">p = 109715490261974447198586988864224528805526352370318545032102915309331780233413
 q = 92066738860291183962222763550286379517247445014524023523696633123203716884771
@@ -147,14 +147,14 @@ sol = &quot;&quot;
 encrypted = &quot;SNESYT3AYN1CTISL7SRS31RAFSKV3C4I0SOCNTGER0COM5&quot;
 
 for x in range(46):
-a = ['a'] * 46
-a[x] = 'b'
-r.sendline(&quot;1&quot;)
-r.recv()
-r.sendline(''.join(a))
-sol += encrypted[r.recv().split()[2].decode().index('B')]
-r.recv()
-print(sol)
+    a = ['a'] * 46
+    a[x] = 'b'
+    r.sendline(&quot;1&quot;)
+    r.recv()
+    r.sendline(''.join(a))
+    sol += encrypted[r.recv().split()[2].decode().index('B')]
+    r.recv()
+    print(sol)
 </code></pre>
 <p>It prints <code>CASTORSCTFR3C0N4ISSANCEISK3YTOS0LV1NGMYS73R1E5</code>, and we add underscores and braces to get the flag.</p>
 <blockquote>
@@ -206,21 +206,21 @@ castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}
 <p>The website has a simple quiz with basic arithmetic questions, playing with the input gives us nothing so we tried gobusting it which again gave nothing, so we tried with a dot prefixed, signifying hidden dirs. That yielded us .backup/, which contained the source code!</p>
 <p>One of the functions was interesting:</p>
 <pre><code class="language-go">func super(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
-fmt.Println(ps.ByName(&quot;whynot&quot;))
-var file string = &quot;/&quot; + ps.ByName(&quot;directory&quot;) + &quot;/&quot; + ps.ByName(&quot;theme&quot;) + &quot;/&quot; + ps.ByName(&quot;whynot&quot;)
-test, err := os.Open(file)
-handleError(w, err)
-defer test.Close()
+    fmt.Println(ps.ByName(&quot;whynot&quot;))
+    var file string = &quot;/&quot; + ps.ByName(&quot;directory&quot;) + &quot;/&quot; + ps.ByName(&quot;theme&quot;) + &quot;/&quot; + ps.ByName(&quot;whynot&quot;)
+    test, err := os.Open(file)
+    handleError(w, err)
+    defer test.Close()
 
-scanner := bufio.NewScanner(test)
-var content string
-for scanner.Scan() {
-content = scanner.Text()
-}
+    scanner := bufio.NewScanner(test)
+    var content string
+    for scanner.Scan() {
+        content = scanner.Text()
+    }
 
-fmt.Fprintf(w, &quot;Directories: %s/%sn&quot;, ps.ByName(&quot;directory&quot;), ps.ByName(&quot;theme&quot;))
-fmt.Fprintf(w, &quot;File: %sn&quot;, ps.ByName(&quot;whynot&quot;))
-fmt.Fprintf(w, &quot;Contents: %sn&quot;, content)
+    fmt.Fprintf(w, &quot;Directories: %s/%s\n&quot;, ps.ByName(&quot;directory&quot;), ps.ByName(&quot;theme&quot;))
+    fmt.Fprintf(w, &quot;File: %s\n&quot;, ps.ByName(&quot;whynot&quot;))
+    fmt.Fprintf(w, &quot;Contents: %s\n&quot;, content)
 }
 </code></pre>
 <p>and this line a bit above it</p>
