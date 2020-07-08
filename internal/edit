@@ -36,7 +36,6 @@ TEMP="$(mktemp)"
 cp "${FILE}" "${TEMP}"
 OLD_MOD_DATE="$(get_mod_date "${TEMP}")"
 "${ED}" "${TEMP}"
-read -p "bs prompt to make program pause"
 OLD_HASH="$(cat "${FILE}" | hash_data)"
 NEW_HASH="$(cat "${TEMP}" | hash_data)"
 if [[ "${OLD_HASH}" != "${NEW_HASH}" ]]
