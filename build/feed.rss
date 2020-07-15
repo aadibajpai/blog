@@ -6,6 +6,12 @@
 <description>Welcome to my writing space on the internet.</description>
 <atom:link href='https://aadibajpai.com/blog/feed.rss' rel='self' type='application/rss+xml' />
 <item>
+<title>Google Summer of Code Phase 1</title>
+<link>https://aadibajpai.com/blog/posts/google-summer-of-uK76p8bd.html</link>
+<guid isPermaLink='false'>uK76p8bd</guid>
+<pubDate>Sun, 05 Jul 2020 18:16:52 IST</pubDate>
+</item>
+<item>
 <title>castorsCTF 2020 Writeups</title>
 <link>https://aadibajpai.com/blog/posts/castorsctf-2020-writeups-DyHHAa2o.html</link>
 <guid isPermaLink='false'>DyHHAa2o</guid>

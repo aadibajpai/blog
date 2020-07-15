@@ -1,0 +1,114 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aadi's blog or something</title>
+  <link href="/blog/static/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div id='divbodyholder'>
+
+
+
+<div id='headerholder'>
+<div id='header'>
+<h1 id='blogtitle'><a href='/blog/'>Aadi Bajpai ✒️</a></h1>
+<h2 id='blogsubtitle'>Welcome to my writing space on the internet. <a href=../>About Me</a> | <a href=http://clashkahznlvpwfg.onion>Onion</a><small>[<a href=https://community.torproject.org/onion-services/>What's this?</a>]</small></h2>
+
+</div> <!-- header -->
+</div> <!-- headerholder -->
+
+<div class='divcontent'>
+
+
+
+
+
+
+
+
+
+<div>
+<h1 id='posttitle'>Google Summer of Code Phase 1</h1>
+<p class='postsubtitle'>Posted on 05 Jul 2020 by Aadi Bajpai</p>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 16 Jul 2020 at 12:47 am</em></span><br/>
+
+<span class='postsubtitle' style='font-size:small;'><a href='/blog/gsoc.html'>permalink</a></span><br/>
+
+
+
+</div>
+
+<p>The first phase of GSoC concluded recently (I passed 🥳) and I wanted to talk about the things I did so far and the process to this point.</p>
+<ul>
+<li><a href='#background'>Background</a></li>
+<li><a href='#community-bonding-period'>Community Bonding Period</a></li>
+<li><a href='#phase-1'>Phase 1</a>
+<ul>
+<li><a href='#minor-tracks'>Minor Tracks</a></li>
+<li><a href='#logging'>Logging</a></li>
+</ul>
+</li>
+</ul>
+<h1 id='background'>Background</h1>
+<p>I got selected as a student for the <a href="https://summerofcode.withgoogle.com">Google Summer of Code</a> program. My proposal resides at <a href="https://aadibajpai.com/gsoc/%E2%80%94which">https://aadibajpai.com/gsoc/—which</a> provides context on my work as well as things I will be working on. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks.</p>
+<p>The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are!</p>
+<h1 id='community-bonding-period'>Community Bonding Period</h1>
+<p>Being well acquainted with everyone already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for <a href="https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8">SwagLyrics</a> and <a href="https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a">SwSpotify</a>. The SwagLyrics Chrome Extension was also <a href=".google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk">published</a>! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature.</p>
+<p>More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner.</p>
+<p>Most notable, however, was fixing a flaw in the backend which would have made my life way harder if discovered by someone else. The issue making feature of the backend does some verification checks to determine if the info is legit or not, e.g. if the song does actually exist on Spotify or not and some rate limiting. However, you could've spammed it with actual songs from Spotify for which it would work and it would have opened those issues which would have been very annoying. To fix this I just needed to resolve and ping the Genius webpage with the stripper crafted from the song, artist info received, but since this wasn't through an API, and PythonAnywhere doesn't allow non-API requests on the free tier, it was just sitting there unresolved.</p>
+<p>However, since PythonAnywhere is awesome, after two very polite emails I was allowed access which fixed this for all eternity 🤗</p>
+<h1 id='phase-1'>Phase 1</h1>
+<h2 id='minor-tracks'>Minor Tracks</h2>
+<p>The first track was adding type hints. Now it's not like a super big project where it is absolutely needed but I feel they greatly improve readability. It also helped me find a <em>bug</em> where I thought I was passing an <code>int</code> but it was through an environment variable so it was actually a string, I mean it was getting handled automatically but the more you know. Additionally, I guess now I can integrate <code>mypy</code> into the CI itself, which should be useful in the long term. Earlier, the <code>typing</code> library used to add some overhead but that has been improved now, so it made sense to do it.</p>
+<p>Then, it was about adding support for Bollywood songs. Through empirical evidence which totally wasn't the 9838731 GitHub issues that swaglyrics opens, we discovered a lot of Bollywood songs on Spotify include the movie name in the title which sometimes did not resolve very well. Thankfully, it was always preceded by From and enclosed within &quot;&quot; which mainly resulted in modifying a previous regex to:</p>
+<p><code>brc = re.compile(r'([(\[](feat|ft|From &quot;[^&quot;]*&quot;)[^)\]]*[)\]]|- .*)', re.I)</code></p>
+<p>and it was taken care of.</p>
+<h2 id='logging'>Logging</h2>
+<p>continue writing from here</p>
+<p><a href='/blog/tags/gsoc.html'>gsoc</a></p>
+</div> <!-- divcontent -->
+
+
+
+<div id='footerholder'>
+<div id='footer'>
+<a href='/blog/tags/index.html'>Posts by tag</a> | <a href='/blog/posts/index.html'>All posts</a><br />
+<span style='font-size:smaller'>All pages signed with <a href='/blog/pubkey.gpg'>18C4DA6834D84A336393C452AA75B83DB24703D6</a>. Append <code>.asc</code> to URL for signature.</span><br />
+
+<span style='font-size:smaller'><a href='/blog/feed.rss'>RSS feed</a></span>
+
+
+<span style='font-size:smaller'></span>
+
+
+</div> <!-- footer -->
+</div> <!-- footerholder -->
+
+</div> <!-- divbodyholder -->
+</body>
+</html>
+
+

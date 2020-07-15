@@ -1,0 +1,46 @@
+1593953212
+1594840661
+uK76p8bd
+named=gsoc
+
+Aadi Bajpai
+Google Summer of Code Phase 1
+
+The first phase of GSoC concluded recently (I passed 🥳) and I wanted to talk about the things I did so far and the process to this point.
+
+{toc}
+
+# Background
+
+I got selected as a student for the [Google Summer of Code](https://summerofcode.withgoogle.com) program. My proposal resides at https://aadibajpai.com/gsoc/—which provides context on my work as well as things I will be working on. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks.
+
+The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are!
+
+# Community Bonding Period
+
+Being well acquainted with everyone already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for [SwagLyrics](https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8) and [SwSpotify](https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a). The SwagLyrics Chrome Extension was also [published](.google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk)! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature. 
+
+More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner.
+
+Most notable, however, was fixing a flaw in the backend which would have made my life way harder if discovered by someone else. The issue making feature of the backend does some verification checks to determine if the info is legit or not, e.g. if the song does actually exist on Spotify or not and some rate limiting. However, you could've spammed it with actual songs from Spotify for which it would work and it would have opened those issues which would have been very annoying. To fix this I just needed to resolve and ping the Genius webpage with the stripper crafted from the song, artist info received, but since this wasn't through an API, and PythonAnywhere doesn't allow non-API requests on the free tier, it was just sitting there unresolved. 
+
+However, since PythonAnywhere is awesome, after two very polite emails I was allowed access which fixed this for all eternity 🤗
+
+# Phase 1
+
+## Minor Tracks
+
+The first track was adding type hints. Now it's not like a super big project where it is absolutely needed but I feel they greatly improve readability. It also helped me find a *bug* where I thought I was passing an `int` but it was through an environment variable so it was actually a string, I mean it was getting handled automatically but the more you know. Additionally, I guess now I can integrate `mypy` into the CI itself, which should be useful in the long term. Earlier, the `typing` library used to add some overhead but that has been improved now, so it made sense to do it.
+
+Then, it was about adding support for Bollywood songs. Through empirical evidence which totally wasn't the 9838731 GitHub issues that swaglyrics opens, we discovered a lot of Bollywood songs on Spotify include the movie name in the title which sometimes did not resolve very well. Thankfully, it was always preceded by From and enclosed within "" which mainly resulted in modifying a previous regex to:
+
+`brc = re.compile(r'([(\[](feat|ft|From "[^"]*")[^)\]]*[)\]]|- .*)', re.I)`
+
+and it was taken care of.
+
+## Logging
+
+continue writing from here
+
+@@gsoc
+
