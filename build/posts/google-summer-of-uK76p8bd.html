@@ -53,7 +53,7 @@
 <div>
 <h1 id='posttitle'>Google Summer of Code Phase 1</h1>
 <p class='postsubtitle'>Posted on 05 Jul 2020 by Aadi Bajpai</p>
-<span class='postsubtitle' style='font-size:small;'><em>Last updated 16 Jul 2020 at 12:56 am</em></span><br/>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 17 Jul 2020 at  2:19 am</em></span><br/>
 
 <span class='postsubtitle' style='font-size:small;'><a href='/blog/gsoc.html'>permalink</a></span><br/>
 
@@ -61,7 +61,7 @@
 
 </div>
 
-<p>The first phase of GSoC concluded recently (I passed 🥳) and I wanted to talk about the things I did so far and the process to this point.</p>
+<p>The first phase of GSoC concluded recently (I passed!) and I wanted to talk about the things I did so far and the process to this point.</p>
 <ul>
 <li><a href='#background'>Background</a></li>
 <li><a href='#community-bonding-period'>Community Bonding Period</a></li>
@@ -69,12 +69,14 @@
 <ul>
 <li><a href='#minor-tracks'>Minor Tracks</a></li>
 <li><a href='#logging'>Logging</a></li>
+<li><a href='#notifications'>Notifications</a></li>
+<li><a href='#testing'>Testing</a></li>
 </ul>
 </li>
 </ul>
 <h1 id='background'>Background</h1>
-<p>I got selected as a student for the <a href="https://summerofcode.withgoogle.com">Google Summer of Code</a> program. My proposal resides at <a href="https://aadibajpai.com/gsoc/">aadibajpai.com/gsoc/</a>—which provides context on my work as well as things I will be working on. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks.</p>
-<p>The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are!</p>
+<p>I got selected as a student for the <a href="https://summerofcode.withgoogle.com">Google Summer of Code</a> program. My proposal resides at <a href="https://aadibajpai.com/gsoc/">aadibajpai.com/gsoc/</a>—which provides context on my work as well as things I will be working on. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks. I would suggest skimming the proposal once if you're unfamiliar with the project, since I go into detail in some places it would make it easier to follow along.</p>
+<p>The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are.</p>
 <h1 id='community-bonding-period'>Community Bonding Period</h1>
 <p>Being well acquainted with everyone already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for <a href="https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8">SwagLyrics</a> and <a href="https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a">SwSpotify</a>. The SwagLyrics Chrome Extension was also <a href=".google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk">published</a>! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature.</p>
 <p>More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner.</p>
@@ -87,7 +89,28 @@
 <p><code>brc = re.compile(r'([(\[](feat|ft|From &quot;[^&quot;]*&quot;)[^)\]]*[)\]]|- .*)', re.I)</code></p>
 <p>and it was taken care of.</p>
 <h2 id='logging'>Logging</h2>
-<p>continue writing from here</p>
+<p>This is exactly what it sounds like, adding proper logging to the swaglyrics backend. So far I was making do with print statements, which is actually a fantastic way of logging but I was missing out on context—since all the print output just gets clumped together. With the python <code>logging</code> library, there's more fine-grained control over the logs than plain print statements. For example, you might not want to log loops and stuff in production since that would spam logs, but that information would be crucial when debugging. So now I can simply set the log level to <code>debug</code> on staging and <code>info</code> on production. This was also cool because while implementing this across functions I managed to refactor a few of them to be more readable and pythonic.</p>
+<p>The only qualm for me was that PythonAnywhere has this quirk of mirroring the server and error logs if the logging library is used. As in, all logs output will be present in both those log files but to be honest that is a minor grievance for me (who checks logs really, but more on this in the next segment).</p>
+<p>Additionally, I now have a valuable addition to the list of snippets I will reuse: a decorator to log the arguments passed to a function. You can even supply an argument to truncate arguments if they're longer than <code>x</code> characters if you want to keep your logs clean and spiffy. Since this might be something useful to other projects as well, you can grab the code <a href="https://github.com/SwagLyrics/swaglyrics-backend/blob/master/swaglyrics_backend/utils.py#L86-L122">here</a>.</p>
+<h2 id='notifications'>Notifications</h2>
+<p>I really don't grasp logging. Like, every time I want to look at something or view them when an error happens, I need to open browser → PythonAnywhere → Web tab → logging file → filter through to whatever I am looking for. Sounds good, doesn't work (very well). I would very much prefer for logs to come to me, rather than me going to them if that makes sense. Also, there's no way to see it as it happens when you're logging to a file or separate different requests in chunks so you can focus on one request being processed at a time instead of all of them in succession one after the other. All of this pales in comparison to the biggest problem I have with raw logs.</p>
+<blockquote>
+<p>raw 💀🎺 logs 💀🎺 look 💀🎺 trash</p>
+</blockquote>
+<p>Seriously, it's just a huge wall of text and I'm supposed to somehow find the parts I'm looking for, can't it just you know, be a bit visually appealing so I don't want to just nope out right after opening them.</p>
+<p>/endrant lol</p>
+<p>Overall, I guess this is the reason why there's so many ✨shiny✨ dashboards and log processors but that would be overkill for my use case. We were already using Discord webhook magic to log requests to the Discord bot as well as successful backend deploy activity, so that's what I went with for the logs that were important to me: stripper resolution, and instrumentalness check.</p>
+<p>When the backend creates an issue, before that it checks whether the song is instrumental or not, because if it's instrumental then it obviously would not have lyrics. Now we get the instrumentalness and speechiness values from Spotify but the thresholds are custom. So it is important to view the logs of these as they happen to identify false positives and negatives to fine tune the values even more and potentially use this when serving lyrics as well. Earlier, this would have meant me periodically checking all the values and the artist names which to be frank I never did. But now it just comes in like-</p>
+<figure>
+	<img src="https://i.imgur.com/Eo7Am8b.png" alt="InstrumentalnessBoi"/>
+  	<figcaption style="text-align: center;">way more beautiful <3</figcaption>
+</figure>
+<p>Now it's trivial to eyeball cases right from the embed, like we know Fur Elise is obviously instrumental and we can compare the values from there to our threshold values. Now if it was flagging it as not instrumental, then I'd have known the values were wack in one look instead of specifically hunting for this in raw logs. In fact, the screenshot above is <em>after</em> <a href="https://github.com/SwagLyrics/swaglyrics-backend/commit/4624ebe3bd952f5c9fc6cf3d8756567e5329adbb">fine-tuning the thresholds</a> a while ago based on the feedback off of InstrumentalnessBoi.</p>
+<p>Similarly, there's GeniusStripperBoi which helps to identify patterns where the song name mismatches on Genius and Spotify and really just take a look to figure out if it's being caused by us or simply because the lyrics aren't available on Genius or something.</p>
+<p>Really, I'm very happy with how well these two turned out. Since we were using Discord for development anyway, this integrates very well and will be quite useful to ease development in the next phases!</p>
+<h2 id='testing'>Testing</h2>
+<p><em>Unittests... my old friend.</em></p>
+<p>If you thought the last segment was a rant then, boy, were you wrong.</p>
 <p><a href='/blog/tags/gsoc.html'>gsoc</a></p>
 </div> <!-- divcontent -->
 
