@@ -1,7 +1,7 @@
 1593953212
-1594932544
+1594934161
 uK76p8bd
-named=gsoc
+heading_ids named=gsoc
 
 Aadi Bajpai
 Google Summer of Code Phase 1
@@ -12,7 +12,7 @@ The first phase of GSoC concluded recently (I passed!) and I wanted to talk abou
 
 # Background
 
-I got selected as a student for the [Google Summer of Code](https://summerofcode.withgoogle.com) program. My proposal resides at [aadibajpai.com/gsoc/](https://aadibajpai.com/gsoc/)—which provides context on my work as well as things I will be working on. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks. I would suggest skimming the proposal once if you're unfamiliar with the project, since I go into detail in some places it would make it easier to follow along.
+I got selected as a student for the [Google Summer of Code](https://summerofcode.withgoogle.com) program. My proposal resides at [aadibajpai.com/gsoc/](https://aadibajpai.com/gsoc/)—which provides context on my work as well as things I will be working on. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks. I would suggest skimming the proposal once if you're unfamiliar with the project. Since I go into detail in some places, it would make it easier to follow along.
 
 The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are.
 
@@ -44,7 +44,7 @@ This is exactly what it sounds like, adding proper logging to the swaglyrics bac
 
 The only qualm for me was that PythonAnywhere has this quirk of mirroring the server and error logs if the logging library is used. As in, all logs output will be present in both those log files but to be honest that is a minor grievance for me (who checks logs really, but more on this in the next segment).
 
-Additionally, I now have a valuable addition to the list of snippets I will reuse: a decorator to log the arguments passed to a function. You can even supply an argument to truncate arguments if they're longer than `x` characters if you want to keep your logs clean and spiffy. Since this might be something useful to other projects as well, you can grab the code [here](https://github.com/SwagLyrics/swaglyrics-backend/blob/master/swaglyrics_backend/utils.py#L86-L122).
+Additionally, I now have a valuable code snippet addition: a decorator to log the arguments passed to a function. You can even supply an argument to truncate arguments if they're longer than `x` characters to keep your logs clean and spiffy. Since this might be something useful to other projects as well, you can grab the code [here](https://github.com/SwagLyrics/swaglyrics-backend/blob/master/swaglyrics_backend/utils.py#L86-L122).
 
 ## Notifications
 
@@ -58,16 +58,16 @@ Seriously, it's just a huge wall of text and I'm supposed to somehow find the pa
 
 Overall, I guess this is the reason why there's so many ✨shiny✨ dashboards and log processors but that would be overkill for my use case. We were already using Discord webhook magic to log requests to the Discord bot as well as successful backend deploy activity, so that's what I went with for the logs that were important to me: stripper resolution, and instrumentalness check.
 
-When the backend creates an issue, before that it checks whether the song is instrumental or not, because if it's instrumental then it obviously would not have lyrics. Now we get the instrumentalness and speechiness values from Spotify but the thresholds are custom. So it is important to view the logs of these as they happen to identify false positives and negatives to fine tune the values even more and potentially use this when serving lyrics as well. Earlier, this would have meant me periodically checking all the values and the artist names which to be frank I never did. But now it just comes in like-
+Before the backend creates an issue, it checks whether the song is instrumental or not. If it is instrumental then it would not have lyrics and hence, no issue creation is necessary. Now we get the instrumentalness and speechiness values from Spotify but the thresholds are custom. So it is important to view the logs of these as they happen to identify false positives and negatives to fine tune the values even more and potentially use this when serving lyrics as well. Earlier, this would have meant me periodically checking all the values and the artist names which to be frank I never did. But now it just comes in like-
 
 <figure>
 	<img src="https://i.imgur.com/Eo7Am8b.png" alt="InstrumentalnessBoi"/>
   	<figcaption style="text-align: center;">way more beautiful <3</figcaption>
 </figure>
 
-Now it's trivial to eyeball cases right from the embed, like we know Fur Elise is obviously instrumental and we can compare the values from there to our threshold values. Now if it was flagging it as not instrumental, then I'd have known the values were wack in one look instead of specifically hunting for this in raw logs. In fact, the screenshot above is *after* [fine-tuning the thresholds](https://github.com/SwagLyrics/swaglyrics-backend/commit/4624ebe3bd952f5c9fc6cf3d8756567e5329adbb) a while ago based on the feedback off of InstrumentalnessBoi.
+Now it's trivial to eyeball cases right from the embed, we know Für Elise is obviously instrumental. Now if it was flagging it as not instrumental, then I'd have known the values were wack in one look instead of specifically hunting for this in raw logs and then comparing the confidence scores to our thresholds. In fact, the screenshot above is *after* [fine-tuning the thresholds](https://github.com/SwagLyrics/swaglyrics-backend/commit/4624ebe3bd952f5c9fc6cf3d8756567e5329adbb) a while ago based on the feedback off of InstrumentalnessBoi.
 
-Similarly, there's GeniusStripperBoi which helps to identify patterns where the song name mismatches on Genius and Spotify and really just take a look to figure out if it's being caused by us or simply because the lyrics aren't available on Genius or something.
+Similarly, there's GeniusStripperBoi which helps to identify patterns where the song name mismatches on Genius and Spotify and really only needs a look to figure out if it's being caused by us or simply because the lyrics aren't available on Genius.
 
 Really, I'm very happy with how well these two turned out. Since we were using Discord for development anyway, this integrates very well and will be quite useful to ease development in the next phases!
 
