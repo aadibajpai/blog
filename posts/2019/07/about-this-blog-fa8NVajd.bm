@@ -1,23 +1,22 @@
 1562540551
-1583119513
+1595308176
 fa8NVajd
-pinned=1
+pinned=1 named=about
 
 Aadi Bajpai
 About This Blog.
 
 ## Hello
-I'm not going to write anymore on my [Medium](https://medium.com/@aadibajpai) (too much pay to play), and this is where new posts will be published.
 
-I love this blog, although it is a relative pain to maintain, purely because of this retro vibe it has going on.
+Welcome to my blog. Some old posts may be found on [Medium](https://medium.com/@aadibajpai), but I don't like Medium anymore because too pay to play.
 
-It is pretty formal as well, which is how I imagine myself writing (all hunched over a typewriter by candlelight lol).
+I love this blog, although it is a relative pain to maintain, purely because of this retro "big-brain" vibe it has going on.
 
 The source code of this blog is at https://github.com/aadibajpai/blog. It is composed solely of linux utilities and I am a Windows pleb unfortunately. This meant configuring a lot of stuff to work with wsl and figuring out how to run the Windows Sublime Text program from inside wsl to create and edit posts like this one. Previously, I used to actually ssh into a linux server just to run the blog, that's how much I like it. 
 
-This also serves as a test blog post.
+This also serves as a test blog post because it will be built each time so I can see if something broken.
 
-Lorem Ipsum or whatever.
+Lorem Ipsum or whatever. Random styling things now.
 
 `import __hello__  # This should be inline code`
 
@@ -26,25 +25,15 @@ Now, let's try a code block.
 ```
 from __future__ import braces
 import antigravity
+if x.startswith('java'):
+	x = 'suck'  # check indents rendered
 # A few Python easter eggs and also an example of a code block
 ```
 
-*italics* and **bold**
+*italics* and **bold** and ~~strikethrough~~
 
 Thanks for visiting, stay to read a couple of posts :)
 
 If you have something to say about this blog (appreciation appreciated, criticism appreciated even more ~~not really~~) then please go ahead and contact me at iloveyourblog@aadibajpai.me
-/// See https://github.com/pastly/bm/blob/master/doc/Options.md for help with valid
-/// options for line four.
-///
-/// Any remaining lines are considered the body. Any word
-/// preceeded by "@@" will be treated as a tag. In the final HTML page,
-/// tags will have the preceeding "@@" removed and hyperlinks added.
-///
-/// You may manually specify where to end the homepage preview of this post by
-/// placing "{preview-stop}" once somewhere. Otherwise, 300 words will
-/// be used. Place "{toc}" somewhere to have BM automatically generate a table of
-/// contents for you.
-///
-/// Other than these special rules, use markdown to format your post.
 
+A huge thanks to my padawans, [Nils André-Chang](https://www.nilsand.re/) and [Uzay Girit](http://uzpg.me/) for adding some important functionality to this. Nils contributed the named links feature, which allows for posts to have simple, easy-to-remember links like [this one](/blog/gsoc.html). Uzay fixed a few overflow errors which were quite annoying and absolutely broke styling on mobile. 
