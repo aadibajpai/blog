@@ -1,7 +1,7 @@
 
 ## Hello
 
-Welcome to my blog. Some old posts may be found on [Medium](https://medium.com/@aadibajpai), but I don't like Medium anymore because too pay to play.
+Welcome to my blog. Some old posts may be found on [Medium](https://medium.com/@aadibajpai), but I don't like Medium anymore because too much pay to play.
 
 I love this blog, although it is a relative pain to maintain, purely because of this retro "big-brain" vibe it has going on.
 
@@ -23,7 +23,7 @@ if x.startswith('java'):
 # A few Python easter eggs and also an example of a code block
 ```
 
-*italics* and **bold** and ~~strikethrough~~
+> *italics* and **bold** and ~~strikethrough~~ within a blockquote
 
 Thanks for visiting, stay to read a couple of posts :)
 
