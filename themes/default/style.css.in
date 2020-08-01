@@ -87,6 +87,6 @@ blockquote iframe {
 img {
 	max-width:100%;
 }
-pre {
+pre, code {
 	overflow-x: auto;
 }
