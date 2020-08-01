@@ -5,7 +5,7 @@ body {
 	margin:0;
 	padding:0;
 	background-color:PAGE_BG_COLOR;
-
+	word-break: break-word;
 }
 #divbodyholder { 
 	padding:5px;
@@ -89,7 +89,4 @@ img {
 }
 pre {
 	overflow-x: auto;
-}
-code {
-	word-break: break-word;
 }
