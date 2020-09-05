@@ -4,6 +4,16 @@
   <title>Aadi's blog or something</title>
   <link href="ROOT_URL/static/style.css" rel="stylesheet" type="text/css" />
   <meta charset="utf-8"/>
+
+  <meta name="twitter:card" content="photo">
+  <link rel="canonical" href="https://aadibajpai.com/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aadibajpai.com/blog/">
+  <meta property="og:title" content="Aadi's blog">
+  <meta property="og:description" content="Welcome to my writing space on the internet.">
+  <meta property="og:image" content="https://images-ext-2.discordapp.net/external/F2u8zXCEjPxNhfDMHYWJWu2UIm1fcmSdc6B8gMzF3yQ/https/aadibajpai.com/assets/logotype_me.png?width=547&height=410">
+  <meta property="og:image:alt" content="Aadi's blog">
+
 </head>
 <body>
 <div id='divbodyholder'>
