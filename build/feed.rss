@@ -6,6 +6,12 @@
 <description>Welcome to my writing space on the internet.</description>
 <atom:link href='https://aadibajpai.com/blog/feed.rss' rel='self' type='application/rss+xml' />
 <item>
+<title>VandyHacks VII vh quest Creator's Writeup</title>
+<link>https://aadibajpai.com/blog/posts/vandyhacks-vii-vh-nsySh97w.html</link>
+<guid isPermaLink='false'>nsySh97w</guid>
+<pubDate>Thu, 08 Oct 2020 06:15:59 IST</pubDate>
+</item>
+<item>
 <title>Google Summer of Code Phase 1</title>
 <link>https://aadibajpai.com/blog/posts/google-summer-of-uK76p8bd.html</link>
 <guid isPermaLink='false'>uK76p8bd</guid>

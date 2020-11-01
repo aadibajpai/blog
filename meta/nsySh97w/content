@@ -1,0 +1,28 @@
+Last week was VandyHacks VII, Vanderbilt's pr0 god hackathon. Since I am a very yung god, they made an exception and recruited me to the board in Fall instead of Spring like it usually happens. Being the smol boi on board, I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. 
+
+## fuck's that?
+
+the squirrel from VandyHacks is a very special Discord bot created for VandyHacks VII with a slew of commands ~~and easter eggs~~ to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a `vh quest` command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay. If you're curious about the bot, look at it at https://github.com/VandyHacks/the-squirrel-from-VandyHacks.
+
+## quest challenges
+
+Anyway, here are the challenges, the flags and some of the motivation behind each of them. 
+
+### Level 0
+
+> welcome to vh quest! this is a ctf-style, fun treasure hunt where you look for flags like `vh{yes_this_is_a_flag_hehe}` hidden in places with cryptic clues to advance to the next level. Flags are always in the vh{} format. Feel free to reach out for hints and good luck on your quest! <:vh_heart:>
+
+simple introductory level, since I did not expect a lot of people to have prior CTF experience or know the flow. And since this was like a side quest, I did not want to make it too hard either.
+
+the answer to this one, of course, was `vh{yes_this_is_a_flag_hehe}`.
+
+### Level 1
+
+```bf
+----[-->+++++<]>.++[->+++<]>.-[----->+<]>.-------.+[->+++<]>++.+.[--->+<]>----.--[->+++++<]>+.+[->++<]>+.+++++++.-------------.++++++++++.++++++++++.++[->+++<]>.+++++++++++++.[-->+<]>---.+[--->++<]>-.[->+++<]>-.>--[-->+++<]>.
+```
+
+I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck. 
+
+
+
