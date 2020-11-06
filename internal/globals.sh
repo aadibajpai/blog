@@ -654,7 +654,7 @@ function start_html {
 
 function start_rss {
 	echo "<?xml version='1.0' encoding='utf-8' ?>"
-	echo "<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>"
+	echo "<rss version='2.0' xmlns:content='http://purl.org/rss/1.0/modules/content/' xmlns:atom='http://www.w3.org/2005/Atom'>"
 	echo "<channel>"
 	echo "<title>$RSS_TITLE</title>"
 	echo "<link>$RSS_HOST</link>"
@@ -673,7 +673,7 @@ function rss_item_for_post {
 	OPTIONS="${METADATA_DIR}/${POST}/options"
 	TITLE="$(get_title "${HEADERS}")"
 	POST_FILE="$(echo "${TITLE}" | title_to_post_url)${TITLE_SEPARATOR_CHAR}${POST}.html"
-    DESC="$(cat "${METADATA_DIR}/${POST}/previewcontent")"
+    DESC="<![CDATA[ $(cat "${METADATA_DIR}/${POST}/previewcontent") ]]>"
 	[[ "${PREFER_SHORT_POSTS}" == "yes" ]] &&
 		POST_LINK="${RSS_HOST}${ROOT_URL}/p/${POST}.html" ||
 		POST_LINK="${RSS_HOST}${ROOT_URL}/posts/${POST_FILE}"

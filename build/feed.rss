@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8' ?>
-<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+<rss version='2.0' xmlns:content='http://purl.org/rss/1.0/modules/content/' xmlns:atom='http://www.w3.org/2005/Atom'>
 <channel>
 <title>Aadi Bajpai ✒️</title>
 <link>https://aadibajpai.com</link>
@@ -10,7 +10,7 @@
 <link>https://aadibajpai.com/blog/posts/vandyhacks-vii-vh-nsySh97w.html</link>
 <guid isPermaLink='false'>nsySh97w</guid>
 <pubDate>Thu, 08 Oct 2020 06:15:59 IST</pubDate>
-<description>[this is a draft I accidentally pushed don't read it pls]
+<description><![CDATA[ [this is a draft I accidentally pushed don't read it pls]
 
 Last week was VandyHacks VII, Vanderbilt's pr0 god hackathon. Since I am a very yung god, they made an exception and recruited me to the board in Fall instead of Spring like it usually happens. Being the smol boi on board, I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. 
 
@@ -36,14 +36,14 @@ the answer to this one, of course, was `vh{yes_this_is_a_flag_hehe}`.
 ----[-->+++++<]>.++[->+++<]>.-[----->+<]>.-------.+[->+++<]>++.+.[--->+<]>----.--[->+++++<]>+.+[->++<]>+.+++++++.-------------.++++++++++.++++++++++.++[->+++<]>.+++++++++++++.[-->+<]>---.+[--->++<]>-.[->+++<]>-.>--[-->+++<]>.
 ```
 
-I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck. </description>
+I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck.  ]]></description>
 </item>
 <item>
 <title>Google Summer of Code Phase 1</title>
 <link>https://aadibajpai.com/blog/posts/google-summer-of-uK76p8bd.html</link>
 <guid isPermaLink='false'>uK76p8bd</guid>
 <pubDate>Sun, 05 Jul 2020 18:16:52 IST</pubDate>
-<description>
+<description><![CDATA[ 
 The first phase of GSoC concluded recently (I passed!) and I wanted to talk about the things I did so far and the process to this point.
 
 {toc}
@@ -58,27 +58,27 @@ The initial application had gone by a bit fast, since I officially enrolled just
 
 Being well acquainted with the org and my mentors already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for [SwagLyrics](https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8) and [SwSpotify](https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a). The SwagLyrics Chrome Extension was also [published](https://chrome.google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk)! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature. 
 
-More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner.</description>
+More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner. ]]></description>
 </item>
 <item>
 <title>castorsCTF 2020 Writeups</title>
 <link>https://aadibajpai.com/blog/posts/castorsctf-2020-writeups-DyHHAa2o.html</link>
 <guid isPermaLink='false'>DyHHAa2o</guid>
 <pubDate>Mon, 01 Jun 2020 06:00:18 IST</pubDate>
-<description>My CTF team Pwnzorz recently won [castorsCTF20](https://castorsctf20.ctfd.io/) 🥳 
+<description><![CDATA[ My CTF team Pwnzorz recently won [castorsCTF20](https://castorsctf20.ctfd.io/) 🥳 
 
 Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process, which, in my opinion, is the most important part of solving a challenge.
 
 Let's get started.
 
-{toc}</description>
+{toc} ]]></description>
 </item>
 <item>
 <title>WPICTF 2020 Writeup(s)</title>
 <link>https://aadibajpai.com/blog/posts/wpictf-2020-writeups-ttL4fYDn.html</link>
 <guid isPermaLink='false'>ttL4fYDn</guid>
 <pubDate>Mon, 20 Apr 2020 17:30:46 IST</pubDate>
-<description>A couple of days ago, me and a couple of other GCI winners decided to participate in the [WPI CTF](https://ctf.wpictf.xyz) out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.
+<description><![CDATA[ A couple of days ago, me and a couple of other GCI winners decided to participate in the [WPI CTF](https://ctf.wpictf.xyz) out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.
 
 This is a writeup for the [Luna](https://ctf.wpictf.xyz/challenges#Luna) steganography challenge, because that's the one I found the most interesting.
 
@@ -114,14 +114,14 @@ Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff
 
 I tried to patch `jut` on `1.png` but welp, no dice.
 
-Circling back, we hadn't yet used the 2nd line from metadata nor `Just In Case.png` so it has to do something with those.</description>
+Circling back, we hadn't yet used the 2nd line from metadata nor `Just In Case.png` so it has to do something with those. ]]></description>
 </item>
 <item>
 <title>How To Google Code-in</title>
 <link>https://aadibajpai.com/blog/posts/how-to-google-XpSr1CDb.html</link>
 <guid isPermaLink='false'>XpSr1CDb</guid>
 <pubDate>Fri, 12 Jul 2019 00:30:41 IST</pubDate>
-<description>*June 2020 (and probably final) edit:* Google Code-in has now been discontinued. 
+<description><![CDATA[ *June 2020 (and probably final) edit:* Google Code-in has now been discontinued. 
 
 As much as I'd like to say my disappointment is immeasurable and my day has been ruined, I'm just grateful for the amazing people I got to meet and the fun stuff I got to do directly or indirectly through the program. If you're reading this in expectation of GCI, I wish you luck in your endeavours :)
 
@@ -143,14 +143,14 @@ The aim of the contest is to simply encourage young developers to get started wi
 
 1. Work constantly through the 7 weeks and go all in hoping for the big prize.
 
-Unsurprisingly, most people go with the first option. Google Code-in 2017 had 3555 students who completed 16468 tasks. That averages to a bit over 4 tasks per student. (I did 21 - and that’s just the tasks I could claim)</description>
+Unsurprisingly, most people go with the first option. Google Code-in 2017 had 3555 students who completed 16468 tasks. That averages to a bit over 4 tasks per student. (I did 21 - and that’s just the tasks I could claim) ]]></description>
 </item>
 <item>
 <title>About This Blog.</title>
 <link>https://aadibajpai.com/blog/posts/about-this-blog-fa8NVajd.html</link>
 <guid isPermaLink='false'>fa8NVajd</guid>
 <pubDate>Mon, 08 Jul 2019 04:32:31 IST</pubDate>
-<description>
+<description><![CDATA[ 
 ## Hello
 
 Welcome to my blog. Some old posts may be found on [Medium](https://medium.com/@aadibajpai), but I don't like Medium anymore because too much pay to play.
@@ -181,7 +181,7 @@ Thanks for visiting, stay to read a couple of posts :)
 
 If you have something to say about this blog (appreciation appreciated, criticism appreciated even more ~~not really~~) then please go ahead and contact me at iloveyourblog@aadibajpai.me
 
-A huge thanks to my padawans, [Nils André-Chang](https://www.nilsand.re/) and [Uzay Girit](http://uzpg.me/) for adding some important functionality to this. Nils contributed the named links feature, which allows for posts to have simple, easy-to-remember links like [this one](/blog/gsoc.html). Uzay fixed a few overflow errors which were quite annoying and absolutely broke styling on mobile. </description>
+A huge thanks to my padawans, [Nils André-Chang](https://www.nilsand.re/) and [Uzay Girit](http://uzpg.me/) for adding some important functionality to this. Nils contributed the named links feature, which allows for posts to have simple, easy-to-remember links like [this one](/blog/gsoc.html). Uzay fixed a few overflow errors which were quite annoying and absolutely broke styling on mobile.  ]]></description>
 </item>
 </channel>
 </rss>
