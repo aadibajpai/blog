@@ -673,6 +673,7 @@ function rss_item_for_post {
 	OPTIONS="${METADATA_DIR}/${POST}/options"
 	TITLE="$(get_title "${HEADERS}")"
 	POST_FILE="$(echo "${TITLE}" | title_to_post_url)${TITLE_SEPARATOR_CHAR}${POST}.html"
+    DESC="$(cat "${METADATA_DIR}/${POST}/previewcontent")"
 	[[ "${PREFER_SHORT_POSTS}" == "yes" ]] &&
 		POST_LINK="${RSS_HOST}${ROOT_URL}/p/${POST}.html" ||
 		POST_LINK="${RSS_HOST}${ROOT_URL}/posts/${POST_FILE}"
@@ -683,6 +684,7 @@ function rss_item_for_post {
 	echo "<link>$POST_LINK</link>"
 	echo "<guid isPermaLink='false'>$POST</guid>"
 	echo "<pubDate>$DATE</pubDate>"
+    echo "<description>$DESC</description>"
 	echo "</item>"
 }
 
