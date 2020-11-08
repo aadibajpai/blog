@@ -10,178 +10,131 @@
 <link>https://aadibajpai.com/blog/posts/vandyhacks-vii-vh-nsySh97w.html</link>
 <guid isPermaLink='false'>nsySh97w</guid>
 <pubDate>Thu, 08 Oct 2020 06:15:59 IST</pubDate>
-<description><![CDATA[ [this is a draft I accidentally pushed don't read it pls]
-
-Last week was VandyHacks VII, Vanderbilt's pr0 god hackathon. Since I am a very yung god, they made an exception and recruited me to the board in Fall instead of Spring like it usually happens. Being the smol boi on board, I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. 
-
-## fuck's that?
-
-the squirrel from VandyHacks is a very special Discord bot created for VandyHacks VII with a slew of commands ~~and easter eggs~~ to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a `vh quest` command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay. If you're curious about the bot, look at it at https://github.com/VandyHacks/the-squirrel-from-VandyHacks.
-
-## quest challenges
-
-Anyway, here are the challenges, the flags and some of the motivation behind each of them. 
-
-### Level 0
-
-> welcome to vh quest! this is a ctf-style, fun treasure hunt where you look for flags like `vh{yes_this_is_a_flag_hehe}` hidden in places with cryptic clues to advance to the next level. Flags are always in the vh{} format. Feel free to reach out for hints and good luck on your quest! <:vh_heart:>
-
-simple introductory level, since I did not expect a lot of people to have prior CTF experience or know the flow. And since this was like a side quest, I did not want to make it too hard either.
-
-the answer to this one, of course, was `vh{yes_this_is_a_flag_hehe}`.
-
-### Level 1
-
-```bf
-----[-->+++++<]>.++[->+++<]>.-[----->+<]>.-------.+[->+++<]>++.+.[--->+<]>----.--[->+++++<]>+.+[->++<]>+.+++++++.-------------.++++++++++.++++++++++.++[->+++<]>.+++++++++++++.[-->+<]>---.+[--->++<]>-.[->+++<]>-.>--[-->+++<]>.
-```
-
-I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck.  ]]></description>
+<description><![CDATA[ <p>[this is a draft I accidentally pushed don't read it pls]</p>
+<p>Last week was VandyHacks VII, Vanderbilt's pr0 god hackathon. Since I am a very yung god, they made an exception and recruited me to the board in Fall instead of Spring like it usually happens. Being the smol boi on board, I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks.</p>
+<h2>fuck's that?</h2>
+<p>the squirrel from VandyHacks is a very special Discord bot created for VandyHacks VII with a slew of commands <del>and easter eggs</del> to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a <code>vh quest</code> command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay. If you're curious about the bot, look at it at <a href="https://github.com/VandyHacks/the-squirrel-from-VandyHacks">https://github.com/VandyHacks/the-squirrel-from-VandyHacks</a>.</p>
+<h2>quest challenges</h2>
+<p>Anyway, here are the challenges, the flags and some of the motivation behind each of them.</p>
+<h3>Level 0</h3>
+<blockquote>
+<p>welcome to vh quest! this is a ctf-style, fun treasure hunt where you look for flags like <code>vh{yes_this_is_a_flag_hehe}</code> hidden in places with cryptic clues to advance to the next level. Flags are always in the vh{} format. Feel free to reach out for hints and good luck on your quest! &lt;:vh_heart:&gt;</p>
+</blockquote>
+<p>simple introductory level, since I did not expect a lot of people to have prior CTF experience or know the flow. And since this was like a side quest, I did not want to make it too hard either.</p>
+<p>the answer to this one, of course, was <code>vh{yes_this_is_a_flag_hehe}</code>.</p>
+<h3>Level 1</h3>
+<pre><code class="language-bf">----[--&gt;+++++&lt;]&gt;.++[-&gt;+++&lt;]&gt;.-[-----&gt;+&lt;]&gt;.-------.+[-&gt;+++&lt;]&gt;++.+.[---&gt;+&lt;]&gt;----.--[-&gt;+++++&lt;]&gt;+.+[-&gt;++&lt;]&gt;+.+++++++.-------------.++++++++++.++++++++++.++[-&gt;+++&lt;]&gt;.+++++++++++++.[--&gt;+&lt;]&gt;---.+[---&gt;++&lt;]&gt;-.[-&gt;+++&lt;]&gt;-.&gt;--[--&gt;+++&lt;]&gt;.
+</code></pre>
+<p>I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck.</p> ]]></description>
 </item>
 <item>
 <title>Google Summer of Code Phase 1</title>
 <link>https://aadibajpai.com/blog/posts/google-summer-of-uK76p8bd.html</link>
 <guid isPermaLink='false'>uK76p8bd</guid>
 <pubDate>Sun, 05 Jul 2020 18:16:52 IST</pubDate>
-<description><![CDATA[ 
-The first phase of GSoC concluded recently (I passed!) and I wanted to talk about the things I did so far and the process to this point.
-
-{toc}
-
-# Background
-
-I got selected as a student for the [Google Summer of Code](https://summerofcode.withgoogle.com) program. You can find my proposal at https://aadibajpai.com/gsoc/.  Since I go into detail in some places, reading the proposal once would make it easier to follow along as it provides important context. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks.
-
-The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are.
-
-# Community Bonding Period
-
-Being well acquainted with the org and my mentors already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for [SwagLyrics](https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8) and [SwSpotify](https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a). The SwagLyrics Chrome Extension was also [published](https://chrome.google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk)! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature. 
-
-More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner. ]]></description>
+<description><![CDATA[ <p>The first phase of GSoC concluded recently (I passed!) and I wanted to talk about the things I did so far and the process to this point.</p>
+<p>{toc}</p>
+<h1>Background</h1>
+<p>I got selected as a student for the <a href="https://summerofcode.withgoogle.com">Google Summer of Code</a> program. You can find my proposal at <a href="https://aadibajpai.com/gsoc/">https://aadibajpai.com/gsoc/</a>.  Since I go into detail in some places, reading the proposal once would make it easier to follow along as it provides important context. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks.</p>
+<p>The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are.</p>
+<h1>Community Bonding Period</h1>
+<p>Being well acquainted with the org and my mentors already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for <a href="https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8">SwagLyrics</a> and <a href="https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a">SwSpotify</a>. The SwagLyrics Chrome Extension was also <a href="https://chrome.google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk">published</a>! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature.</p>
+<p>More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner.</p> ]]></description>
 </item>
 <item>
 <title>castorsCTF 2020 Writeups</title>
 <link>https://aadibajpai.com/blog/posts/castorsctf-2020-writeups-DyHHAa2o.html</link>
 <guid isPermaLink='false'>DyHHAa2o</guid>
 <pubDate>Mon, 01 Jun 2020 06:00:18 IST</pubDate>
-<description><![CDATA[ My CTF team Pwnzorz recently won [castorsCTF20](https://castorsctf20.ctfd.io/) 🥳 
-
-Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process, which, in my opinion, is the most important part of solving a challenge.
-
-Let's get started.
-
-{toc} ]]></description>
+<description><![CDATA[ <p>My CTF team Pwnzorz recently won <a href="https://castorsctf20.ctfd.io/">castorsCTF20</a> 🥳</p>
+<p>Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process, which, in my opinion, is the most important part of solving a challenge.</p>
+<p>Let's get started.</p>
+<p>{toc}</p> ]]></description>
 </item>
 <item>
 <title>WPICTF 2020 Writeup(s)</title>
 <link>https://aadibajpai.com/blog/posts/wpictf-2020-writeups-ttL4fYDn.html</link>
 <guid isPermaLink='false'>ttL4fYDn</guid>
 <pubDate>Mon, 20 Apr 2020 17:30:46 IST</pubDate>
-<description><![CDATA[ A couple of days ago, me and a couple of other GCI winners decided to participate in the [WPI CTF](https://ctf.wpictf.xyz) out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.
-
-This is a writeup for the [Luna](https://ctf.wpictf.xyz/challenges#Luna) steganography challenge, because that's the one I found the most interesting.
-
-# Luna
-> They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!
-
+<description><![CDATA[ <p>A couple of days ago, me and a couple of other GCI winners decided to participate in the <a href="https://ctf.wpictf.xyz">WPI CTF</a> out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.</p>
+<p>This is a writeup for the <a href="https://ctf.wpictf.xyz/challenges#Luna">Luna</a> steganography challenge, because that's the one I found the most interesting.</p>
+<h1>Luna</h1>
+<blockquote>
+<p>They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!</p>
+</blockquote>
 <p align="center">
 <img src="https://i.imgur.com/LEZkRet.png" alt="Luna" />
 </p>
-
-So as you see, we start off with a `Luna.tar.xz` file which on decompressing gives a `Luna.tar` file which on further unzipping gives a file named `1.png` and a zipped folder with two password protected files—`Just In Case.png` and `jut`.
-
-Clearly, we're supposed to start out with `1.png` which in looks is nothing but an all white image. 
-
+<p>So as you see, we start off with a <code>Luna.tar.xz</code> file which on decompressing gives a <code>Luna.tar</code> file which on further unzipping gives a file named <code>1.png</code> and a zipped folder with two password protected files—<code>Just In Case.png</code> and <code>jut</code>.</p>
+<p>Clearly, we're supposed to start out with <code>1.png</code> which in looks is nothing but an all white image.</p>
 <p align="center">
 <img src="https://i.imgur.com/sK55OEO.png" alt="1.png" />
 </p>
-
-I ran the [stegoveritas](https://github.com/bannsec/stegoVeritas) tool on it to examine further and it printed a lot of metadata and exif info and carved out a couple of `.zlib` files. Interestingly, the metadata had 2 fields that stood out: 
-
-1. `StudyPhysician: awcIsALegendAndIHopeThisIsAStrongPasswordJackTheRipperBegone`
-2. `Description: oops, all #FFD2A4#`
-
-From the first, we have our password! The `jut` file seemed absolute gibberish while `Just In Case.png` was a screenshot from gimp.
-
+<p>I ran the <a href="https://github.com/bannsec/stegoVeritas">stegoveritas</a> tool on it to examine further and it printed a lot of metadata and exif info and carved out a couple of <code>.zlib</code> files. Interestingly, the metadata had 2 fields that stood out:</p>
+<ol>
+<li><code>StudyPhysician: awcIsALegendAndIHopeThisIsAStrongPasswordJackTheRipperBegone</code></li>
+<li><code>Description: oops, all #FFD2A4#</code></li>
+</ol>
+<p>From the first, we have our password! The <code>jut</code> file seemed absolute gibberish while <code>Just In Case.png</code> was a screenshot from gimp.</p>
 <p align="center">
 <img src="https://i.imgur.com/u8Ax45H.png" alt="Just In Case" />
 </p>
-
-Looking at `jut` from a hex editor, the first 3 characters were interesting: `BPS`
-
-Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff so I downloaded [Flips](https://github.com/Alcaro/Flips), a patcher for BPS files. 
-
-I tried to patch `jut` on `1.png` but welp, no dice.
-
-Circling back, we hadn't yet used the 2nd line from metadata nor `Just In Case.png` so it has to do something with those. ]]></description>
+<p>Looking at <code>jut</code> from a hex editor, the first 3 characters were interesting: <code>BPS</code></p>
+<p>Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff so I downloaded <a href="https://github.com/Alcaro/Flips">Flips</a>, a patcher for BPS files.</p>
+<p>I tried to patch <code>jut</code> on <code>1.png</code> but welp, no dice.</p>
+<p>Circling back, we hadn't yet used the 2nd line from metadata nor <code>Just In Case.png</code> so it has to do something with those.</p> ]]></description>
 </item>
 <item>
 <title>How To Google Code-in</title>
 <link>https://aadibajpai.com/blog/posts/how-to-google-XpSr1CDb.html</link>
 <guid isPermaLink='false'>XpSr1CDb</guid>
 <pubDate>Fri, 12 Jul 2019 00:30:41 IST</pubDate>
-<description><![CDATA[ *June 2020 (and probably final) edit:* Google Code-in has now been discontinued. 
-
-As much as I'd like to say my disappointment is immeasurable and my day has been ruined, I'm just grateful for the amazing people I got to meet and the fun stuff I got to do directly or indirectly through the program. If you're reading this in expectation of GCI, I wish you luck in your endeavours :)
-
-Ultimately, here is a testimonial from Dylan Iskandar, GCI GPW 2019:
-
-> ngl tho that article saved my ass
-
-***
-
-*I originally wrote this way back in early 2018 but it's still valid today.*
-
-![Googleplex - where the winners go](https://miro.medium.com/max/2500/0*SxiXhFrVuX10Bxid.jpg)
-
-If you read this in time for [Code-in](http://g.co/gci) 2019 and are aged between 13 to 17, you might be in luck, for this post might just help you out. It would’ve made it easier for me too, if this existed before I won. I list some pro tips that I feel would be useful in order to fully experience GCI.
-
-The aim of the contest is to simply encourage young developers to get started with open-source. Interestingly, unlike other contests, not everyone participates in GCI to truly win. Yes, I hear you, the Grand Prize is an all expenses paid 4 days trip to fucking Googleplex and here you see me saying some people don’t really concentrate on that. It is true though, a participant can approach Code-in two ways-
-
-1. Quickly complete 3 noob tasks (including 2 beginner tasks) which guarantees you a Google Code-in t-shirt and call it quits. It’s that simple, you could do that in just a day.
-
-1. Work constantly through the 7 weeks and go all in hoping for the big prize.
-
-Unsurprisingly, most people go with the first option. Google Code-in 2017 had 3555 students who completed 16468 tasks. That averages to a bit over 4 tasks per student. (I did 21 - and that’s just the tasks I could claim) ]]></description>
+<description><![CDATA[ <p><em>June 2020 (and probably final) edit:</em> Google Code-in has now been discontinued.</p>
+<p>As much as I'd like to say my disappointment is immeasurable and my day has been ruined, I'm just grateful for the amazing people I got to meet and the fun stuff I got to do directly or indirectly through the program. If you're reading this in expectation of GCI, I wish you luck in your endeavours :)</p>
+<p>Ultimately, here is a testimonial from Dylan Iskandar, GCI GPW 2019:</p>
+<blockquote>
+<p>ngl tho that article saved my ass</p>
+</blockquote>
+<hr />
+<p><em>I originally wrote this way back in early 2018 but it's still valid today.</em></p>
+<p><img src="https://miro.medium.com/max/2500/0*SxiXhFrVuX10Bxid.jpg" alt="Googleplex - where the winners go" /></p>
+<p>If you read this in time for <a href="http://g.co/gci">Code-in</a> 2019 and are aged between 13 to 17, you might be in luck, for this post might just help you out. It would’ve made it easier for me too, if this existed before I won. I list some pro tips that I feel would be useful in order to fully experience GCI.</p>
+<p>The aim of the contest is to simply encourage young developers to get started with open-source. Interestingly, unlike other contests, not everyone participates in GCI to truly win. Yes, I hear you, the Grand Prize is an all expenses paid 4 days trip to fucking Googleplex and here you see me saying some people don’t really concentrate on that. It is true though, a participant can approach Code-in two ways-</p>
+<ol>
+<li>
+<p>Quickly complete 3 noob tasks (including 2 beginner tasks) which guarantees you a Google Code-in t-shirt and call it quits. It’s that simple, you could do that in just a day.</p>
+</li>
+<li>
+<p>Work constantly through the 7 weeks and go all in hoping for the big prize.</p>
+</li>
+</ol>
+<p>Unsurprisingly, most people go with the first option. Google Code-in 2017 had 3555 students who completed 16468 tasks. That averages to a bit over 4 tasks per student. (I did 21 - and that’s just the tasks I could claim)</p> ]]></description>
 </item>
 <item>
 <title>About This Blog.</title>
 <link>https://aadibajpai.com/blog/posts/about-this-blog-fa8NVajd.html</link>
 <guid isPermaLink='false'>fa8NVajd</guid>
 <pubDate>Mon, 08 Jul 2019 04:32:31 IST</pubDate>
-<description><![CDATA[ 
-## Hello
-
-Welcome to my blog. Some old posts may be found on [Medium](https://medium.com/@aadibajpai), but I don't like Medium anymore because too much pay to play.
-
-I love this blog, although it is a relative pain to maintain, purely because of this retro "big-brain" vibe it has going on.
-
-The source code of this blog is at https://github.com/aadibajpai/blog. It is composed solely of linux utilities and I am a Windows pleb unfortunately. This meant configuring a lot of stuff to work with wsl and figuring out how to run the Windows Sublime Text program from inside wsl to create and edit posts like this one. Previously, I used to actually ssh into a linux server just to run the blog, that's how much I like it. 
-
-This also serves as a test blog post because it will be built each time so I can see if something broken.
-
-Lorem Ipsum or whatever. Random styling things now.
-
-`import __hello__  # This should be inline code`
-
-Now, let's try a code block.
-
-```
-from __future__ import braces
+<description><![CDATA[ <h2>Hello</h2>
+<p>Welcome to my blog. Some old posts may be found on <a href="https://medium.com/@aadibajpai">Medium</a>, but I don't like Medium anymore because too much pay to play.</p>
+<p>I love this blog, although it is a relative pain to maintain, purely because of this retro &quot;big-brain&quot; vibe it has going on.</p>
+<p>The source code of this blog is at <a href="https://github.com/aadibajpai/blog">https://github.com/aadibajpai/blog</a>. It is composed solely of linux utilities and I am a Windows pleb unfortunately. This meant configuring a lot of stuff to work with wsl and figuring out how to run the Windows Sublime Text program from inside wsl to create and edit posts like this one. Previously, I used to actually ssh into a linux server just to run the blog, that's how much I like it.</p>
+<p>This also serves as a test blog post because it will be built each time so I can see if something broken.</p>
+<p>Lorem Ipsum or whatever. Random styling things now.</p>
+<p><code>import __hello__  # This should be inline code</code></p>
+<p>Now, let's try a code block.</p>
+<pre><code>from __future__ import braces
 import antigravity
 if x.startswith('java'):
 	x = 'suck'  # check indents rendered
 # A few Python easter eggs and also an example of a code block
-```
-
-> *italics* and **bold** and ~~strikethrough~~ within a blockquote
-
-Thanks for visiting, stay to read a couple of posts :)
-
-If you have something to say about this blog (appreciation appreciated, criticism appreciated even more ~~not really~~) then please go ahead and contact me at iloveyourblog@aadibajpai.me
-
-A huge thanks to my padawans, [Nils André-Chang](https://www.nilsand.re/) and [Uzay Girit](http://uzpg.me/) for adding some important functionality to this. Nils contributed the named links feature, which allows for posts to have simple, easy-to-remember links like [this one](/blog/gsoc.html). Uzay fixed a few overflow errors which were quite annoying and absolutely broke styling on mobile.  ]]></description>
+</code></pre>
+<blockquote>
+<p><em>italics</em> and <strong>bold</strong> and <del>strikethrough</del> within a blockquote</p>
+</blockquote>
+<p>Thanks for visiting, stay to read a couple of posts :)</p>
+<p>If you have something to say about this blog (appreciation appreciated, criticism appreciated even more <del>not really</del>) then please go ahead and contact me at <a href="mailto:iloveyourblog@aadibajpai.me">iloveyourblog@aadibajpai.me</a></p>
+<p>A huge thanks to my padawans, <a href="https://www.nilsand.re/">Nils André-Chang</a> and <a href="http://uzpg.me/">Uzay Girit</a> for adding some important functionality to this. Nils contributed the named links feature, which allows for posts to have simple, easy-to-remember links like <a href="/blog/gsoc.html">this one</a>. Uzay fixed a few overflow errors which were quite annoying and absolutely broke styling on mobile.</p> ]]></description>
 </item>
 </channel>
 </rss>
