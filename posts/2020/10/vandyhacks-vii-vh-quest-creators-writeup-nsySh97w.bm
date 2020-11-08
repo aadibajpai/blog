@@ -1,27 +1,11 @@
 1602117959
-1604674525
+1604871713
 nsySh97w
 named=vhvii
 
 Aadi Bajpai
 VandyHacks VII vh quest Creator's Writeup
-/// Create your post below. Lines beginning with "///"
-/// will be stripped out.
-///
-/// Do not add any comments above the first seven lines. The first seven lines
-/// are special.
-///
-/// 1. The initial posting timestamp
-/// 2. The last modified date
-/// 3. The post id
-/// 4. Options for this post (feel free to change)
-/// 5. (Reserved for future use)
-/// 6. The author (feel free to change)
-/// 7. The title (feel free to change)
-///
-/// See https://github.com/pastly/bm/blob/master/doc/Options.md for help with valid
-/// options for line four.
-///
+
 [this is a draft I accidentally pushed don't read it pls]
 
 Last week was VandyHacks VII, Vanderbilt's pr0 god hackathon. Since I am a very yung god, they made an exception and recruited me to the board in Fall instead of Spring like it usually happens. Being the smol boi on board, I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. 
@@ -50,5 +34,76 @@ the answer to this one, of course, was `vh{yes_this_is_a_flag_hehe}`.
 
 I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck. 
 
+On decoding, this yields us the flag `vh{tabr1el_is_l3wd}`, which somewhat references the next challenge, as well as an easter egg.
 
+### Level 2
 
+> Did you tell Tabriel Ging how much you love VandyHacks? He's asking that frequently.
+
+![image-20201109014230404](https://i.imgur.com/PG3VbqK.png)
+
+The flag being `vh{v1rtually_the_be$t_<3}`.
+
+### Level 3
+
+> everyone ask what is vh, why is vh, no one ask how is vh
+
+Use the `vh how ` command, except with the full question, so `vh how is vh` and it will respond to you with the flag.
+
+Giving us the answer,  `vh{aww_thx_4_asking_heart_emoji}`.
+
+### Level 4
+
+> This is off the \*record*, but we're really **digging** the website this year. Are you? ;)
+
+Probably one of the harder challenges in this quest. This required digging into the the DNS records of the website.
+
+![image-20201109014723991](https://i.imgur.com/eNKdam9.png)
+
+See something familiar? `vh{p/q2-q4!}` and brownie points if you know what that is.
+
+### Level 5
+
+> this level has no answer, literally, it's an empty string. But you can still get past it, I believe in you!
+
+First off, this flag was indeed an empty string which you can verify from the [source code](https://github.com/VandyHacks/the-squirrel-from-VandyHacks/blob/7c3606406063e88db9e6a0e59c8a57d9ac77ce32/cogs/quest.py#L43). However, sending an empty message on Discord required some thinking or luck or a combination of both. 
+
+`tl;dr send any image or file.`
+
+Once I explain it, it will seem simple but it is hard to arrive at this yourself I think. Anyway, so it is a reasonable assumption that all messages on Discord are messages. But when would that be truly empty? Because any message you type and send, it would still put the string you sent in the message field even if it is a zero width character. But a text message is not the only type of messages seen on Discord—there’s rich embeds, files, images etc. And when you share an image or attachment, you can add a message to go along with it (what if you didn’t). That would set the message to be empty and clear the challenge🎉
+
+One participant completed this one in a very *interesting* manner unintentionally which kind of made it worth it for me. 
+
+![img](https://media.discordapp.net/attachments/755112298435051552/762084127259361310/unknown.png)
+
+### Level 6
+
+> you are ‎nearing ‎the end. ‎Your ‎flag ‎is ‎here, ‎‎wrap ‎it ‎‎in ‎‎vh{} ‎‎also ‎‎‎‎‎it's all uppercase.
+
+Hardest level I think. Mainly because there’s not a lot to go on with, just the “your flag is here” line which is hard to decode.  If you look at the message closely, you will learn a terrible truth ~~Chancellor Palpatine is a Sith Lord~~, there’s also sorts of weird characters in that message. 
+
+![image-20201109021905358](https://i.imgur.com/iPp0e7x.png)
+
+Except they’re not really random, you’ll see it’s just two characters repeating `&#8203;` and `&lrm;`, which is a zero width space and a left right mark respectively. Both of these take up zero space, which is why they were discreetly squirreled away in the message. What’s the simplest way to encode something with 2 characters? Probably either binary or morse code, and you can observe it is not binary since the sequence lengths are inconsistent. One morse code decode later, you are left with `HIDDENFLAGL3ZG0`. Follow the rest of the instructions in the challenge text and you get `vh{HIDDENFLAGL3ZG0}` :)
+
+### Level 7
+
+> Dark web? More like dork web. Find the teapot, vhviippzyvdissgj 🧅
+
+Yeah. You’re right. I really did set up a whole onion service just for the challenge with a vanity url. Overkill? probably. Fun? for sure. ~~Hotel? trivago.~~
+
+I’m especially happy I managed to make it begin with vhvii but also fit pp and diss and gj in there. Well there you have a starting point, if you visit that url using Tor Browser or Brave or *insert tool*, you will be greeted with:
+
+![img](https://media.discordapp.net/attachments/753051340044763178/767494010217824267/unknown.png)
+
+Which…isn’t much but hey that’s not the point here. Now where do you go from here? Looking at the second part of the challenge text, you’re supposed to find a *teapot* of all things. Googling a bit for “teapot website” and related stuff might lead you to https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418 which is a reference to an [April Fool’s Day Joke](https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol) by the Internet Engineering Task Force that actually got implemented.
+
+Going to `/418` on the website, you get:
+
+![img](https://media.discordapp.net/attachments/753051340044763178/767494145383465000/unknown.png)
+
+Look at the source code:
+
+![img](https://media.discordapp.net/attachments/753051340044763178/767494310085394442/unknown.png)
+
+`vh{this_is_the_end_im_sad}` and I was sad :(
