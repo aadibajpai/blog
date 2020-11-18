@@ -673,7 +673,7 @@ function rss_item_for_post {
 	OPTIONS="${METADATA_DIR}/${POST}/options"
 	TITLE="$(get_title "${HEADERS}")"
 	POST_FILE="$(echo "${TITLE}" | title_to_post_url)${TITLE_SEPARATOR_CHAR}${POST}.html"
-    DESC="<![CDATA[ $(cat "${METADATA_DIR}/${POST}/previewcontent" | ${MARKDOWN} ${MARKDOWN_FLAGS}) ]]>"
+    DESC="<![CDATA[ $(cat "${METADATA_DIR}/${POST}/content" | ${MARKDOWN} ${MARKDOWN_FLAGS}) ]]>"
 	[[ "${PREFER_SHORT_POSTS}" == "yes" ]] &&
 		POST_LINK="${RSS_HOST}${ROOT_URL}/p/${POST}.html" ||
 		POST_LINK="${RSS_HOST}${ROOT_URL}/posts/${POST_FILE}"
