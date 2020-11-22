@@ -1,11 +1,11 @@
 
-Last week was [VandyHacks VII](https://vandyhacks.org), Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I really wanted to chronicle a part of it, so here we are, approximately a month and 1250 words later.
+Last week was [VandyHacks VII](https://vandyhacks.org), Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I wanted to chronicle a part of it for posterity, so here we are, approximately a month and 1250 words later.
 
 {toc}
 
 ## What is the squirrel from VandyHacks?
 
-the squirrel from VandyHacks is a very special Discord bot created for VandyHacks VII with a slew of commands ~~and easter eggs~~ to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a `vh quest` command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay. 
+"the squirrel from VandyHacks" is a very special Discord bot created for VandyHacks VII with a slew of commands ~~and easter eggs~~ to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a `vh quest` command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay. 
 
 If you're curious about the bot, look at it at https://github.com/VandyHacks/the-squirrel-from-VandyHacks.
 
@@ -19,7 +19,7 @@ Here’s like the top three most used commands in the hackathon Discord server, 
 
 ## Quest challenges
 
-Here are the challenges, the flags and some of the motivation behind each of them. 
+The challenges, the flags and some of the motivation behind each of them. 
 
 ### Level 0
 

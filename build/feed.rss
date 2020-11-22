@@ -10,10 +10,10 @@
 <link>https://aadibajpai.com/blog/posts/vandyhacks-vii-vh-nsySh97w.html</link>
 <guid isPermaLink='false'>nsySh97w</guid>
 <pubDate>Thu, 08 Oct 2020 06:15:59 IST</pubDate>
-<description><![CDATA[ <p>Last week was <a href="https://vandyhacks.org">VandyHacks VII</a>, Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I really wanted to chronicle a part of it, so here we are, approximately a month and 1250 words later.</p>
+<description><![CDATA[ <p>Last week was <a href="https://vandyhacks.org">VandyHacks VII</a>, Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I wanted to chronicle a part of it for posterity, so here we are, approximately a month and 1250 words later.</p>
 <p>{toc}</p>
 <h2>What is the squirrel from VandyHacks?</h2>
-<p>the squirrel from VandyHacks is a very special Discord bot created for VandyHacks VII with a slew of commands <del>and easter eggs</del> to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a <code>vh quest</code> command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay.</p>
+<p>&quot;the squirrel from VandyHacks&quot; is a very special Discord bot created for VandyHacks VII with a slew of commands <del>and easter eggs</del> to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a <code>vh quest</code> command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay.</p>
 <p>If you're curious about the bot, look at it at <a href="https://github.com/VandyHacks/the-squirrel-from-VandyHacks">https://github.com/VandyHacks/the-squirrel-from-VandyHacks</a>.</p>
 <p>Here’s like the top three most used commands in the hackathon Discord server, just so there is a record (I also wanted to use a markdown table). I think the schedule command especially was way more popular than I expected.</p>
 <table>
@@ -39,7 +39,7 @@
 </tbody>
 </table>
 <h2>Quest challenges</h2>
-<p>Here are the challenges, the flags and some of the motivation behind each of them.</p>
+<p>The challenges, the flags and some of the motivation behind each of them.</p>
 <h3>Level 0</h3>
 <blockquote>
 <p>welcome to vh quest! this is a ctf-style, fun treasure hunt where you look for flags like <code>vh{yes_this_is_a_flag_hehe}</code> hidden in places with cryptic clues to advance to the next level. Flags are always in the vh{} format. Feel free to reach out for hints and good luck on your quest! &lt;:vh_heart:&gt;</p>
@@ -58,7 +58,7 @@
 </blockquote>
 <p><img src="https://i.imgur.com/PG3VbqK.png" alt="image-20201109014230404" /></p>
 <p>Most participants had gone through the FAQ on the website, so probably had no problem connecting that to this challenge. Either way, <em>asking that frequently</em> was deliberately put to hint towards the FAQ. The flag being <code>vh{v1rtually_the_be$t_&lt;3}</code>.</p>
-<p>VandyHacks VII Co-Prez Gabriel Ting got a <del>lot</del> few DMs from confused participants so that was an added bonus…I mean collateral damage.</p>
+<p>VandyHacks VII Co-Prez Gabriel Ting got a <del>lot of</del> few DMs from confused participants so that was an added bonus…I mean collateral damage.</p>
 <h3>Level 3</h3>
 <blockquote>
 <p>everyone ask what is vh, why is vh, no one ask how is vh</p>
@@ -78,7 +78,7 @@
 </blockquote>
 <p>First off, this flag was indeed an empty string which you can verify from the <a href="https://github.com/VandyHacks/the-squirrel-from-VandyHacks/blob/7c3606406063e88db9e6a0e59c8a57d9ac77ce32/cogs/quest.py#L43">source code</a>. However, sending an empty message on Discord required some thinking or luck or a combination of both.</p>
 <p><code>tl;dr send any image or file.</code></p>
-<p>Once I explain it, it will seem simple but it is hard to arrive at this yourself I think. Anyway, so it is a reasonable assumption that all messages on Discord are messages. But when would that be truly empty? Because any message you type and send, it would still put the string you sent in the message field even if it is a zero width character. But a text message is not the only type of messages seen on Discord—there’s rich embeds, files, images etc. And when you share an image or attachment, you can add a message to go along with it (what if you didn’t). That would set the message to be empty and clear the challenge🎉</p>
+<p>Once I explain it, it will seem simple but it is hard to arrive at this yourself I think. Anyway, so it is a reasonable assumption that all messages on Discord are messages in the technical sense of the word. When would that be truly empty? Because any message you type and send, it would still put the string you sent in the message field even if it is a zero width character. But a text message is not the only type of messages seen on Discord—there’s rich embeds, files, images etc. And when you share an image or attachment, you can add a message to go along with it (what if you didn’t). That would set the message to be empty and clear the challenge🎉</p>
 <p>One participant completed this one in a very <em>interesting</em> manner unintentionally which kind of made it worth it for me.</p>
 <p><img src="https://media.discordapp.net/attachments/755112298435051552/762084127259361310/unknown.png" alt="img" /></p>
 <h3>Level 6</h3>

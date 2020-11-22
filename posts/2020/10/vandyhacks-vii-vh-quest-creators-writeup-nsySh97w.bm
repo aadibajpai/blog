@@ -1,18 +1,18 @@
 1602117959
-1605972801
+1606030376
 nsySh97w
 named=vhvii
 
 Aadi Bajpai
 VandyHacks VII vh quest Creator's Writeup
 
-Last week was [VandyHacks VII](https://vandyhacks.org), Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I really wanted to chronicle a part of it, so here we are, approximately a month and 1250 words later.
+Last week was [VandyHacks VII](https://vandyhacks.org), Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I wanted to chronicle a part of it for posterity, so here we are, approximately a month and 1250 words later.
 
 {toc}
 
 ## What is the squirrel from VandyHacks?
 
-the squirrel from VandyHacks is a very special Discord bot created for VandyHacks VII with a slew of commands ~~and easter eggs~~ to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a `vh quest` command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay. 
+"the squirrel from VandyHacks" is a very special Discord bot created for VandyHacks VII with a slew of commands ~~and easter eggs~~ to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a `vh quest` command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay. 
 
 If you're curious about the bot, look at it at https://github.com/VandyHacks/the-squirrel-from-VandyHacks.
 
@@ -26,7 +26,7 @@ Here’s like the top three most used commands in the hackathon Discord server, 
 
 ## Quest challenges
 
-Here are the challenges, the flags and some of the motivation behind each of them. 
+The challenges, the flags and some of the motivation behind each of them. 
 
 ### Level 0
 
@@ -44,7 +44,7 @@ the answer to this one, of course, was `vh{yes_this_is_a_flag_hehe}`.
 
 I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck. 
 
-If not, there was still hope. Googling all of it or part of it could lead to bf. Another interesting observation was that this was syntax highlighted on Discord, hinting towards a programming language. In fact, if you did inspect element on the message, you could see the ```bf in the raw message, giving away the language.
+If not, there was still hope. Googling all of it or part of it could lead to bf. Another interesting observation was that this was syntax highlighted on Discord, hinting towards a programming language. In fact, if you did inspect element on the message, you could see the \`\`\`bf in the raw message, giving away the language.
 
 On decoding, this yields us the flag `vh{tabr1el_is_l3wd}`, which somewhat references the next challenge, as well as an easter egg.
 
@@ -56,7 +56,7 @@ On decoding, this yields us the flag `vh{tabr1el_is_l3wd}`, which somewhat refer
 
 Most participants had gone through the FAQ on the website, so probably had no problem connecting that to this challenge. Either way, *asking that frequently* was deliberately put to hint towards the FAQ. The flag being `vh{v1rtually_the_be$t_<3}`.
 
-VandyHacks VII Co-Prez Gabriel Ting got a ~~lot~~ few DMs from confused participants so that was an added bonus…I mean collateral damage.
+VandyHacks VII Co-Prez Gabriel Ting got a ~~lot of~~ few DMs from confused participants so that was an added bonus…I mean collateral damage.
 
 ### Level 3
 
@@ -68,7 +68,7 @@ Giving us the answer,  `vh{aww_thx_4_asking_heart_emoji}`.
 
 ### Level 4
 
-> This is off the \*record*, but we're really **digging** the website this year. Are you? ;)
+> This is off the \*record\*, but we're really **digging** the website this year. Are you? ;)
 
 Probably one of the harder challenges in this quest. This required digging into the the DNS records of the website.
 
@@ -84,7 +84,7 @@ First off, this flag was indeed an empty string which you can verify from the [s
 
 `tl;dr send any image or file.`
 
-Once I explain it, it will seem simple but it is hard to arrive at this yourself I think. Anyway, so it is a reasonable assumption that all messages on Discord are messages. But when would that be truly empty? Because any message you type and send, it would still put the string you sent in the message field even if it is a zero width character. But a text message is not the only type of messages seen on Discord—there’s rich embeds, files, images etc. And when you share an image or attachment, you can add a message to go along with it (what if you didn’t). That would set the message to be empty and clear the challenge🎉
+Once I explain it, it will seem simple but it is hard to arrive at this yourself I think. Anyway, so it is a reasonable assumption that all messages on Discord are messages in the technical sense of the word. When would that be truly empty? Because any message you type and send, it would still put the string you sent in the message field even if it is a zero width character. But a text message is not the only type of messages seen on Discord—there’s rich embeds, files, images etc. And when you share an image or attachment, you can add a message to go along with it (what if you didn’t). That would set the message to be empty and clear the challenge🎉
 
 One participant completed this one in a very *interesting* manner unintentionally which kind of made it worth it for me. 
 
