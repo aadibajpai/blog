@@ -53,7 +53,7 @@
 <div>
 <h1 id='posttitle'>VandyHacks VII vh quest Creator's Writeup</h1>
 <p class='postsubtitle'>Posted on 08 Oct 2020 by Aadi Bajpai</p>
-<span class='postsubtitle' style='font-size:small;'><em>Last updated 22 Nov 2020 at  1:22 pm</em></span><br/>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 22 Nov 2020 at  2:16 pm</em></span><br/>
 
 <span class='postsubtitle' style='font-size:small;'><a href='/blog/vhvii.html'>permalink</a></span><br/>
 
@@ -150,7 +150,7 @@
 <blockquote>
 <p>you are ‎nearing ‎the end. ‎Your ‎flag ‎is ‎here, ‎‎wrap ‎it ‎‎in ‎‎vh{} ‎‎also ‎‎‎‎‎it's all uppercase.</p>
 </blockquote>
-<p>Hardest level I think. Mainly because there’s not a lot to go on with, just the “your flag is here” line which is hard to decode.  If you look at the message closely, you will learn a terrible truth <del>Chancellor Palpatine is a Sith Lord</del>, there’s also sorts of weird characters in that message.</p>
+<p>Hardest level I think. Mainly because there’s not a lot to go on with, just the “your flag is here” line which is hard to decode.  If you look at the message closely, you will learn a terrible truth <del>Chancellor Palpatine is a Sith Lord</del>, there’s all sorts of weird characters in that message.</p>
 <p><img src="https://i.imgur.com/iPp0e7x.png" alt="image-20201109021905358" /></p>
 <p>Except they’re not really random, you’ll see it’s just two characters repeating <code>&amp;#8203;</code> and <code>&amp;lrm;</code>, which is a zero width space and a left right mark respectively. Both of these take up zero space, which is why they were discreetly squirreled away in the message. What’s the simplest way to encode something with 2 characters? Probably either binary or morse code, and you can observe it is not binary since the sequence lengths are inconsistent. One morse code decode later, you are left with <code>HIDDENFLAGL3ZG0</code>. Follow the rest of the instructions in the challenge text and you get <code>vh{HIDDENFLAGL3ZG0}</code> :)</p>
 <h3 id='level-7'>Level 7</h3>
