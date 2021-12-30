@@ -15,7 +15,9 @@ GPG_SIGN_FLAGS="--yes --armor --detach-sign --local-user ${GPG_FINGERPRINT}"
 GPG_EXPORT_FLAGS="--armor --export ${GPG_FINGERPRINT}"
 RM="rm"
 RM_FLAGS="-fr"
-MARKDOWN="./internal/cmark-gfm"
+# have nix installed cmark-gfm
+# there are also cmark-gfm binaries built for linux and macOS in internal/
+MARKDOWN="$(which cmark-gfm)"
 # --unsafe is needed in order to render manually-entered HTML when generating
 # the table of contents. If you do not trust the markdown-formatted text
 # content of your blog (i.e. it isn't written by you), then it probably is not
