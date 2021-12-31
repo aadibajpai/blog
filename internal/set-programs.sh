@@ -18,6 +18,8 @@ RM_FLAGS="-fr"
 # have nix installed cmark-gfm
 # there are also cmark-gfm binaries built for linux and macOS in internal/
 MARKDOWN="$(which cmark-gfm)"
+# if no cmark-gfm, fallback to the binary
+: "${MARKDOWN:="./internal/cmark-gfm"}"
 # --unsafe is needed in order to render manually-entered HTML when generating
 # the table of contents. If you do not trust the markdown-formatted text
 # content of your blog (i.e. it isn't written by you), then it probably is not
