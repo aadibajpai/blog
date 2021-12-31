@@ -2,5 +2,5 @@
 with pkgs;
 
 mkShell {
-  buildInputs = [ coreutils gnumake gnum4 ]; # packages here
+  buildInputs = [ coreutils gnumake gnum4 cmark-gfm ]; # packages here
 }
