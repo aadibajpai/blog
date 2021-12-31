@@ -38,6 +38,10 @@ yourself in the new directory.
 
 ## `cmark-gfm` issue?
 
+If you're not using the nix-shell setup that automatically installs cmark-gfm
+and you also haven't provisioned it on your own, then note that ../internal contains
+prebuilt binaries for cmark-gfm for linux and macOS that might be useful.
+
 You might want to verify that the bundled copy works on your machine,
 especially if "Linux amd64" doesn't sound like a good description of your
 computer.
