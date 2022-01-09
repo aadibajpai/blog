@@ -1,0 +1,517 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<rss version='2.0' xmlns:content='http://purl.org/rss/1.0/modules/content/' xmlns:atom='http://www.w3.org/2005/Atom'>
+<channel>
+<title>Aadi Bajpai ✒️</title>
+<link>https://aadibajpai.com</link>
+<description>Welcome to my writing space on the internet.</description>
+<atom:link href='https://aadibajpai.com/blog/feed.rss' rel='self' type='application/rss+xml' />
+<item>
+<title>Sophomore Fall Semester</title>
+<link>https://aadibajpai.com/blog/posts/sophomore-fall-semester-vBYbG35K.html</link>
+<guid isPermaLink='false'>vBYbG35K</guid>
+<pubDate>Fri, 31 Dec 2021 00:33:40 CST</pubDate>
+<description><![CDATA[ <p>It has been a while since I wrote something and I wanted to remedy that. I figured
+I could write more and less, as in more posts but shorter in length and content.
+To that end, writing about my past semester academically while it is mostly fresh in my mind seemed to
+be a good idea, I had planned to write something for my spring semester along the lines of what classes I took,
+how I did, what I thought of them and so on but it never ended up happening. I also think writing about classes
+and such is good because it's not that interesting to read about college classes but easy to write on since it's
+just my experience.</p>
+<p>This semester I took 17 hours worth of classes:</p>
+<ul>
+<li>Linear Algebra (math 2410)</li>
+<li>Multivariable Calculus (math 2300)</li>
+<li>Intro to Microeconomics (econ 1020)</li>
+<li>Digital Systems (w/ lab) (eece 2123)</li>
+<li>Theory of Automata (cs 3252)</li>
+<li>CS Senior Seminar (cs 4959)</li>
+</ul>
+<p>I am not going to talk about them in an organized manner with nice subheadings because that doesn't seem fun, I will talk about them in order though. There isn't much to say about some of them but for the others I could talk a fair bit. Let us start.</p>
+<p>{preview-stop}</p>
+<p>The CS Seminar class wasn't something super interesting, it's like a 50m once-a-week class that's required for the CS major, every week is a guest lecture about some topic about like working in the industry, ethics, personal responsibilities etc. After every class there is a short quiz. There were just two interesting instances I took away from this class: 1) I saw people actually sleeping for some of the lectures and having a good time I guess. 2) For one of the lectures hardly any people showed up but prof. saw almost all of the class completing the previous quiz so he cancelled the lecture and only let the people in the class at that moment do a throwaway quiz for the points (it was like what is Professor Stringfellow's favourite color).</p>
+<p>Microeconomics was fun in the sense that I got to know about stuff I didn't have much prior knowledge about, having never taken economics properly other than a minor segment in grades 9th and 10th. Professor Ghandi was a really passionate lecturer and I especially found game theory interesting, sometimes you see things in real life that closely mimic it. There is definitely something to be said about class organization though—or the lack thereof—we didn't get our second midterm scores until after the final exam.</p>
+<p>There is not much I have to say about Digital Systems to be honest. Professor was a nice person. Grading was a bit weird at times. It happened.</p>
+<p>Automata Theory was good. The Professor was super chill, one of the only ones who still recorded classes and had the Zoom option. The class turned out to be reading based which was a bit of a bummer because honestly, who does prereadings. Thankfully, since my friends Sam and <a href="https://siraben.dev">Ben</a> were in the class, and Ben is the sort of fellow who writes Turing machines on napkins n flights when bored, we grinded before each exam and managed to do really well. There was an extra credit assignment that had you write a parser for a context free grammar that I quite enjoyed, you can find my parser <a href="https://github.com/aadibajpai/parser">here</a>. There were more extra credit opportunities as well, but the incentive wasn't as high since I was doing well in the class and even if I did more extra credit I couldn't skip the last exam so I didn't do it.</p>
+<p>That leaves us with the two math classes I was in, interestingly, Multivariable is a prerequisite to Linear Algebra so most people do them in consecutive semesters but I saw they could be co-requisites as well so decided to take them at the same time. I don't think that's the best decision for everyone since both classes promise to be a lot of work but it was doable. I especially wanted to get done with linalg asap since it unlocks the Cryptography class, which I am interested to take.</p>
+<p>Linear Algebra was my favourite class this semester, and the class that had the most work. I enjoyed learning the stuff after vector spaces since all that was new to me but it was nice to see how all of it came together as we progressed. At times it did feel a bit fake since all of the constructs were essentially made up, if no one ever defined a vector space then you probably would never need to find eigenvalues either. I liked how it was all very methodical and how the concepts were very interlinked and abstracted away. One thing I found that helped me was to reason about things that I didn't immediately get and look them up or ask my Professor after lecture if it was something in the lecture, e.g. why eigenvectors from different eigenvalues are linearly independent. That helped me build an intuition on how to reason about things and have a better understanding. This was also the only class that had regular homework and quizzes so that forced me to regularly learn stuff as well, which I am sure helped. I think I am interested to pursue linear algebra further, though I am not sure in what manner.</p>
+<p>Multivariable calculus was an interesting class, it was very different from both the single-variable calculus classes I had taken in prior semesters, which were much harder computation-wise. The class was at 8am, twice a week so that was a challenge in itself that I overcame, never missing any class due to oversleep. The content initially did not seem difficult, the first midterm was on vectors and such, most of which I had done before. We had &quot;suggested&quot; homework problems, but I didn't really do them and just looked at them and the solutions<sup class="footnote-ref"><a href="#fn-1" id="fnref-1" data-footnote-ref>1</a></sup> to them the day before the exam so I &quot;knew&quot; how to solve a similar problem in case. This along with going through my notes and making sure I understand the concepts seemed to work well for the first two exams, though I committed an embarrassing mistake on the second one. We had a hard question based on one of the proofs we did for gradient vectors that I managed to do perfectly but one of the questions just wanted us to draw a gradient vector and I had no idea where to draw the arrow since I guess I never looked at the pretty pictures in the textbook. That arrow cost me 5 marks and was one of the only errors I made on the exam and it seemed reasonably something I should know. This little study strategy of mine didn't work for the third and last midterm, since the topics were the hardest and needed good practice to do fast and correctly. While I didn't do as bad as I thought, I didn't do as well as I wanted to. It didn't matter since our final would replace our lowest midterm and I had done well enough on the first two.<sup class="footnote-ref"><a href="#fn-2" id="fnref-2" data-footnote-ref>2</a></sup></p>
+<p>I had a very tight finals &quot;week&quot; in that it was 4 finals across 3 days: econ on wednesday 9am, linalg on thursday 7pm, digital systems on friday 9am and multi calc on friday 3pm.</p>
+<p>Let us now talk about this finals sequence and how it went, since it is evident the multi exam is very much a squeeze but also one I need to do really well in to replace the midterm 3 grade.</p>
+<h3>finals</h3>
+<p>Since I knew multi would be my biggest blocker as I wouldn't get any time before the exam, I spent Saturday evening, Sunday and Monday the week of the exams working through the last chapter of multi topic by topic doing the homework problems. That made me more confident and helped me figure out how to link everything together, this stuff all came down to figuring out the right parametrization for the problem and then the solving was reduced to previously done stuff that I also went through and did some examples for. Professor Gieri held office hours on Tuesday and Thursday, so I went on Tuesday just to go over my midterm 2 so I could finally know how to draw gradient vectors, he was super helpful and seemed to believe in me more than I did at that point.</p>
+<p>For the rest of the Tuesday I just prepared for econ and took the exam early Wednesday morning then came back and slept for a while, then I worked through some more of multi stuff and not linear algebra since I was fairly confident and the exam was in the evening. On Thursday, I went to Professor Gieri's office hours again and discussed my midterm 3. To my delight but not really, one of the problems I made errors on turned out to be one I had solved in practice a couple of days ago which was good since now I knew how to do it but also if I had practiced earlier... oh well. The best thing I did that office hour session was to go over all the types of integrals we did in class and how to solve them, which solidified the info in my head and condensed it to be very manageable.</p>
+<p>After my linear algebra exam that day, I fell asleep till like 1am which was unplanned and delayed any plans for sleep before the digital systems exam. That went well though, and I finished early so I had a couple of hours to rest and eat something before I needed to prepare for multi. The one thing I really wanted to go over before the exam was the method of Lagrange multipliers since it was somewhat tangential to everything but could easily have a question on the exam.</p>
+<p>The exam went well, notable stuff was that there was indeed a question on Lagrange multipliers. The question on drawing gradient vectors also made a comeback so I was happy that I took the time to learn that. Some of the values simplified really well, which had looked hard on surface so I was sort of worried if I did something wrong and it was too good to be true. I ended up doing well so it all worked out.</p>
+<h3>final thoughts</h3>
+<p>It was my hardest semester yet in terms of classes and workload but also the semester I performed the best at, missing nothing, so I am happy with that. Next semester I'm in algorithms, stats, programming languages, ethics, bio + lab, and a business module on essentials of financial reporting so let's see how that goes. Anyway writing this was fun, hopefully I write more on topics more fun than this soon. I have been trying some Nix things here and there so maybe something about that.</p>
+<hr />
+<p>@@vanderbilt</p>
+<section class="footnotes" data-footnotes>
+<ol>
+<li id="fn-1">
+<p>Thanks to the person who gave me the book and the solutions manual for free, it was nice having the physical books. I'll pass it on to someone else next semester to continue the tradition. <a href="#fnref-1" class="footnote-backref" data-footnote-backref aria-label="Back to content">↩</a></p>
+</li>
+<li id="fn-2">
+<p>I wonder if a part of me didn't put in as much effort because of this, even though I tried not to think about it. <a href="#fnref-2" class="footnote-backref" data-footnote-backref aria-label="Back to content">↩</a></p>
+</li>
+</ol>
+</section> ]]></description>
+</item>
+<item>
+<title>VandyHacks VII vh quest Creator's Writeup</title>
+<link>https://aadibajpai.com/blog/posts/vandyhacks-vii-vh-nsySh97w.html</link>
+<guid isPermaLink='false'>nsySh97w</guid>
+<pubDate>Wed, 07 Oct 2020 19:45:59 CDT</pubDate>
+<description><![CDATA[ <p>Last week was <a href="https://vandyhacks.org">VandyHacks VII</a>, Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I wanted to chronicle a part of it for posterity, so here we are, approximately a month and 1250 words later.</p>
+<p>{toc}</p>
+<h2>What is the squirrel from VandyHacks?</h2>
+<p>&quot;the squirrel from VandyHacks&quot; is a very special Discord bot created for VandyHacks VII with a slew of commands <del>and easter eggs</del> to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a <code>vh quest</code> command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay.</p>
+<p>If you're curious about the bot, look at it at <a href="https://github.com/VandyHacks/the-squirrel-from-VandyHacks">https://github.com/VandyHacks/the-squirrel-from-VandyHacks</a>.</p>
+<p>Here’s like the top three most used commands in the hackathon Discord server, just so there is a record (I also wanted to use a markdown table). I think the schedule command especially was way more popular than I expected.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>uses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vh pat</td>
+<td>1391</td>
+</tr>
+<tr>
+<td>vh schedule</td>
+<td>249</td>
+</tr>
+<tr>
+<td>vh when</td>
+<td>145</td>
+</tr>
+</tbody>
+</table>
+<h2>Quest challenges</h2>
+<p>The challenges, the flags and some of the motivation behind each of them.</p>
+<h3>Level 0</h3>
+<blockquote>
+<p>welcome to vh quest! this is a ctf-style, fun treasure hunt where you look for flags like <code>vh{yes_this_is_a_flag_hehe}</code> hidden in places with cryptic clues to advance to the next level. Flags are always in the vh{} format. Feel free to reach out for hints and good luck on your quest! &lt;:vh_heart:&gt;</p>
+</blockquote>
+<p>simple introductory level, since I did not expect a lot of people to have prior CTF experience or know the flow. And since this was like a side quest, I did not want to make it too hard either.</p>
+<p>the answer to this one, of course, was <code>vh{yes_this_is_a_flag_hehe}</code>.</p>
+<h3>Level 1</h3>
+<pre><code class="language-bf">----[--&gt;+++++&lt;]&gt;.++[-&gt;+++&lt;]&gt;.-[-----&gt;+&lt;]&gt;.-------.+[-&gt;+++&lt;]&gt;++.+.[---&gt;+&lt;]&gt;----.--[-&gt;+++++&lt;]&gt;+.+[-&gt;++&lt;]&gt;+.+++++++.-------------.++++++++++.++++++++++.++[-&gt;+++&lt;]&gt;.+++++++++++++.[--&gt;+&lt;]&gt;---.+[---&gt;++&lt;]&gt;-.[-&gt;+++&lt;]&gt;-.&gt;--[--&gt;+++&lt;]&gt;.
+</code></pre>
+<p>I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck.</p>
+<p>If not, there was still hope. Googling all of it or part of it could lead to bf. Another interesting observation was that this was syntax highlighted on Discord, hinting towards a programming language. In fact, if you did inspect element on the message, you could see the ```bf in the raw message, giving away the language.</p>
+<p>On decoding, this yields us the flag <code>vh{tabr1el_is_l3wd}</code>, which somewhat references the next challenge, as well as an easter egg.</p>
+<h3>Level 2</h3>
+<blockquote>
+<p>Did you tell Tabriel Ging how much you love VandyHacks? He's asking that frequently.</p>
+</blockquote>
+<p><img src="https://i.imgur.com/PG3VbqK.png" alt="image-20201109014230404" /></p>
+<p>Most participants had gone through the FAQ on the website, so probably had no problem connecting that to this challenge. Either way, <em>asking that frequently</em> was deliberately put to hint towards the FAQ. The flag being <code>vh{v1rtually_the_be$t_&lt;3}</code>.</p>
+<p>VandyHacks VII Co-Prez Gabriel Ting got a <del>lot of</del> few DMs from confused participants so that was an added bonus…I mean collateral damage.</p>
+<h3>Level 3</h3>
+<blockquote>
+<p>everyone ask what is vh, why is vh, no one ask how is vh</p>
+</blockquote>
+<p>Use the <code>vh how </code> command, except with the full question, so <code>vh how is vh</code> and it will respond to you with the flag.</p>
+<p>Giving us the answer,  <code>vh{aww_thx_4_asking_heart_emoji}</code>.</p>
+<h3>Level 4</h3>
+<blockquote>
+<p>This is off the <em>record</em>, but we're really <strong>digging</strong> the website this year. Are you? ;)</p>
+</blockquote>
+<p>Probably one of the harder challenges in this quest. This required digging into the DNS records of the website.</p>
+<p><img src="https://i.imgur.com/eNKdam9.png" alt="image-20201109014723991" /></p>
+<p>See something familiar? <code>vh{p/q2-q4!}</code> and brownie points if you know what that is.</p>
+<h3>Level 5</h3>
+<blockquote>
+<p>this level has no answer, literally, it's an empty string. But you can still get past it, I believe in you!</p>
+</blockquote>
+<p>First off, this flag was indeed an empty string which you can verify from the <a href="https://github.com/VandyHacks/the-squirrel-from-VandyHacks/blob/7c3606406063e88db9e6a0e59c8a57d9ac77ce32/cogs/quest.py#L43">source code</a>. However, sending an empty message on Discord required some thinking or luck or a combination of both.</p>
+<p><code>tl;dr send any image or file.</code></p>
+<p>Once I explain it, it will seem simple but it is hard to arrive at this yourself I think. Anyway, so it is a reasonable assumption that all messages on Discord are messages in the technical sense of the word. When would that be truly empty? Because any message you type and send, it would still put the string you sent in the message field even if it is a zero width character. But a text message is not the only type of messages seen on Discord—there’s rich embeds, files, images etc. And when you share an image or attachment, you can add a message to go along with it (what if you didn’t). That would set the message to be empty and clear the challenge🎉</p>
+<p>One participant completed this one in a very <em>interesting</em> manner unintentionally which kind of made it worth it for me.</p>
+<p><img src="https://media.discordapp.net/attachments/755112298435051552/762084127259361310/unknown.png" alt="img" /></p>
+<h3>Level 6</h3>
+<blockquote>
+<p>you are ‎nearing ‎the end. ‎Your ‎flag ‎is ‎here, ‎‎wrap ‎it ‎‎in ‎‎vh{} ‎‎also ‎‎‎‎‎it's all uppercase.</p>
+</blockquote>
+<p>Hardest level I think. Mainly because there’s not a lot to go on with, just the “your flag is here” line which is hard to decode.  If you look at the message closely, you will learn a terrible truth <del>Chancellor Palpatine is a Sith Lord</del>, there’s all sorts of weird characters in that message.</p>
+<p><img src="https://i.imgur.com/iPp0e7x.png" alt="image-20201109021905358" /></p>
+<p>Except they’re not really random, you’ll see it’s just two characters repeating <code>&amp;#8203;</code> and <code>&amp;lrm;</code>, which is a zero width space and a left right mark respectively. Both of these take up zero space, which is why they were discreetly squirreled away in the message. What’s the simplest way to encode something with 2 characters? Probably either binary or morse code, and you can observe it is not binary since the sequence lengths are inconsistent. One morse code decode later, you are left with <code>HIDDENFLAGL3ZG0</code>. Follow the rest of the instructions in the challenge text and you get <code>vh{HIDDENFLAGL3ZG0}</code> :)</p>
+<h3>Level 7</h3>
+<blockquote>
+<p>Dark web? More like dork web. Find the teapot, vhviippzyvdissgj 🧅</p>
+</blockquote>
+<p>Yeah. You’re right. I really did set up a whole onion service just for the challenge with a vanity url. Overkill? probably. Fun? for sure. <del>Hotel? trivago.</del></p>
+<p>I’m especially happy I managed to make it begin with vhvii but also fit pp and diss and gj in there. Well there you have a starting point, if you visit that url using Tor Browser or Brave or <em>insert tool</em>, you will be greeted with:</p>
+<p><img src="https://media.discordapp.net/attachments/753051340044763178/767494010217824267/unknown.png" alt="img" /></p>
+<p>Which…isn’t much but hey that’s not the point here. Now where do you go from here? Looking at the second part of the challenge text, you’re supposed to find a <em>teapot</em> of all things. Googling a bit for “teapot website” and related stuff might lead you to <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418</a> which is a reference to an <a href="https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol">April Fool’s Day Joke</a> by the Internet Engineering Task Force that actually got implemented.</p>
+<p>Going to <code>/418</code> on the website, you get:</p>
+<p><img src="https://media.discordapp.net/attachments/753051340044763178/767494145383465000/unknown.png" alt="img" /></p>
+<p>Look at the source code:</p>
+<p><img src="https://media.discordapp.net/attachments/753051340044763178/767494310085394442/unknown.png" alt="img" /></p>
+<p><code>vh{this_is_the_end_im_sad}</code> and I was sad :(</p>
+<hr />
+<p>@@ctf, @@vanderbilt</p> ]]></description>
+</item>
+<item>
+<title>Google Summer of Code Phase 1</title>
+<link>https://aadibajpai.com/blog/posts/google-summer-of-uK76p8bd.html</link>
+<guid isPermaLink='false'>uK76p8bd</guid>
+<pubDate>Sun, 05 Jul 2020 07:46:52 CDT</pubDate>
+<description><![CDATA[ <p>The first phase of GSoC concluded recently (I passed!) and I wanted to talk about the things I did so far and the process to this point.</p>
+<p>{toc}</p>
+<h1>Background</h1>
+<p>I got selected as a student for the <a href="https://summerofcode.withgoogle.com">Google Summer of Code</a> program. You can find my proposal at <a href="https://aadibajpai.com/gsoc/">https://aadibajpai.com/gsoc/</a>.  Since I go into detail in some places, reading the proposal once would make it easier to follow along as it provides important context. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks.</p>
+<p>The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are.</p>
+<h1>Community Bonding Period</h1>
+<p>Being well acquainted with the org and my mentors already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for <a href="https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8">SwagLyrics</a> and <a href="https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a">SwSpotify</a>. The SwagLyrics Chrome Extension was also <a href="https://chrome.google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk">published</a>! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature.</p>
+<p>More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner.</p>
+<p>Most notable, however, was fixing a flaw in the backend which would have made my life way harder if discovered by someone else. The issue making feature of the backend does some verification checks to determine if the info is legit or not, e.g. if the song does actually exist on Spotify or not, along with some rate limiting. However, you could've spammed it with actual songs from Spotify for which it would work and it would have opened those spam issues. To fix this I just needed to ping the Genius webpage with the stripper crafted from the song, artist info received, but since this wasn't through an API, and PythonAnywhere doesn't allow non-API requests on the free tier, it was just sitting there unresolved.</p>
+<p>However, since PythonAnywhere is awesome, after two very polite emails I was allowed access which fixed this for all eternity 🤗</p>
+<h1>Phase 1</h1>
+<h2>Minor Tracks</h2>
+<p>The first track was adding type hints. Now it's not like a super big project where it is absolutely needed but I feel they greatly improve readability. It also helped me find a <em>bug</em> where I thought I was passing an <code>int</code> but it was through an environment variable so it was actually a string, I mean it was getting handled automatically but the more you know. Additionally, I guess now I can integrate <code>mypy</code> into the CI itself, which should be useful in the long term. Earlier, the <code>typing</code> library used to add some overhead but that has been improved now, so it made sense to do it.</p>
+<p>Then, it was about adding support for Bollywood songs. Through empirical evidence which totally wasn't the 9838731 GitHub issues that swaglyrics opens, we discovered a lot of Bollywood songs on Spotify include the movie name in the title which sometimes did not resolve very well.</p>
+<p><img src="https://i.imgur.com/V08NyAy.png" alt="GitHub Issues" /></p>
+<p>As you can see, it is always preceded by From and enclosed within &quot;&quot; which we can handle by modifying a previous regex to:</p>
+<p><code>brc = re.compile(r'([(\[](feat|ft|From &quot;[^&quot;]*&quot;)[^)\]]*[)\]]|- .*)', re.I)</code></p>
+<p>and it was taken care of.</p>
+<h2>Logging</h2>
+<p>This is exactly what it sounds like, adding proper logging to the swaglyrics backend. So far I was making do with print statements, which is actually a fantastic way of logging but I was missing out on context—since all the print output just gets clumped together. With the python <code>logging</code> library, there's more fine-grained control over the logs than plain print statements. For example, you might not want to log loops and stuff in production since that would spam logs, but that information would be crucial when debugging. So now I can simply set the log level to <code>debug</code> on staging and <code>info</code> on production. This was also cool because while implementing this across functions I managed to refactor a few of them to be more readable and pythonic.</p>
+<p>The only qualm for me was that PythonAnywhere has this &quot;feature&quot; of mirroring the server and error logs if the logging library is used so you don't miss anything even if your config is misconfigured. As in, all logs output will be present in both those log file. To be honest that is a minor grievance for me but well (who checks logs really, but more on this in the next segment).</p>
+<p>Additionally, I now have a valuable code snippet addition: a decorator to log the arguments passed to a function. You can even supply an argument to truncate arguments if they're longer than <code>x</code> characters to keep your logs clean and spiffy. Since this might be something useful to other projects as well, you can grab the code <a href="https://github.com/SwagLyrics/swaglyrics-backend/blob/master/swaglyrics_backend/utils.py#L86-L122">here</a>.</p>
+<h2>Notifications</h2>
+<p>I really don't grasp logging. Like, every time I want to look at something or view them when an error happens, I need to open browser → PythonAnywhere → Web tab → logging file → filter through to whatever I am looking for. Sounds good, doesn't work (very well). I would very much prefer for logs to come to me, rather than me going to them if that makes sense. Also, there's no way to see it as it happens when you're logging to a file or separate different requests in chunks so you can focus on one request being processed at a time instead of all of them in succession one after the other. All of this pales in comparison to the biggest problem I have with raw logs.</p>
+<blockquote>
+<p>raw 💀🎺 logs 💀🎺 look 💀🎺 trash</p>
+</blockquote>
+<p>Seriously, it's just a huge wall of text and I'm supposed to somehow find the parts I'm looking for, can't it just you know, be a bit visually appealing so I don't want to just nope out right after opening them.</p>
+<p>/endrant lol</p>
+<p>Overall, I guess this is the reason why there's so many ✨shiny✨ dashboards and log processors but that would be overkill for my use case. We were already using Discord webhook magic to log requests to the Discord bot as well as successful backend deploy activity, so that's what I went with for the logs that were important to me: stripper resolution, and instrumentalness check.</p>
+<p>Before the backend creates an issue, it checks whether the song is instrumental or not. If it is instrumental then it would not have lyrics and hence, no issue creation is necessary. Now we get the instrumentalness and speechiness values from Spotify but the thresholds for deciding if it is instrumental or not are custom. So it is important to view the logs of these as they happen to identify false positives and negatives to fine tune the values even more and potentially use this when serving lyrics as well. Earlier, this would have meant me periodically checking all the values and the artist names which to be frank I never did. But now it just comes in like-</p>
+<figure>
+	<img src="https://i.imgur.com/Eo7Am8b.png" alt="InstrumentalnessBoi"/>
+  	<figcaption style="text-align: center;">way more beautiful <3</figcaption>
+</figure>
+<p>Now it's trivial to eyeball cases right from the embed—we know Für Elise is obviously instrumental. If it was flagging it as not instrumental, then I'd have known the values were wack in one look instead of specifically hunting for this in raw logs and then comparing the confidence scores. In fact, the screenshot above is <em>after</em> <a href="https://github.com/SwagLyrics/swaglyrics-backend/commit/4624ebe3bd952f5c9fc6cf3d8756567e5329adbb">fine-tuning the thresholds</a> a while ago based on the feedback off of InstrumentalnessBoi.</p>
+<p>Similarly, there's GeniusStripperBoi which helps to identify patterns where the song name mismatches on Genius and Spotify and really only needs a look to figure out if it's being caused by us or simply because the lyrics aren't available on Genius.</p>
+<p>Really, I'm very happy with how well these two turned out. Since we were using Discord for development anyway, this integrates very well and will be quite useful to ease development in the next phases!</p>
+<h2>Testing</h2>
+<p><em>Unittests... my old friend.</em></p>
+<p>If you thought the last segment was a rant then, boy, were you wrong. I'm actually kidding, I like unittests and the value they provide. It is very nice to be working when you have <em>some</em> confidence that the code will be tested for regressions—has definitely saved me a few times. What I don't like, however, is writing them.</p>
+<p>This was primarily about testing the swaglyrics backend, it had some tests written during GCI 2019 but the vast majority of routes and functions were untested. An annoying thing here was that while the test runner used was <code>pytest</code>, in order to preserve compatibility the tests themselves had been written with <code>unittest</code>. It didn't seem as much of a deal when I started writing them, but it meant I wasn't able to use pytest fixtures which would have made some parts easier.</p>
+<p>I grinded unittests hard for like a week, refactored a lot of old ones and wrote ~40 new ones. The coverage now sits at a nice 80% and there's basically this large decorator that checks if a request is from github that is untested-not exactly critical. I feel I'll ultimately end up testing it as well just to get that sweet 100% coverage badge.</p>
+<p>The reason it took so much time for writing tests is that you want to write smart tests, instead of just tests that hit the code once. I'd typically think of the logical flow as it goes and then try to write tests that mimic it, so now if there's a deviation from it then we'd know—which wouldn't happen if it was just executing the lines once to increasing coverage. Plus, since there's functions and flask routes and loggers and a really specific db query <em>shudders</em>, testing each of them required me to read up on various, wildly separate topics and then end up combining them in places.</p>
+<p>The test-writing went like there's a specific concept I want to test, I spend a lot of time figuring out, once I do then it goes swimmingly until the next concept is hit, repeat. For example, I wanted to test logging in a few places and since I couldn't test logs using the <code>caplog</code> fixture in pytest, I needed to find a different way to do it. Until I found the <code>self.assertLogs()</code> method from unittest, I was stuck, but after it I was able to write tests for a few functions. Similarly, once I realized how to test implicit requests being sent, as in the function being tested sending a request within itself and you want to test the contents of that request, then I was able to test the Discord loggers from the last segment easily where I wanted to test the embed contents.</p>
+<p>There were times I got frustrated and switched over to working on other things, I actually completed a minor track from next phase related to the Discord bot in this time so that was useful.</p>
+<p>After this whole testing ordeal, I know way more about testing Flask applications now than before which should be useful in the future. And it feels much nicer now that it is done.</p>
+<h1>Conclusion</h1>
+<p>I'm really looking forward to capitalize on the stuff done in this phase in the next phase. The logging interface should be especially useful in optimizing functionality further—which is a major point in Phase 2. I realize this is a 2000 word post and you're <del>definitely</del> probably bored out of your mind so thank you very much if you read it all (and hopefully managed to follow along). Criticism and questions are appreciated and can be sent to <a href="mailto:iloveyourblog@aadibajpai.me">iloveyourblog@aadibajpai.me</a>.</p>
+<p>A big thanks to my amazing mentors, Willem and Shivam for their continuous help. Here's to a good Phase 2!</p>
+<p>If you have any questions about the Project, the discord server is where it's at: <a href="https://discord.swaglyrics.dev">https://discord.swaglyrics.dev</a>.</p>
+<hr />
+<p>tags: @@gsoc, @@swaglyrics</p> ]]></description>
+</item>
+<item>
+<title>castorsCTF 2020 Writeups</title>
+<link>https://aadibajpai.com/blog/posts/castorsctf-2020-writeups-DyHHAa2o.html</link>
+<guid isPermaLink='false'>DyHHAa2o</guid>
+<pubDate>Sun, 31 May 2020 19:30:18 CDT</pubDate>
+<description><![CDATA[ <p>My CTF team Pwnzorz recently won <a href="https://castorsctf20.ctfd.io/">castorsCTF20</a> 🥳</p>
+<p>Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process, which, in my opinion, is the most important part of solving a challenge.</p>
+<p>Let's get started.</p>
+<p>{toc}
+{preview-stop}</p>
+<h2>Cryptography</h2>
+<h3>Goose Chase</h3>
+<p>We're given two pictures from a screenshot of the Untitled Goose Game, with one of them having a distorted horizontal bar of pixels presumably containing the flag and the other having some weird RGB stuff going on:</p>
+<p><img src="https://i.imgur.com/hRiwU4V.png" alt="goose_stole_the_key.png" /><br />
+<img src="https://i.imgur.com/G96FFLG.png" alt="chal.png" /></p>
+<p>Since they're the same picture, immediately my mind jumps to the thought that the diff of both the images might show us the distorted part properly. Checking the diff using literally the first website that came up, my suspicions were confirmed.</p>
+<p><img src="https://i.imgur.com/vPshBkJ.png" alt="flag image diff" /></p>
+<blockquote>
+<p>castorsCTF{m355_w1th_7h3_h0nk_y0u_g3t_7h3_b0nk}</p>
+</blockquote>
+<h3>Warmup</h3>
+<p>We're provided a few numbers, and an image.</p>
+<blockquote>
+<p>a=p+q</p>
+<p>b=p-q</p>
+<p>c=41027546415588921135190519817388916847442693284567375482282571314638757544938653824671437300971782426302443281077457253827782026089649732942648771306702020</p>
+<p>A=1780602199528179468577178612383888301611753776788787799581979768613992169436352468580888042155360498830144442282937213247708372597613226926855391934953064</p>
+<p>e=0x10001</p>
+<p>enc=825531027337680366509171870396193970230179478931882005355846498785843598000659828635030935743236266080589740863128695174980645084614454653557872620514117</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/cyber-castors/ctf20challenges/master/challenges/crypto/rsa/chal.png" alt="triangle with numbers" /></p>
+<p>Classic RSA with a twist, seems simple enough! But even after getting the values of <code>p</code> and <code>q</code>, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of <code>c</code> posted in the challenge was actually <code>c^2</code>, factoring that into the equation, we got the correct values.</p>
+<p>The equations I used were derived from the Pythagoras theorem and area of the triangle formula:</p>
+<p><code>p = \sqrt(c^2/4 + A)</code></p>
+<p><code>q = \sqrt(p^2-2A)</code></p>
+<p>giving us:</p>
+<pre><code class="language-python">p = 109715490261974447198586988864224528805526352370318545032102915309331780233413
+q = 92066738860291183962222763550286379517247445014524023523696633123203716884771
+</code></pre>
+<p>Then, it's a simple matter of plugging the values in <a href="https://github.com/Ganapati/RsaCtfTool">RsaCtfTool</a>, and it spits out the flag.</p>
+<blockquote>
+<p>castorsCTF{n0th1ng_l1k3_pr1m3_numb3r5_t0_w4rm_up_7h3_3ng1n3s}</p>
+</blockquote>
+<h3>Magic School Bus</h3>
+<blockquote>
+<p>nc <a href="http://chals20.cybercastors.com/">chals20.cybercastors.com</a> 14421</p>
+<p><em>Flag is slightly out of format. Add underscores and submit uppercase</em></p>
+</blockquote>
+<p>Connecting to it, we are greeted with:</p>
+<p><img src="https://i.imgur.com/G7vn9Ks.png" alt="Magic School Bus" /></p>
+<p>Of note is the description that all the kids got moved around and we should fill each row, that alludes to the shuffling being length dependent.</p>
+<p>Inputting <code>2</code> always gives us the same  string, <code>Flag bus seating: SCNTGET0SKV3CTNESYS2ISL7AF4I0SC0COM5ORS31RR3AYN1</code>. And inputting <code>1</code> allows us to provide our own string that gets shuffled and returned, playing a bit with that confirmed that the shuffling depends on the length, and is the same shuffling that happens to the flag.</p>
+<p>So I thought the way we can do this is use the first option to send a string of <code>A</code>s equal to the length of the flag string with one character changed and then observing where the changed character ends up in the output and performing that same switch in the encrypted flag string. As in, if we send <code>AAAB</code> and get back <code>ABAA</code> then we know that the second character in the encrypted string was actually the last character in the plaintext.</p>
+<p>I was trying it manually, and it seemed to be working, so my teammate Nils whipped up a quick script to do this automatically.</p>
+<pre><code class="language-python">#!/usr/bin/env python
+
+from pwn import *
+
+r = remote('chals20.cybercastors.com', 14421)
+r.recv()
+r.recv()
+
+sol = &quot;&quot;
+encrypted = &quot;SNESYT3AYN1CTISL7SRS31RAFSKV3C4I0SOCNTGER0COM5&quot;
+
+for x in range(46):
+    a = ['a'] * 46
+    a[x] = 'b'
+    r.sendline(&quot;1&quot;)
+    r.recv()
+    r.sendline(''.join(a))
+    sol += encrypted[r.recv().split()[2].decode().index('B')]
+    r.recv()
+    print(sol)
+</code></pre>
+<p>It prints <code>CASTORSCTFR3C0N4ISSANCEISK3YTOS0LV1NGMYS73R1E5</code>, and we add underscores and braces to get the flag.</p>
+<blockquote>
+<p>CASTORSCTF{R3C0N4ISSANCE_IS_K3Y_TO_S0LV1NG_MYS73R1E5}</p>
+</blockquote>
+<h3>Amazon</h3>
+<blockquote>
+<p>Are you watching the new series on Amazon?</p>
+<p>198 291 575 812 1221 1482 1955 1273 1932 2030 3813 2886 1968 4085 3243 5830 5900 5795 5628 3408 7300 4108 10043 8455 6790 4848 11742 10165 8284 5424 14986 6681 13015 10147 7897 14345 13816 8313 18370 8304 19690 22625</p>
+</blockquote>
+<p>Key takeaways from the challenge text are the words &quot;series&quot; and &quot;Amazon&quot;, especially because to watch a series on Amazon you'd go to Prime, and prime numbers are common in context of cryptography.</p>
+<p>Now, thinking about primes and series, I think it might be referring to the series of first n prime numbers, loading that up, I tried to xor the first number in the challenge with the first prime number and so on, which led to exactly nothing lol, so I tried modulo which spat out a list of 0s. This was interesting because that meant those numbers were divisible by the corresponding prime number. So we divide and convert to characters:</p>
+<pre><code class="language-python">&gt;&gt;&gt; pp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181]
+&gt;&gt;&gt; nn = [198,291,575,812,1221,1482,1955,1273,1932,2030,3813,2886,1968,4085,3243,5830,5900,5795,5628,3408,7300,4108,10043,8455,6790,4848,11742,10165,8284,5424,14986,6681,13015,10147,7897,14345,13816,8313,18370,8304,19690,22625]
+&gt;&gt;&gt; for i in range(42):
+...     print(chr(int(nn[i]/pp[i])), end='')
+...
+castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}
+</code></pre>
+<blockquote>
+<p>castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}</p>
+</blockquote>
+<h2>Misc</h2>
+<h3>Pitfall</h3>
+<blockquote>
+<p>sylv3on_ was visiting cybercastors island and thought it'd be funny to bury the flag.txt. Can you help us dig it out?</p>
+</blockquote>
+<p>And there was an Animal Crossing image attached (this tweet has the challenge image <a href="https://twitter.com/sylv3on_/status/1266478775585386496">https://twitter.com/sylv3on_/status/1266478775585386496</a>).</p>
+<p>After performing a lot of steganography on the image and coming up with nothing, I understood that it was not a forensics challenge at all. Then the challenge text was updated with the words dig capitalized to DIG. Immediately I make the connection to the linux <code>dig</code> commands and query the DNS records of the domain cybercastors.com where we find a TXT record with the flag.</p>
+<blockquote>
+<p>castorsCTF{L00K_1_DuG_uP_4_fL4g_464C4147}</p>
+</blockquote>
+<h2>Web</h2>
+<h3>Bane Art</h3>
+<blockquote>
+<p><a href="http://web1.cybercastors.com:14438/">http://web1.cybercastors.com:14438/</a></p>
+</blockquote>
+<p>We're greeted by a website with a lot of ascii art and tabs with even more ascii art, when you go to a tab, the link is like <code>http://web1.cybercastors.com:14438/app.php?topic=space.php</code> which screams LFI.</p>
+<p>I was thinking of doing log poisoning to get RCE but when I opened the logs through the LFI <code>http://web1.cybercastors.com:14438/app.php?topic=/var/log/apache2/access.log</code>, the flag was already there 😛</p>
+<p>For the purposes of the writeup, I properly did the challenge and the flag was located at <code>http://web1.cybercastors.com:14438/app.php?topic=/home/falg/flag/test/why/the/hassle/right/flag.txt</code>.</p>
+<blockquote>
+<p>castorsCTF{w3lc0m3_2_D4_s0urc3_YoUng_Ju4n}</p>
+</blockquote>
+<h3>Quiz</h3>
+<blockquote>
+<p>Our intern, Jeff, received a brief introduction to Golang and decided to write a Web app that quizzes users.</p>
+<p><a href="http://web1.cybercastors.com:14436">http://web1.cybercastors.com:14436</a></p>
+</blockquote>
+<p>The website has a simple quiz with basic arithmetic questions, playing with the input gives us nothing so we tried gobusting it which again gave nothing, so we tried with a dot prefixed, signifying hidden dirs. That yielded us .backup/, which contained the source code!</p>
+<p>One of the functions was interesting:</p>
+<pre><code class="language-go">func super(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
+    fmt.Println(ps.ByName(&quot;whynot&quot;))
+    var file string = &quot;/&quot; + ps.ByName(&quot;directory&quot;) + &quot;/&quot; + ps.ByName(&quot;theme&quot;) + &quot;/&quot; + ps.ByName(&quot;whynot&quot;)
+    test, err := os.Open(file)
+    handleError(w, err)
+    defer test.Close()
+
+    scanner := bufio.NewScanner(test)
+    var content string
+    for scanner.Scan() {
+        content = scanner.Text()
+    }
+
+    fmt.Fprintf(w, &quot;Directories: %s/%s\n&quot;, ps.ByName(&quot;directory&quot;), ps.ByName(&quot;theme&quot;))
+    fmt.Fprintf(w, &quot;File: %s\n&quot;, ps.ByName(&quot;whynot&quot;))
+    fmt.Fprintf(w, &quot;Contents: %s\n&quot;, content)
+}
+</code></pre>
+<p>and this line a bit above it</p>
+<pre><code class="language-go">mux.GET(&quot;/test/:directory/:theme/:whynot&quot;, super)
+</code></pre>
+<p>which gave us LFI as long as all the three parts of the url existed. A lot of attempts later, the flag was found at <code>http://web1.cybercastors.com:14436/test/home/jeff/flag.txt</code>.</p>
+<blockquote>
+<p>castorsCTC{wh0_l4iks_qUiZZ3s_4nyW4y}</p>
+</blockquote>
+<h2>Forensics</h2>
+<h3>Leftovers</h3>
+<blockquote>
+<p>We suspect a user has been typing faster than a computer. Our analyst don't know what to make of it, maybe you will be the one to shine light on the subject.</p>
+</blockquote>
+<p>A USB PCAP was included with it as well. Since I had never done keyboard pcap analysis before, I googled a bit and found this one <a href="https://teamrocketist.github.io/2017/08/29/Forensics-Hackit-2017-USB-ducker/">writeup</a> which was pretty similar.</p>
+<p>Dumping all keystrokes to a txt and running a <a href="https://github.com/TeamRocketIst/ctf-usb-keyboard-parser/blob/master/usbkeyboard.py">script</a> to decode them back gave us:</p>
+<p><code>what doyo thng yu will fn her? ths? cstos[CAPSLOCK]ctf[CAPSLOCK]{1stiswhatyowant}</code></p>
+<p>which had the flag with one letter missing.</p>
+<blockquote>
+<p>castorsCTF{1stiswhatyouwant}</p>
+</blockquote>
+<hr />
+<p>Overall, this was a great CTF for us and a huge shoutout to the extremely helpful organizers, especially hasu and icinta! We had a great time participating so thank you for making it possible :)</p>
+<p>@@ctf</p> ]]></description>
+</item>
+<item>
+<title>WPICTF 2020 Writeup(s)</title>
+<link>https://aadibajpai.com/blog/posts/wpictf-2020-writeups-ttL4fYDn.html</link>
+<guid isPermaLink='false'>ttL4fYDn</guid>
+<pubDate>Mon, 20 Apr 2020 07:00:46 CDT</pubDate>
+<description><![CDATA[ <p>A couple of days ago, me and a couple of other GCI winners decided to participate in the <a href="https://ctf.wpictf.xyz">WPI CTF</a> out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.</p>
+<p>This is a writeup for the <a href="https://ctf.wpictf.xyz/challenges#Luna">Luna</a> steganography challenge, because that's the one I found the most interesting.</p>
+<h1>Luna</h1>
+<blockquote>
+<p>They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!</p>
+</blockquote>
+<p align="center">
+<img src="https://i.imgur.com/LEZkRet.png" alt="Luna" />
+</p>
+<p>So as you see, we start off with a <code>Luna.tar.xz</code> file which on decompressing gives a <code>Luna.tar</code> file which on further unzipping gives a file named <code>1.png</code> and a zipped folder with two password protected files—<code>Just In Case.png</code> and <code>jut</code>.</p>
+<p>Clearly, we're supposed to start out with <code>1.png</code> which in looks is nothing but an all white image.</p>
+<p align="center">
+<img src="https://i.imgur.com/sK55OEO.png" alt="1.png" />
+</p>
+<p>I ran the <a href="https://github.com/bannsec/stegoVeritas">stegoveritas</a> tool on it to examine further and it printed a lot of metadata and exif info and carved out a couple of <code>.zlib</code> files. Interestingly, the metadata had 2 fields that stood out:</p>
+<ol>
+<li><code>StudyPhysician: awcIsALegendAndIHopeThisIsAStrongPasswordJackTheRipperBegone</code></li>
+<li><code>Description: oops, all #FFD2A4#</code></li>
+</ol>
+<p>From the first, we have our password! The <code>jut</code> file seemed absolute gibberish while <code>Just In Case.png</code> was a screenshot from gimp.</p>
+<p align="center">
+<img src="https://i.imgur.com/u8Ax45H.png" alt="Just In Case" />
+</p>
+<p>Looking at <code>jut</code> from a hex editor, the first 3 characters were interesting: <code>BPS</code></p>
+<p>Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff so I downloaded <a href="https://github.com/Alcaro/Flips">Flips</a>, a patcher for BPS files.</p>
+<p>I tried to patch <code>jut</code> on <code>1.png</code> but welp, no dice.</p>
+<p>Circling back, we hadn't yet used the 2nd line from metadata nor <code>Just In Case.png</code> so it has to do something with those.</p>
+<p>&quot;oops, all #FFD2A4#&quot; seems to imply that the image shouldn't be all white but the hex color <code>#FFD2A4</code>, and <code>Just In Case.png</code> has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new <code>1.png</code> looks like this:</p>
+<p align="center">
+<img src="https://i.imgur.com/NuamVNH.png" alt="New 1.png" />
+</p>
+<p>Now we patch <code>jut</code> on top of this and voila!</p>
+<p align="center">
+<img src="https://i.imgur.com/K1KCVhr.png" alt="flag ez" />
+</p>
+<blockquote>
+<p>WPI{M00N_mOOn}</p>
+</blockquote>
+<p>Honestly, this was a pretty involved challenge and Justin really did a great job with this, so props for that. I would even recommend his other challenge, Remy's Epic Adventure 2: Electric Boogaloo but I'm gonna procrastinate on writing that writeup lol.</p>
+<p>@@ctf</p> ]]></description>
+</item>
+<item>
+<title>How To Google Code-in</title>
+<link>https://aadibajpai.com/blog/posts/how-to-google-XpSr1CDb.html</link>
+<guid isPermaLink='false'>XpSr1CDb</guid>
+<pubDate>Thu, 11 Jul 2019 14:00:41 CDT</pubDate>
+<description><![CDATA[ <p><em>June 2020 (and probably final) edit:</em> Google Code-in has now been discontinued.</p>
+<p>As much as I'd like to say my disappointment is immeasurable and my day has been ruined, I'm just grateful for the amazing people I got to meet and the fun stuff I got to do directly or indirectly through the program. If you're reading this in expectation of GCI, I wish you luck in your endeavours :)</p>
+<p>Ultimately, here is a testimonial from Dylan Iskandar, GCI GPW 2019:</p>
+<blockquote>
+<p>ngl tho that article saved my ass</p>
+</blockquote>
+<hr />
+<p><em>I originally wrote this way back in early 2018 but it's still valid today.</em></p>
+<p><img src="https://miro.medium.com/max/2500/0*SxiXhFrVuX10Bxid.jpg" alt="Googleplex - where the winners go" /></p>
+<p>If you read this in time for <a href="http://g.co/gci">Code-in</a> 2019 and are aged between 13 to 17, you might be in luck, for this post might just help you out. It would’ve made it easier for me too, if this existed before I won. I list some pro tips that I feel would be useful in order to fully experience GCI.</p>
+<p>The aim of the contest is to simply encourage young developers to get started with open-source. Interestingly, unlike other contests, not everyone participates in GCI to truly win. Yes, I hear you, the Grand Prize is an all expenses paid 4 days trip to fucking Googleplex and here you see me saying some people don’t really concentrate on that. It is true though, a participant can approach Code-in two ways-</p>
+<ol>
+<li>
+<p>Quickly complete 3 noob tasks (including 2 beginner tasks) which guarantees you a Google Code-in t-shirt and call it quits. It’s that simple, you could do that in just a day.</p>
+</li>
+<li>
+<p>Work constantly through the 7 weeks and go all in hoping for the big prize.</p>
+</li>
+</ol>
+<p>Unsurprisingly, most people go with the first option. Google Code-in 2017 had 3555 students who completed 16468 tasks. That averages to a bit over 4 tasks per student. (I did 21 - and that’s just the tasks I could claim)</p>
+<p>Let’s say you don’t want to settle for a t-shirt and are willing to focus on GCI neglecting sleep/studies/social life/whatever. In that case, read on, we’re jumping to the meat of it now. (I’m presuming you know the basics about the contest.)</p>
+<hr />
+<p>You need to understand there’s no specific skill set that will help you win GCI, there’s no sure bet that being very proficient in <em>insert language</em> will make sure you win. That’s not how it works, which brings us to the first pro tip-</p>
+<h3>1. Choose your org early.</h3>
+<p>Every organization has specific languages and tools they use. The org I worked with, <a href="http://ccextractor.org">CCExtractor Development</a>, has its core utility mainly written in C, while the <a href="https://github.com/CCExtractor/sample-platform">sample-platform</a> is in Python. So skim through the orgs once they’re official and see which one suits you best. It wouldn’t hurt checking out previous orgs either, since many of them may participate again. That would in fact give you an advantage over others. This point applies for GSoC as well.</p>
+<p>Once you’ve chosen your org and acquainted yourself with their code and the contest begins, you might wonder what tasks to do and if number of tasks is important.</p>
+<h3>2. Get acquainted with how version control works.</h3>
+<p>You should know the basics, so you don’t trip yourself in making a pull request or performing a rebase and stuff like that. You’ll probably be eligible for <a href="https://education.github.com/pack">GitHub’s student pack</a>, which’ll provide you access to GitKraken, a client that made things simpler for me.</p>
+<h3>3. Quality over quantity would be the way to go except...</h3>
+<p><strong>Quantity matters</strong> too. 12 quality tasks are better than 7 quality tasks so don’t stop once you feel you’ve done enough, quantity will make a difference.</p>
+<p>Avoid silly tasks like writing about your experience etc. Use that time to work on stuff that will count.</p>
+<h3>4. Try to make life easier for your org.</h3>
+<p>If your PRs require multiple reviews for silly stuff by your mentors, you’re wasting their time and energy. On the other hand if you write good code than can be merged without a lot of revisions, you certainly would be better than a lot of others.</p>
+<h3>5. Don’t restrict yourself to tasks.</h3>
+<p>Your aim should be to help the org, so the tasks page shouldn’t be a limit to your contributions. Eg. if you see an issue on their GitHub that you could fix, it would be a good idea to implement it. It definitely shows good faith and is what a good person would do. <em>You feel nice about yourself too</em></p>
+<h3>6. Try to get really involved.</h3>
+<p>Once I realized I wasn’t dependent on GCI to work with my org, I did stuff even after the contest had ended. That is what Google aims for with the contest and what I find coolest about it. I fixed an issue that had been waiting to be fixed for over a year right after Code-in had ended. No one is stopping you from working, so if you choose to go beyond GCI, you’re doing it right.</p>
+<h3>7. Last but not the least, be nice be respectful.</h3>
+<p>Don’t badger your mentors if they don’t review your task within the hour, don’t ask overly silly questions and at the same time do ask questions if you have problems understanding code or need help understanding a task. Do help a fellow participant out if you’re a good person and share dank memes in the group chat (or not).</p>
+<p>Thanks for reading, I hope it helps. I might write about more Code-in stuff, especially after the trip. You could check out CCExtractor Development’s GitHub <a href="https://github.com/CCExtractor">here</a> to find out more about what I and other participants worked on.</p>
+<h3>Useful Links-</h3>
+<ul>
+<li>
+<p><a href="https://codein.withgoogle.com/archive/">Previous years’ tasks</a></p>
+</li>
+<li>
+<p><a href="https://www.google-melange.com/archive/gci">Even older archive (2010–2014)</a></p>
+</li>
+<li>
+<p><a href="https://developers.google.com/open-source/gci/resources/example-tasks">Sample Tasks</a></p>
+</li>
+</ul>
+<p>Best of luck!</p>
+<hr />
+<p>tags: @@howto, @@gci</p> ]]></description>
+</item>
+<item>
+<title>About This Blog.</title>
+<link>https://aadibajpai.com/blog/posts/about-this-blog-fa8NVajd.html</link>
+<guid isPermaLink='false'>fa8NVajd</guid>
+<pubDate>Sun, 07 Jul 2019 18:02:31 CDT</pubDate>
+<description><![CDATA[ <h2>Hello</h2>
+<p>Welcome to my blog. Some old posts may be found on <a href="https://medium.com/@aadibajpai">Medium</a>, but I don't like Medium anymore because too much pay to play.</p>
+<p>I love this blog, although it is a relative pain to maintain, purely because of this retro &quot;big-brain&quot; vibe it has going on.</p>
+<p>The source code of this blog is at <a href="https://github.com/aadibajpai/blog">https://github.com/aadibajpai/blog</a>. It is composed solely of linux utilities and I am a Windows pleb unfortunately. This meant configuring a lot of stuff to work with wsl and figuring out how to run the Windows Sublime Text program from inside wsl to create and edit posts like this one. Previously, I used to actually ssh into a linux server just to run the blog, that's how much I like it.</p>
+<p>This also serves as a test blog post because it will be built each time so I can see if something broken.</p>
+<p>Lorem Ipsum or whatever. Random styling things now.</p>
+<p><code>import __hello__  # This should be inline code</code></p>
+<p>Now, let's try a code block.</p>
+<pre><code>from __future__ import braces
+import antigravity
+if x.startswith('java'):
+	x = 'suck'  # check indents rendered
+# A few Python easter eggs and also an example of a code block
+</code></pre>
+<blockquote>
+<p><em>italics</em> and <strong>bold</strong> and <del>strikethrough</del> within a blockquote</p>
+</blockquote>
+<p>Thanks for visiting, stay to read a couple of posts :)</p>
+<p>If you have something to say about this blog (appreciation appreciated, criticism appreciated even more <del>not really</del>) then please go ahead and contact me at <a href="mailto:iloveyourblog@aadibajpai.com">iloveyourblog@aadibajpai.com</a></p>
+<p>A huge thanks to my padawans, <a href="https://www.nilsand.re/">Nils André-Chang</a> and <a href="http://uzpg.me/">Uzay Girit</a> for adding some important functionality to this. Nils contributed the named links feature, which allows for posts to have simple, easy-to-remember links like <a href="/blog/gsoc.html">this one</a>. Uzay fixed a few overflow errors which were quite annoying and absolutely broke styling on mobile.</p> ]]></description>
+</item>
+</channel>
+</rss>

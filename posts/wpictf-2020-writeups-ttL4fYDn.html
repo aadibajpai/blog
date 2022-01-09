@@ -1,0 +1,126 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aadi's blog or something</title>
+  <link href="/blog/static/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div id='divbodyholder'>
+
+
+
+<div id='headerholder'>
+<div id='header'>
+<h1 id='blogtitle'><a href='/blog/'>Aadi Bajpai ✒️</a></h1>
+<h2 id='blogsubtitle'>Welcome to my writing space on the internet. <a href=../>About Me</a> | <a href=http://clashkahznlvpwfg.onion>Onion</a><small>[<a href=https://community.torproject.org/onion-services/>What's this?</a>]</small></h2>
+
+</div> <!-- header -->
+</div> <!-- headerholder -->
+
+<div class='divcontent'>
+
+
+
+
+
+
+
+
+
+<div>
+<h1 id='posttitle'>WPICTF 2020 Writeup(s)</h1>
+<p class='postsubtitle'>Posted on 20 Apr 2020 by Aadi Bajpai</p>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 20 Apr 2020 at  7:13 pm</em></span><br/>
+
+<span class='postsubtitle' style='font-size:small;'><a href='/blog/p/ttL4fYDn.html'>permalink</a></span><br/>
+
+
+
+</div>
+
+<p>A couple of days ago, me and a couple of other GCI winners decided to participate in the <a href="https://ctf.wpictf.xyz">WPI CTF</a> out of quarantine boredness, we ended up finishing #14 which I think was pretty great since we were all just doing it for fun.</p>
+<p>This is a writeup for the <a href="https://ctf.wpictf.xyz/challenges#Luna">Luna</a> steganography challenge, because that's the one I found the most interesting.</p>
+<h1>Luna</h1>
+<blockquote>
+<p>They say the full moon makes people go crazy... hopefully this stego won't have the same effect on you!</p>
+</blockquote>
+<p align="center">
+<img src="https://i.imgur.com/LEZkRet.png" alt="Luna" />
+</p>
+<p>So as you see, we start off with a <code>Luna.tar.xz</code> file which on decompressing gives a <code>Luna.tar</code> file which on further unzipping gives a file named <code>1.png</code> and a zipped folder with two password protected files—<code>Just In Case.png</code> and <code>jut</code>.</p>
+<p>Clearly, we're supposed to start out with <code>1.png</code> which in looks is nothing but an all white image.</p>
+<p align="center">
+<img src="https://i.imgur.com/sK55OEO.png" alt="1.png" />
+</p>
+<p>I ran the <a href="https://github.com/bannsec/stegoVeritas">stegoveritas</a> tool on it to examine further and it printed a lot of metadata and exif info and carved out a couple of <code>.zlib</code> files. Interestingly, the metadata had 2 fields that stood out:</p>
+<ol>
+<li><code>StudyPhysician: awcIsALegendAndIHopeThisIsAStrongPasswordJackTheRipperBegone</code></li>
+<li><code>Description: oops, all #FFD2A4#</code></li>
+</ol>
+<p>From the first, we have our password! The <code>jut</code> file seemed absolute gibberish while <code>Just In Case.png</code> was a screenshot from gimp.</p>
+<p align="center">
+<img src="https://i.imgur.com/u8Ax45H.png" alt="Just In Case" />
+</p>
+<p>Looking at <code>jut</code> from a hex editor, the first 3 characters were interesting: <code>BPS</code></p>
+<p>Upon googling, a .bps file is one used to patch ROMs on SNES emulators and stuff so I downloaded <a href="https://github.com/Alcaro/Flips">Flips</a>, a patcher for BPS files.</p>
+<p>I tried to patch <code>jut</code> on <code>1.png</code> but welp, no dice.</p>
+<p>Circling back, we hadn't yet used the 2nd line from metadata nor <code>Just In Case.png</code> so it has to do something with those.</p>
+<p>&quot;oops, all #FFD2A4#&quot; seems to imply that the image shouldn't be all white but the hex color <code>#FFD2A4</code>, and <code>Just In Case.png</code> has specific export instructions. So I ssh into a linux server with x11 to use gimp (yes, I am a windows pleb) and when that was too slow I just ask a friend on Linux. After those operations, our new <code>1.png</code> looks like this:</p>
+<p align="center">
+<img src="https://i.imgur.com/NuamVNH.png" alt="New 1.png" />
+</p>
+<p>Now we patch <code>jut</code> on top of this and voila!</p>
+<p align="center">
+<img src="https://i.imgur.com/K1KCVhr.png" alt="flag ez" />
+</p>
+<blockquote>
+<p>WPI{M00N_mOOn}</p>
+</blockquote>
+<p>Honestly, this was a pretty involved challenge and Justin really did a great job with this, so props for that. I would even recommend his other challenge, Remy's Epic Adventure 2: Electric Boogaloo but I'm gonna procrastinate on writing that writeup lol.</p>
+<p><a href='/blog/tags/ctf.html'>ctf</a></p>
+</div> <!-- divcontent -->
+
+
+
+<div id='footerholder'>
+<div id='footer'>
+<a href='/blog/tags/index.html'>Posts by tag</a> | <a href='/blog/posts/index.html'>All posts</a><br />
+<span style='font-size:smaller'>All pages signed with <a href='/blog/pubkey.gpg'>BFE0CFDBF90E4BF0</a>. Append <code>.asc</code> to URL for signature.</span><br />
+
+<span style='font-size:smaller'><a href='/blog/feed.rss'>RSS feed</a></span>
+
+
+<span style='font-size:smaller'></span>
+
+
+</div> <!-- footer -->
+</div> <!-- footerholder -->
+
+</div> <!-- divbodyholder -->
+</body>
+</html>
+
+

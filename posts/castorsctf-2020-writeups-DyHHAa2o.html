@@ -1,0 +1,270 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aadi's blog or something</title>
+  <link href="/blog/static/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div id='divbodyholder'>
+
+
+
+<div id='headerholder'>
+<div id='header'>
+<h1 id='blogtitle'><a href='/blog/'>Aadi Bajpai ✒️</a></h1>
+<h2 id='blogsubtitle'>Welcome to my writing space on the internet. <a href=../>About Me</a> | <a href=http://clashkahznlvpwfg.onion>Onion</a><small>[<a href=https://community.torproject.org/onion-services/>What's this?</a>]</small></h2>
+
+</div> <!-- header -->
+</div> <!-- headerholder -->
+
+<div class='divcontent'>
+
+
+
+
+
+
+
+
+
+<div>
+<h1 id='posttitle'>castorsCTF 2020 Writeups</h1>
+<p class='postsubtitle'>Posted on 01 Jun 2020 by Aadi Bajpai</p>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 16 Jun 2020 at 12:00 am</em></span><br/>
+
+<span class='postsubtitle' style='font-size:small;'><a href='/blog/p/DyHHAa2o.html'>permalink</a></span><br/>
+
+
+
+</div>
+
+<p>My CTF team Pwnzorz recently won <a href="https://castorsctf20.ctfd.io/">castorsCTF20</a> 🥳</p>
+<p>Here are the writeups for the challenges I did for verification. I've tried to go into detail where possible but feel free to hit me up for a clarification if you don't understand what I did or the thought process, which, in my opinion, is the most important part of solving a challenge.</p>
+<p>Let's get started.</p>
+<ul>
+<li><a href='#cryptography'>Cryptography</a>
+<ul>
+<li><a href='#goose-chase'>Goose Chase</a></li>
+<li><a href='#warmup'>Warmup</a></li>
+<li><a href='#magic-school-bus'>Magic School Bus</a></li>
+<li><a href='#amazon'>Amazon</a></li>
+</ul>
+</li>
+<li><a href='#misc'>Misc</a>
+<ul>
+<li><a href='#pitfall'>Pitfall</a></li>
+</ul>
+</li>
+<li><a href='#web'>Web</a>
+<ul>
+<li><a href='#bane-art'>Bane Art</a></li>
+<li><a href='#quiz'>Quiz</a></li>
+</ul>
+</li>
+<li><a href='#forensics'>Forensics</a>
+<ul>
+<li><a href='#leftovers'>Leftovers</a></li>
+</ul>
+</li>
+</ul>
+<p></p>
+<h2 id='cryptography'>Cryptography</h2>
+<h3 id='goose-chase'>Goose Chase</h3>
+<p>We're given two pictures from a screenshot of the Untitled Goose Game, with one of them having a distorted horizontal bar of pixels presumably containing the flag and the other having some weird RGB stuff going on:</p>
+<p><img src="https://i.imgur.com/hRiwU4V.png" alt="goose_stole_the_key.png" /><br />
+<img src="https://i.imgur.com/G96FFLG.png" alt="chal.png" /></p>
+<p>Since they're the same picture, immediately my mind jumps to the thought that the diff of both the images might show us the distorted part properly. Checking the diff using literally the first website that came up, my suspicions were confirmed.</p>
+<p><img src="https://i.imgur.com/vPshBkJ.png" alt="flag image diff" /></p>
+<blockquote>
+<p>castorsCTF{m355_w1th_7h3_h0nk_y0u_g3t_7h3_b0nk}</p>
+</blockquote>
+<h3 id='warmup'>Warmup</h3>
+<p>We're provided a few numbers, and an image.</p>
+<blockquote>
+<p>a=p+q</p>
+<p>b=p-q</p>
+<p>c=41027546415588921135190519817388916847442693284567375482282571314638757544938653824671437300971782426302443281077457253827782026089649732942648771306702020</p>
+<p>A=1780602199528179468577178612383888301611753776788787799581979768613992169436352468580888042155360498830144442282937213247708372597613226926855391934953064</p>
+<p>e=0x10001</p>
+<p>enc=825531027337680366509171870396193970230179478931882005355846498785843598000659828635030935743236266080589740863128695174980645084614454653557872620514117</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/cyber-castors/ctf20challenges/master/challenges/crypto/rsa/chal.png" alt="triangle with numbers" /></p>
+<p>Classic RSA with a twist, seems simple enough! But even after getting the values of <code>p</code> and <code>q</code>, I wasn't getting anywhere, so I DMed the challenge creator. A crosscheck later, it turned out that the value of <code>c</code> posted in the challenge was actually <code>c^2</code>, factoring that into the equation, we got the correct values.</p>
+<p>The equations I used were derived from the Pythagoras theorem and area of the triangle formula:</p>
+<p><code>p = \sqrt(c^2/4 + A)</code></p>
+<p><code>q = \sqrt(p^2-2A)</code></p>
+<p>giving us:</p>
+<pre><code class="language-python">p = 109715490261974447198586988864224528805526352370318545032102915309331780233413
+q = 92066738860291183962222763550286379517247445014524023523696633123203716884771
+</code></pre>
+<p>Then, it's a simple matter of plugging the values in <a href="https://github.com/Ganapati/RsaCtfTool">RsaCtfTool</a>, and it spits out the flag.</p>
+<blockquote>
+<p>castorsCTF{n0th1ng_l1k3_pr1m3_numb3r5_t0_w4rm_up_7h3_3ng1n3s}</p>
+</blockquote>
+<h3 id='magic-school-bus'>Magic School Bus</h3>
+<blockquote>
+<p>nc <a href="http://chals20.cybercastors.com/">chals20.cybercastors.com</a> 14421</p>
+<p><em>Flag is slightly out of format. Add underscores and submit uppercase</em></p>
+</blockquote>
+<p>Connecting to it, we are greeted with:</p>
+<p><img src="https://i.imgur.com/G7vn9Ks.png" alt="Magic School Bus" /></p>
+<p>Of note is the description that all the kids got moved around and we should fill each row, that alludes to the shuffling being length dependent.</p>
+<p>Inputting <code>2</code> always gives us the same  string, <code>Flag bus seating: SCNTGET0SKV3CTNESYS2ISL7AF4I0SC0COM5ORS31RR3AYN1</code>. And inputting <code>1</code> allows us to provide our own string that gets shuffled and returned, playing a bit with that confirmed that the shuffling depends on the length, and is the same shuffling that happens to the flag.</p>
+<p>So I thought the way we can do this is use the first option to send a string of <code>A</code>s equal to the length of the flag string with one character changed and then observing where the changed character ends up in the output and performing that same switch in the encrypted flag string. As in, if we send <code>AAAB</code> and get back <code>ABAA</code> then we know that the second character in the encrypted string was actually the last character in the plaintext.</p>
+<p>I was trying it manually, and it seemed to be working, so my teammate Nils whipped up a quick script to do this automatically.</p>
+<pre><code class="language-python">#!/usr/bin/env python
+
+from pwn import *
+
+r = remote('chals20.cybercastors.com', 14421)
+r.recv()
+r.recv()
+
+sol = &quot;&quot;
+encrypted = &quot;SNESYT3AYN1CTISL7SRS31RAFSKV3C4I0SOCNTGER0COM5&quot;
+
+for x in range(46):
+    a = ['a'] * 46
+    a[x] = 'b'
+    r.sendline(&quot;1&quot;)
+    r.recv()
+    r.sendline(''.join(a))
+    sol += encrypted[r.recv().split()[2].decode().index('B')]
+    r.recv()
+    print(sol)
+</code></pre>
+<p>It prints <code>CASTORSCTFR3C0N4ISSANCEISK3YTOS0LV1NGMYS73R1E5</code>, and we add underscores and braces to get the flag.</p>
+<blockquote>
+<p>CASTORSCTF{R3C0N4ISSANCE_IS_K3Y_TO_S0LV1NG_MYS73R1E5}</p>
+</blockquote>
+<h3 id='amazon'>Amazon</h3>
+<blockquote>
+<p>Are you watching the new series on Amazon?</p>
+<p>198 291 575 812 1221 1482 1955 1273 1932 2030 3813 2886 1968 4085 3243 5830 5900 5795 5628 3408 7300 4108 10043 8455 6790 4848 11742 10165 8284 5424 14986 6681 13015 10147 7897 14345 13816 8313 18370 8304 19690 22625</p>
+</blockquote>
+<p>Key takeaways from the challenge text are the words &quot;series&quot; and &quot;Amazon&quot;, especially because to watch a series on Amazon you'd go to Prime, and prime numbers are common in context of cryptography.</p>
+<p>Now, thinking about primes and series, I think it might be referring to the series of first n prime numbers, loading that up, I tried to xor the first number in the challenge with the first prime number and so on, which led to exactly nothing lol, so I tried modulo which spat out a list of 0s. This was interesting because that meant those numbers were divisible by the corresponding prime number. So we divide and convert to characters:</p>
+<pre><code class="language-python">&gt;&gt;&gt; pp = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181]
+&gt;&gt;&gt; nn = [198,291,575,812,1221,1482,1955,1273,1932,2030,3813,2886,1968,4085,3243,5830,5900,5795,5628,3408,7300,4108,10043,8455,6790,4848,11742,10165,8284,5424,14986,6681,13015,10147,7897,14345,13816,8313,18370,8304,19690,22625]
+&gt;&gt;&gt; for i in range(42):
+...     print(chr(int(nn[i]/pp[i])), end='')
+...
+castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}
+</code></pre>
+<blockquote>
+<p>castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}</p>
+</blockquote>
+<h2 id='misc'>Misc</h2>
+<h3 id='pitfall'>Pitfall</h3>
+<blockquote>
+<p>sylv3on_ was visiting cybercastors island and thought it'd be funny to bury the flag.txt. Can you help us dig it out?</p>
+</blockquote>
+<p>And there was an Animal Crossing image attached (this tweet has the challenge image <a href="https://twitter.com/sylv3on_/status/1266478775585386496">https://twitter.com/sylv3on_/status/1266478775585386496</a>).</p>
+<p>After performing a lot of steganography on the image and coming up with nothing, I understood that it was not a forensics challenge at all. Then the challenge text was updated with the words dig capitalized to DIG. Immediately I make the connection to the linux <code>dig</code> commands and query the DNS records of the domain cybercastors.com where we find a TXT record with the flag.</p>
+<blockquote>
+<p>castorsCTF{L00K_1_DuG_uP_4_fL4g_464C4147}</p>
+</blockquote>
+<h2 id='web'>Web</h2>
+<h3 id='bane-art'>Bane Art</h3>
+<blockquote>
+<p><a href="http://web1.cybercastors.com:14438/">http://web1.cybercastors.com:14438/</a></p>
+</blockquote>
+<p>We're greeted by a website with a lot of ascii art and tabs with even more ascii art, when you go to a tab, the link is like <code>http://web1.cybercastors.com:14438/app.php?topic=space.php</code> which screams LFI.</p>
+<p>I was thinking of doing log poisoning to get RCE but when I opened the logs through the LFI <code>http://web1.cybercastors.com:14438/app.php?topic=/var/log/apache2/access.log</code>, the flag was already there 😛</p>
+<p>For the purposes of the writeup, I properly did the challenge and the flag was located at <code>http://web1.cybercastors.com:14438/app.php?topic=/home/falg/flag/test/why/the/hassle/right/flag.txt</code>.</p>
+<blockquote>
+<p>castorsCTF{w3lc0m3_2_D4_s0urc3_YoUng_Ju4n}</p>
+</blockquote>
+<h3 id='quiz'>Quiz</h3>
+<blockquote>
+<p>Our intern, Jeff, received a brief introduction to Golang and decided to write a Web app that quizzes users.</p>
+<p><a href="http://web1.cybercastors.com:14436">http://web1.cybercastors.com:14436</a></p>
+</blockquote>
+<p>The website has a simple quiz with basic arithmetic questions, playing with the input gives us nothing so we tried gobusting it which again gave nothing, so we tried with a dot prefixed, signifying hidden dirs. That yielded us .backup/, which contained the source code!</p>
+<p>One of the functions was interesting:</p>
+<pre><code class="language-go">func super(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
+    fmt.Println(ps.ByName(&quot;whynot&quot;))
+    var file string = &quot;/&quot; + ps.ByName(&quot;directory&quot;) + &quot;/&quot; + ps.ByName(&quot;theme&quot;) + &quot;/&quot; + ps.ByName(&quot;whynot&quot;)
+    test, err := os.Open(file)
+    handleError(w, err)
+    defer test.Close()
+
+    scanner := bufio.NewScanner(test)
+    var content string
+    for scanner.Scan() {
+        content = scanner.Text()
+    }
+
+    fmt.Fprintf(w, &quot;Directories: %s/%s\n&quot;, ps.ByName(&quot;directory&quot;), ps.ByName(&quot;theme&quot;))
+    fmt.Fprintf(w, &quot;File: %s\n&quot;, ps.ByName(&quot;whynot&quot;))
+    fmt.Fprintf(w, &quot;Contents: %s\n&quot;, content)
+}
+</code></pre>
+<p>and this line a bit above it</p>
+<pre><code class="language-go">mux.GET(&quot;/test/:directory/:theme/:whynot&quot;, super)
+</code></pre>
+<p>which gave us LFI as long as all the three parts of the url existed. A lot of attempts later, the flag was found at <code>http://web1.cybercastors.com:14436/test/home/jeff/flag.txt</code>.</p>
+<blockquote>
+<p>castorsCTC{wh0_l4iks_qUiZZ3s_4nyW4y}</p>
+</blockquote>
+<h2 id='forensics'>Forensics</h2>
+<h3 id='leftovers'>Leftovers</h3>
+<blockquote>
+<p>We suspect a user has been typing faster than a computer. Our analyst don't know what to make of it, maybe you will be the one to shine light on the subject.</p>
+</blockquote>
+<p>A USB PCAP was included with it as well. Since I had never done keyboard pcap analysis before, I googled a bit and found this one <a href="https://teamrocketist.github.io/2017/08/29/Forensics-Hackit-2017-USB-ducker/">writeup</a> which was pretty similar.</p>
+<p>Dumping all keystrokes to a txt and running a <a href="https://github.com/TeamRocketIst/ctf-usb-keyboard-parser/blob/master/usbkeyboard.py">script</a> to decode them back gave us:</p>
+<p><code>what doyo thng yu will fn her? ths? cstos[CAPSLOCK]ctf[CAPSLOCK]{1stiswhatyowant}</code></p>
+<p>which had the flag with one letter missing.</p>
+<blockquote>
+<p>castorsCTF{1stiswhatyouwant}</p>
+</blockquote>
+<hr />
+<p>Overall, this was a great CTF for us and a huge shoutout to the extremely helpful organizers, especially hasu and icinta! We had a great time participating so thank you for making it possible :)</p>
+<p><a href='/blog/tags/ctf.html'>ctf</a></p>
+</div> <!-- divcontent -->
+
+
+
+<div id='footerholder'>
+<div id='footer'>
+<a href='/blog/tags/index.html'>Posts by tag</a> | <a href='/blog/posts/index.html'>All posts</a><br />
+<span style='font-size:smaller'>All pages signed with <a href='/blog/pubkey.gpg'>BFE0CFDBF90E4BF0</a>. Append <code>.asc</code> to URL for signature.</span><br />
+
+<span style='font-size:smaller'><a href='/blog/feed.rss'>RSS feed</a></span>
+
+
+<span style='font-size:smaller'></span>
+
+
+</div> <!-- footer -->
+</div> <!-- footerholder -->
+
+</div> <!-- divbodyholder -->
+</body>
+</html>
+
+

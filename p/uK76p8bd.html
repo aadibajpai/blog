@@ -1,0 +1,151 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aadi's blog or something</title>
+  <link href="/blog/static/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div id='divbodyholder'>
+
+
+
+<div id='headerholder'>
+<div id='header'>
+<h1 id='blogtitle'><a href='/blog/'>Aadi Bajpai ✒️</a></h1>
+<h2 id='blogsubtitle'>Welcome to my writing space on the internet. <a href=../>About Me</a> | <a href=http://clashkahznlvpwfg.onion>Onion</a><small>[<a href=https://community.torproject.org/onion-services/>What's this?</a>]</small></h2>
+
+</div> <!-- header -->
+</div> <!-- headerholder -->
+
+<div class='divcontent'>
+
+
+
+
+
+
+
+
+
+<div>
+<h1 id='posttitle'>Google Summer of Code Phase 1</h1>
+<p class='postsubtitle'>Posted on 05 Jul 2020 by Aadi Bajpai</p>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 17 Jul 2020 at  9:47 pm</em></span><br/>
+
+<span class='postsubtitle' style='font-size:small;'><a href='/blog/gsoc.html'>permalink</a></span><br/>
+
+
+
+</div>
+
+<p>The first phase of GSoC concluded recently (I passed!) and I wanted to talk about the things I did so far and the process to this point.</p>
+<ul>
+<li><a href='#background'>Background</a></li>
+<li><a href='#community-bonding-period'>Community Bonding Period</a></li>
+<li><a href='#phase-1'>Phase 1</a>
+<ul>
+<li><a href='#minor-tracks'>Minor Tracks</a></li>
+<li><a href='#logging'>Logging</a></li>
+<li><a href='#notifications'>Notifications</a></li>
+<li><a href='#testing'>Testing</a></li>
+</ul>
+</li>
+<li><a href='#conclusion'>Conclusion</a></li>
+</ul>
+<h1 id='background'>Background</h1>
+<p>I got selected as a student for the <a href="https://summerofcode.withgoogle.com">Google Summer of Code</a> program. You can find my proposal at <a href="https://aadibajpai.com/gsoc/">https://aadibajpai.com/gsoc/</a>.  Since I go into detail in some places, reading the proposal once would make it easier to follow along as it provides important context. For phase 1, there were 3 major tracks: Logging x Notifications, Testing, and fixing a security flaw in the backend, along with a few minor tracks.</p>
+<p>The initial application had gone by a bit fast, since I officially enrolled just a day before the application deadline. But well, I was able to apply successfully, got selected and here we are.</p>
+<h1 id='community-bonding-period'>Community Bonding Period</h1>
+<p>Being well acquainted with the org and my mentors already, I directly began to work through my proposal during this period. I cleaned up some of the issues and pull requests—although I am saving most of them for use in later stages. Then, I made new releases for <a href="https://github.com/SwagLyrics/SwagLyrics-For-Spotify/commit/977a195fae66896dec865132256825c32bbfbfe8">SwagLyrics</a> and <a href="https://github.com/SwagLyrics/SwSpotify/commit/1213be5ce630bdcfdb63ec368c260ca5c627de3a">SwSpotify</a>. The SwagLyrics Chrome Extension was also <a href="https://chrome.google.com/webstore/detail/swaglyrics-for-spotify/miopldoofdhmipepmnclnoangcdffmlk">published</a>! It adds support for the Spotify Web Player on SwagLyrics which was a long awaited feature.</p>
+<p>More notably, I managed to complete an important major track in this time, there was a very weird unreproducible error occurring in swaglyrics that had been haunting us for a month or so. One day I stayed up, analyzed everything from the ground up and discovered that Genius had been A/B testing a new page format, which broke our parser whenever the new version was sent which was random and location dependent. Then, it was basically isolating the new html and parsing the new format. Now the worst part about this was that it wasn't anything we could handle in advance or even figure out, but I'm glad we caught it when we did if not sooner.</p>
+<p>Most notable, however, was fixing a flaw in the backend which would have made my life way harder if discovered by someone else. The issue making feature of the backend does some verification checks to determine if the info is legit or not, e.g. if the song does actually exist on Spotify or not, along with some rate limiting. However, you could've spammed it with actual songs from Spotify for which it would work and it would have opened those spam issues. To fix this I just needed to ping the Genius webpage with the stripper crafted from the song, artist info received, but since this wasn't through an API, and PythonAnywhere doesn't allow non-API requests on the free tier, it was just sitting there unresolved.</p>
+<p>However, since PythonAnywhere is awesome, after two very polite emails I was allowed access which fixed this for all eternity 🤗</p>
+<h1 id='phase-1'>Phase 1</h1>
+<h2 id='minor-tracks'>Minor Tracks</h2>
+<p>The first track was adding type hints. Now it's not like a super big project where it is absolutely needed but I feel they greatly improve readability. It also helped me find a <em>bug</em> where I thought I was passing an <code>int</code> but it was through an environment variable so it was actually a string, I mean it was getting handled automatically but the more you know. Additionally, I guess now I can integrate <code>mypy</code> into the CI itself, which should be useful in the long term. Earlier, the <code>typing</code> library used to add some overhead but that has been improved now, so it made sense to do it.</p>
+<p>Then, it was about adding support for Bollywood songs. Through empirical evidence which totally wasn't the 9838731 GitHub issues that swaglyrics opens, we discovered a lot of Bollywood songs on Spotify include the movie name in the title which sometimes did not resolve very well.</p>
+<p><img src="https://i.imgur.com/V08NyAy.png" alt="GitHub Issues" /></p>
+<p>As you can see, it is always preceded by From and enclosed within &quot;&quot; which we can handle by modifying a previous regex to:</p>
+<p><code>brc = re.compile(r'([(\[](feat|ft|From &quot;[^&quot;]*&quot;)[^)\]]*[)\]]|- .*)', re.I)</code></p>
+<p>and it was taken care of.</p>
+<h2 id='logging'>Logging</h2>
+<p>This is exactly what it sounds like, adding proper logging to the swaglyrics backend. So far I was making do with print statements, which is actually a fantastic way of logging but I was missing out on context—since all the print output just gets clumped together. With the python <code>logging</code> library, there's more fine-grained control over the logs than plain print statements. For example, you might not want to log loops and stuff in production since that would spam logs, but that information would be crucial when debugging. So now I can simply set the log level to <code>debug</code> on staging and <code>info</code> on production. This was also cool because while implementing this across functions I managed to refactor a few of them to be more readable and pythonic.</p>
+<p>The only qualm for me was that PythonAnywhere has this &quot;feature&quot; of mirroring the server and error logs if the logging library is used so you don't miss anything even if your config is misconfigured. As in, all logs output will be present in both those log file. To be honest that is a minor grievance for me but well (who checks logs really, but more on this in the next segment).</p>
+<p>Additionally, I now have a valuable code snippet addition: a decorator to log the arguments passed to a function. You can even supply an argument to truncate arguments if they're longer than <code>x</code> characters to keep your logs clean and spiffy. Since this might be something useful to other projects as well, you can grab the code <a href="https://github.com/SwagLyrics/swaglyrics-backend/blob/master/swaglyrics_backend/utils.py#L86-L122">here</a>.</p>
+<h2 id='notifications'>Notifications</h2>
+<p>I really don't grasp logging. Like, every time I want to look at something or view them when an error happens, I need to open browser → PythonAnywhere → Web tab → logging file → filter through to whatever I am looking for. Sounds good, doesn't work (very well). I would very much prefer for logs to come to me, rather than me going to them if that makes sense. Also, there's no way to see it as it happens when you're logging to a file or separate different requests in chunks so you can focus on one request being processed at a time instead of all of them in succession one after the other. All of this pales in comparison to the biggest problem I have with raw logs.</p>
+<blockquote>
+<p>raw 💀🎺 logs 💀🎺 look 💀🎺 trash</p>
+</blockquote>
+<p>Seriously, it's just a huge wall of text and I'm supposed to somehow find the parts I'm looking for, can't it just you know, be a bit visually appealing so I don't want to just nope out right after opening them.</p>
+<p>/endrant lol</p>
+<p>Overall, I guess this is the reason why there's so many ✨shiny✨ dashboards and log processors but that would be overkill for my use case. We were already using Discord webhook magic to log requests to the Discord bot as well as successful backend deploy activity, so that's what I went with for the logs that were important to me: stripper resolution, and instrumentalness check.</p>
+<p>Before the backend creates an issue, it checks whether the song is instrumental or not. If it is instrumental then it would not have lyrics and hence, no issue creation is necessary. Now we get the instrumentalness and speechiness values from Spotify but the thresholds for deciding if it is instrumental or not are custom. So it is important to view the logs of these as they happen to identify false positives and negatives to fine tune the values even more and potentially use this when serving lyrics as well. Earlier, this would have meant me periodically checking all the values and the artist names which to be frank I never did. But now it just comes in like-</p>
+<figure>
+	<img src="https://i.imgur.com/Eo7Am8b.png" alt="InstrumentalnessBoi"/>
+  	<figcaption style="text-align: center;">way more beautiful <3</figcaption>
+</figure>
+<p>Now it's trivial to eyeball cases right from the embed—we know Für Elise is obviously instrumental. If it was flagging it as not instrumental, then I'd have known the values were wack in one look instead of specifically hunting for this in raw logs and then comparing the confidence scores. In fact, the screenshot above is <em>after</em> <a href="https://github.com/SwagLyrics/swaglyrics-backend/commit/4624ebe3bd952f5c9fc6cf3d8756567e5329adbb">fine-tuning the thresholds</a> a while ago based on the feedback off of InstrumentalnessBoi.</p>
+<p>Similarly, there's GeniusStripperBoi which helps to identify patterns where the song name mismatches on Genius and Spotify and really only needs a look to figure out if it's being caused by us or simply because the lyrics aren't available on Genius.</p>
+<p>Really, I'm very happy with how well these two turned out. Since we were using Discord for development anyway, this integrates very well and will be quite useful to ease development in the next phases!</p>
+<h2 id='testing'>Testing</h2>
+<p><em>Unittests... my old friend.</em></p>
+<p>If you thought the last segment was a rant then, boy, were you wrong. I'm actually kidding, I like unittests and the value they provide. It is very nice to be working when you have <em>some</em> confidence that the code will be tested for regressions—has definitely saved me a few times. What I don't like, however, is writing them.</p>
+<p>This was primarily about testing the swaglyrics backend, it had some tests written during GCI 2019 but the vast majority of routes and functions were untested. An annoying thing here was that while the test runner used was <code>pytest</code>, in order to preserve compatibility the tests themselves had been written with <code>unittest</code>. It didn't seem as much of a deal when I started writing them, but it meant I wasn't able to use pytest fixtures which would have made some parts easier.</p>
+<p>I grinded unittests hard for like a week, refactored a lot of old ones and wrote ~40 new ones. The coverage now sits at a nice 80% and there's basically this large decorator that checks if a request is from github that is untested-not exactly critical. I feel I'll ultimately end up testing it as well just to get that sweet 100% coverage badge.</p>
+<p>The reason it took so much time for writing tests is that you want to write smart tests, instead of just tests that hit the code once. I'd typically think of the logical flow as it goes and then try to write tests that mimic it, so now if there's a deviation from it then we'd know—which wouldn't happen if it was just executing the lines once to increasing coverage. Plus, since there's functions and flask routes and loggers and a really specific db query <em>shudders</em>, testing each of them required me to read up on various, wildly separate topics and then end up combining them in places.</p>
+<p>The test-writing went like there's a specific concept I want to test, I spend a lot of time figuring out, once I do then it goes swimmingly until the next concept is hit, repeat. For example, I wanted to test logging in a few places and since I couldn't test logs using the <code>caplog</code> fixture in pytest, I needed to find a different way to do it. Until I found the <code>self.assertLogs()</code> method from unittest, I was stuck, but after it I was able to write tests for a few functions. Similarly, once I realized how to test implicit requests being sent, as in the function being tested sending a request within itself and you want to test the contents of that request, then I was able to test the Discord loggers from the last segment easily where I wanted to test the embed contents.</p>
+<p>There were times I got frustrated and switched over to working on other things, I actually completed a minor track from next phase related to the Discord bot in this time so that was useful.</p>
+<p>After this whole testing ordeal, I know way more about testing Flask applications now than before which should be useful in the future. And it feels much nicer now that it is done.</p>
+<h1 id='conclusion'>Conclusion</h1>
+<p>I'm really looking forward to capitalize on the stuff done in this phase in the next phase. The logging interface should be especially useful in optimizing functionality further—which is a major point in Phase 2. I realize this is a 2000 word post and you're <del>definitely</del> probably bored out of your mind so thank you very much if you read it all (and hopefully managed to follow along). Criticism and questions are appreciated and can be sent to <a href="mailto:iloveyourblog@aadibajpai.me">iloveyourblog@aadibajpai.me</a>.</p>
+<p>A big thanks to my amazing mentors, Willem and Shivam for their continuous help. Here's to a good Phase 2!</p>
+<p>If you have any questions about the Project, the discord server is where it's at: <a href="https://discord.swaglyrics.dev">https://discord.swaglyrics.dev</a>.</p>
+<hr />
+<p>tags: <a href='/blog/tags/gsoc.html'>gsoc</a>, <a href='/blog/tags/swaglyrics.html'>swaglyrics</a></p>
+</div> <!-- divcontent -->
+
+
+
+<div id='footerholder'>
+<div id='footer'>
+<a href='/blog/tags/index.html'>Posts by tag</a> | <a href='/blog/posts/index.html'>All posts</a><br />
+<span style='font-size:smaller'>All pages signed with <a href='/blog/pubkey.gpg'>BFE0CFDBF90E4BF0</a>. Append <code>.asc</code> to URL for signature.</span><br />
+
+<span style='font-size:smaller'><a href='/blog/feed.rss'>RSS feed</a></span>
+
+
+<span style='font-size:smaller'></span>
+
+
+</div> <!-- footer -->
+</div> <!-- footerholder -->
+
+</div> <!-- divbodyholder -->
+</body>
+</html>
+
+

@@ -1,0 +1,193 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aadi's blog or something</title>
+  <link href="/blog/static/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8"/>
+</head>
+<body>
+<div id='divbodyholder'>
+
+
+
+<div id='headerholder'>
+<div id='header'>
+<h1 id='blogtitle'><a href='/blog/'>Aadi Bajpai ✒️</a></h1>
+<h2 id='blogsubtitle'>Welcome to my writing space on the internet. <a href=../>About Me</a> | <a href=http://clashkahznlvpwfg.onion>Onion</a><small>[<a href=https://community.torproject.org/onion-services/>What's this?</a>]</small></h2>
+
+</div> <!-- header -->
+</div> <!-- headerholder -->
+
+<div class='divcontent'>
+
+
+
+
+
+
+
+
+
+<div>
+<h1 id='posttitle'>VandyHacks VII vh quest Creator's Writeup</h1>
+<p class='postsubtitle'>Posted on 08 Oct 2020 by Aadi Bajpai</p>
+<span class='postsubtitle' style='font-size:small;'><em>Last updated 11 Dec 2020 at  7:16 pm</em></span><br/>
+
+<span class='postsubtitle' style='font-size:small;'><a href='/blog/vhvii.html'>permalink</a></span><br/>
+
+
+
+</div>
+
+<p>Last week was <a href="https://vandyhacks.org">VandyHacks VII</a>, Vanderbilt's cool annual hackathon. It was awesome, I had a great time with great people. I was the only Fall recruit to the VandyHacks board, and I knew I had to underpromise and overdeliver. Thus was born the squirrel from VandyHacks. I wanted to chronicle a part of it for posterity, so here we are, approximately a month and 1250 words later.</p>
+<ul>
+<li><a href='#what-is-the'>What is the squirrel from VandyHacks?</a></li>
+<li><a href='#quest-challenges'>Quest challenges</a>
+<ul>
+<li><a href='#level-0'>Level 0</a></li>
+<li><a href='#level-1'>Level 1</a></li>
+<li><a href='#level-2'>Level 2</a></li>
+<li><a href='#level-3'>Level 3</a></li>
+<li><a href='#level-4'>Level 4</a></li>
+<li><a href='#level-5'>Level 5</a></li>
+<li><a href='#level-6'>Level 6</a></li>
+<li><a href='#level-7'>Level 7</a></li>
+</ul>
+</li>
+</ul>
+<h2 id='what-is-the'>What is the squirrel from VandyHacks?</h2>
+<p>&quot;the squirrel from VandyHacks&quot; is a very special Discord bot created for VandyHacks VII with a slew of commands <del>and easter eggs</del> to enhance hacker engagement and provide key hackathon info right on Discord. Without delving too much into all that, the important idea is that I baked in a <code>vh quest</code> command that essentially activated an 8 challenge long mini CTF. Why this was a good idea, I'm not sure but it got a good response so yay.</p>
+<p>If you're curious about the bot, look at it at <a href="https://github.com/VandyHacks/the-squirrel-from-VandyHacks">https://github.com/VandyHacks/the-squirrel-from-VandyHacks</a>.</p>
+<p>Here’s like the top three most used commands in the hackathon Discord server, just so there is a record (I also wanted to use a markdown table). I think the schedule command especially was way more popular than I expected.</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>uses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vh pat</td>
+<td>1391</td>
+</tr>
+<tr>
+<td>vh schedule</td>
+<td>249</td>
+</tr>
+<tr>
+<td>vh when</td>
+<td>145</td>
+</tr>
+</tbody>
+</table>
+<h2 id='quest-challenges'>Quest challenges</h2>
+<p>The challenges, the flags and some of the motivation behind each of them.</p>
+<h3 id='level-0'>Level 0</h3>
+<blockquote>
+<p>welcome to vh quest! this is a ctf-style, fun treasure hunt where you look for flags like <code>vh{yes_this_is_a_flag_hehe}</code> hidden in places with cryptic clues to advance to the next level. Flags are always in the vh{} format. Feel free to reach out for hints and good luck on your quest! &lt;:vh_heart:&gt;</p>
+</blockquote>
+<p>simple introductory level, since I did not expect a lot of people to have prior CTF experience or know the flow. And since this was like a side quest, I did not want to make it too hard either.</p>
+<p>the answer to this one, of course, was <code>vh{yes_this_is_a_flag_hehe}</code>.</p>
+<h3 id='level-1'>Level 1</h3>
+<pre><code class="language-bf">----[--&gt;+++++&lt;]&gt;.++[-&gt;+++&lt;]&gt;.-[-----&gt;+&lt;]&gt;.-------.+[-&gt;+++&lt;]&gt;++.+.[---&gt;+&lt;]&gt;----.--[-&gt;+++++&lt;]&gt;+.+[-&gt;++&lt;]&gt;+.+++++++.-------------.++++++++++.++++++++++.++[-&gt;+++&lt;]&gt;.+++++++++++++.[--&gt;+&lt;]&gt;---.+[---&gt;++&lt;]&gt;-.[-&gt;+++&lt;]&gt;-.&gt;--[--&gt;+++&lt;]&gt;.
+</code></pre>
+<p>I am sure some of you will instantly recognize what this is, the esoteric language known as brainfuck.</p>
+<p>If not, there was still hope. Googling all of it or part of it could lead to bf. Another interesting observation was that this was syntax highlighted on Discord, hinting towards a programming language. In fact, if you did inspect element on the message, you could see the ```bf in the raw message, giving away the language.</p>
+<p>On decoding, this yields us the flag <code>vh{tabr1el_is_l3wd}</code>, which somewhat references the next challenge, as well as an easter egg.</p>
+<h3 id='level-2'>Level 2</h3>
+<blockquote>
+<p>Did you tell Tabriel Ging how much you love VandyHacks? He's asking that frequently.</p>
+</blockquote>
+<p><img src="https://i.imgur.com/PG3VbqK.png" alt="image-20201109014230404" /></p>
+<p>Most participants had gone through the FAQ on the website, so probably had no problem connecting that to this challenge. Either way, <em>asking that frequently</em> was deliberately put to hint towards the FAQ. The flag being <code>vh{v1rtually_the_be$t_&lt;3}</code>.</p>
+<p>VandyHacks VII Co-Prez Gabriel Ting got a <del>lot of</del> few DMs from confused participants so that was an added bonus…I mean collateral damage.</p>
+<h3 id='level-3'>Level 3</h3>
+<blockquote>
+<p>everyone ask what is vh, why is vh, no one ask how is vh</p>
+</blockquote>
+<p>Use the <code>vh how </code> command, except with the full question, so <code>vh how is vh</code> and it will respond to you with the flag.</p>
+<p>Giving us the answer,  <code>vh{aww_thx_4_asking_heart_emoji}</code>.</p>
+<h3 id='level-4'>Level 4</h3>
+<blockquote>
+<p>This is off the <em>record</em>, but we're really <strong>digging</strong> the website this year. Are you? ;)</p>
+</blockquote>
+<p>Probably one of the harder challenges in this quest. This required digging into the DNS records of the website.</p>
+<p><img src="https://i.imgur.com/eNKdam9.png" alt="image-20201109014723991" /></p>
+<p>See something familiar? <code>vh{p/q2-q4!}</code> and brownie points if you know what that is.</p>
+<h3 id='level-5'>Level 5</h3>
+<blockquote>
+<p>this level has no answer, literally, it's an empty string. But you can still get past it, I believe in you!</p>
+</blockquote>
+<p>First off, this flag was indeed an empty string which you can verify from the <a href="https://github.com/VandyHacks/the-squirrel-from-VandyHacks/blob/7c3606406063e88db9e6a0e59c8a57d9ac77ce32/cogs/quest.py#L43">source code</a>. However, sending an empty message on Discord required some thinking or luck or a combination of both.</p>
+<p><code>tl;dr send any image or file.</code></p>
+<p>Once I explain it, it will seem simple but it is hard to arrive at this yourself I think. Anyway, so it is a reasonable assumption that all messages on Discord are messages in the technical sense of the word. When would that be truly empty? Because any message you type and send, it would still put the string you sent in the message field even if it is a zero width character. But a text message is not the only type of messages seen on Discord—there’s rich embeds, files, images etc. And when you share an image or attachment, you can add a message to go along with it (what if you didn’t). That would set the message to be empty and clear the challenge🎉</p>
+<p>One participant completed this one in a very <em>interesting</em> manner unintentionally which kind of made it worth it for me.</p>
+<p><img src="https://media.discordapp.net/attachments/755112298435051552/762084127259361310/unknown.png" alt="img" /></p>
+<h3 id='level-6'>Level 6</h3>
+<blockquote>
+<p>you are ‎nearing ‎the end. ‎Your ‎flag ‎is ‎here, ‎‎wrap ‎it ‎‎in ‎‎vh{} ‎‎also ‎‎‎‎‎it's all uppercase.</p>
+</blockquote>
+<p>Hardest level I think. Mainly because there’s not a lot to go on with, just the “your flag is here” line which is hard to decode.  If you look at the message closely, you will learn a terrible truth <del>Chancellor Palpatine is a Sith Lord</del>, there’s all sorts of weird characters in that message.</p>
+<p><img src="https://i.imgur.com/iPp0e7x.png" alt="image-20201109021905358" /></p>
+<p>Except they’re not really random, you’ll see it’s just two characters repeating <code>&amp;#8203;</code> and <code>&amp;lrm;</code>, which is a zero width space and a left right mark respectively. Both of these take up zero space, which is why they were discreetly squirreled away in the message. What’s the simplest way to encode something with 2 characters? Probably either binary or morse code, and you can observe it is not binary since the sequence lengths are inconsistent. One morse code decode later, you are left with <code>HIDDENFLAGL3ZG0</code>. Follow the rest of the instructions in the challenge text and you get <code>vh{HIDDENFLAGL3ZG0}</code> :)</p>
+<h3 id='level-7'>Level 7</h3>
+<blockquote>
+<p>Dark web? More like dork web. Find the teapot, vhviippzyvdissgj 🧅</p>
+</blockquote>
+<p>Yeah. You’re right. I really did set up a whole onion service just for the challenge with a vanity url. Overkill? probably. Fun? for sure. <del>Hotel? trivago.</del></p>
+<p>I’m especially happy I managed to make it begin with vhvii but also fit pp and diss and gj in there. Well there you have a starting point, if you visit that url using Tor Browser or Brave or <em>insert tool</em>, you will be greeted with:</p>
+<p><img src="https://media.discordapp.net/attachments/753051340044763178/767494010217824267/unknown.png" alt="img" /></p>
+<p>Which…isn’t much but hey that’s not the point here. Now where do you go from here? Looking at the second part of the challenge text, you’re supposed to find a <em>teapot</em> of all things. Googling a bit for “teapot website” and related stuff might lead you to <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418</a> which is a reference to an <a href="https://en.wikipedia.org/wiki/Hyper_Text_Coffee_Pot_Control_Protocol">April Fool’s Day Joke</a> by the Internet Engineering Task Force that actually got implemented.</p>
+<p>Going to <code>/418</code> on the website, you get:</p>
+<p><img src="https://media.discordapp.net/attachments/753051340044763178/767494145383465000/unknown.png" alt="img" /></p>
+<p>Look at the source code:</p>
+<p><img src="https://media.discordapp.net/attachments/753051340044763178/767494310085394442/unknown.png" alt="img" /></p>
+<p><code>vh{this_is_the_end_im_sad}</code> and I was sad :(</p>
+<hr />
+<p><a href='/blog/tags/ctf.html'>ctf</a>, <a href='/blog/tags/vanderbilt.html'>vanderbilt</a></p>
+</div> <!-- divcontent -->
+
+
+
+<div id='footerholder'>
+<div id='footer'>
+<a href='/blog/tags/index.html'>Posts by tag</a> | <a href='/blog/posts/index.html'>All posts</a><br />
+<span style='font-size:smaller'>All pages signed with <a href='/blog/pubkey.gpg'>BFE0CFDBF90E4BF0</a>. Append <code>.asc</code> to URL for signature.</span><br />
+
+<span style='font-size:smaller'><a href='/blog/feed.rss'>RSS feed</a></span>
+
+
+<span style='font-size:smaller'></span>
+
+
+</div> <!-- footer -->
+</div> <!-- footerholder -->
+
+</div> <!-- divbodyholder -->
+</body>
+</html>
+
+
