@@ -1,9 +1,11 @@
 # literally just need to do all this to deploy build folder
+# draft branch useful to test stuff since master also built to prod
 name: Build and Deploy
 on:
   push:
     branches:
       - master
+      - draft
 jobs:
   deploy:
     runs-on: ubuntu-latest
