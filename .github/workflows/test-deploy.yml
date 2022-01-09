@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.5.1
+        uses: actions/checkout@v2
 
       # no build step since already built stuff locally
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.2.0
         with:
-          branch: test-deploy # The branch the action should deploy to.
+          branch: gh-pages # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
