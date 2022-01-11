@@ -501,7 +501,7 @@ castorsCTF{N0_End_T0d4y_F0r_L0v3_I5_X3n0n}
 <p>Lorem Ipsum or whatever. Random styling things now.</p>
 <p><code>import __hello__  # This should be inline code</code></p>
 <p>Now, let's try a code block.</p>
-<pre><code>from __future__ import braces
+<pre><code class="language-py">from __future__ import braces
 import antigravity
 if x.startswith('java'):
 	x = 'suck'  # check indents rendered
