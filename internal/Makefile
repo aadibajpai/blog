@@ -367,7 +367,7 @@ $(BUILT_TAG_DIR)/index.html: $(METADATA_DIR)/tags $(filter $(METADATA_DIR)/%/hea
 	end_html; } | $(M4) $(M4_FLAGS) > $@
 
 # All CSS. Easy enough.
-$(BUILT_STATIC_DIR)/%.css: $(CSS_THEME_FILES) | $(OUT_DIRS)
+$(BUILT_STATIC_DIR)/style.css: $(CSS_THEME_FILES) | $(OUT_DIRS)
 	@echo $@
 	$(M4) $(M4_FLAGS) $< > $@
 

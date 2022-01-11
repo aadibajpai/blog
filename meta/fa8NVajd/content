@@ -15,7 +15,7 @@ Lorem Ipsum or whatever. Random styling things now.
 
 Now, let's try a code block.
 
-```
+```py
 from __future__ import braces
 import antigravity
 if x.startswith('java'):
