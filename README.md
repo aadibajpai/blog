@@ -2,6 +2,8 @@
 
 Blog Maker - Build a blog with bash, make, and other GNU shell utilities.
 
+Aadi: for changes I've made to og [bm](https://github.com/pastly/bm), look in [UPDATES.md](doc/UPDATES.md)
+
 ![example blog image](https://i.imgur.com/6chb1CG.png)
 
 BM generates static sites. Thus they will be _blazing fast_
